@@ -30,9 +30,9 @@ Il existe des éditeurs en ligne, dont [Dilinger](https://dillinger.io), [StackE
 ---
 ## Organisation de la FS
 
-La FS sera composée de plusieurs fichiers `Markdown`. Le fichier principal de votre FS sera appelé _main.md_, et inclura des liens vers les différents fichiers qui composent votre fiche. 
+La FS sera composée de plusieurs fichiers `Markdown`. Le fichier principal de votre FS sera appelé _README.md_, et inclura des liens vers les différents fichiers qui composent votre fiche. 
 
-Votre fichier _main.md_ sera organisé de la manière suivante :
+Votre fichier _README.md_ sera organisé de la manière suivante :
 
  - le titre de votre FS, les noms des auteurs, l'année (les informations classiques d'une page de garde).    
  - un résumé d'une dizaine de lignes.    
