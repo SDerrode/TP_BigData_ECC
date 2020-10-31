@@ -64,7 +64,7 @@ De manière synthétique, une fois le projet créé,
    2. quand vous êtes content de votre travail, et que vos jugez vos algorithmes fonctionnels, vous publiez vos précédents ``commit`` sur **gitlab** avec un ``push``.
 
 Ce comportement est illustré par le schéma de la figure suivante:
-<center><img src="figures/PrincipeGit.png" style="width:50%"/></center>   
+<center><img src="figures/PrincipeGit.png" style="width:75%"/></center>   
 
 -----
 Pour détruire ce projet (sans grand interêt), il faut :

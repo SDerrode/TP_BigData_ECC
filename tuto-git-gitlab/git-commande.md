@@ -1,4 +1,16 @@
-Voici une démo des principales commandes de git, à utiliser depuis un terminal. Pour **Windows**, utilisez le terminal appelé ``Git Bash``, qui a été installé en même temps que **git**). 
+### Tuto des principales commandes git
+
+Ce tuto présente les principales commandes _git_, lorsqu'on souhaite l'utiliser en mode _Terminal_ (à l'aide de commandes manuelles). 
+
+> *Remarque* :Vous devez savoir ouvrir un _Terminal_ sur votre machine, quelque soit le système d'exploitation (_Windows_, _Linux_, ou _Mac OS X_). Sous _Windows 10_ (et antérieur), vous pourrez utiliser le programme _Windows powershell_ qui est très similaires au _Terminal_ de _Linux_ et de _Mac OS X_. 
+Vous devez aussi savoir a minima naviguer dans vos dossiers à l'aide de la commande ```cd```. Typiquement :
+```shell
+cd c:\Users\stephane\TP_Hadoop # Windows
+cd ~\stephane\TP_Hadoop        # Mac, linux
+```
+Si vous souhaitez remonter d'un niveau dans la hiérarchie des dossiers: ```cd ..```. Des tutos vidéo existent pour décoruvrir les comandes de bases (identiques à celles que l'on retourve sur les systèmes _Linux_).
+
+
 
 **Configuration de git** (à faire une fois pour toute)
 ```bash
@@ -14,12 +26,12 @@ Voici une démo des principales commandes de git, à utiliser depuis un terminal
 
 **git clone / status / log**
 ```bash
->> git clone https://gitlab.ec-lyon.fr/sderrode/helloworld.git
->> cd helloworld
+>> git clone https://github.com/SDerrode/Test.git
+>> cd Test
 >> git status
 >> git log
 ```
-Il s'agit ici du clonage d'un projet existant sur votre espace **gitlab**.
+Il s'agit ici du clonage, sur votre machine, d'un projet existant stocké sur **gitlab** ou **github**.
 
 **Modification d'un fichier existant**
 ```bash
@@ -42,14 +54,14 @@ Il s'agit ici du clonage d'un projet existant sur votre espace **gitlab**.
 >> git status
 >> git log
 ```
-On peut utiliser ce procédé pour ajouter un fichier ``.gitignore`` sur la racine du projet.
+On peut utiliser ce procédé pour ajouter un fichier `gitignore` sur la racine du projet.
 
 
-**Différence entre 2 commit**
+**Différence entre 2 commits**
 ```bash
 >> git diff HEAD^ HEAD README.md  #(entre l''avant dernier et le dernier commit)
 ```
-On peut remplacer ``HEAD^`` et ``HEAD`` par deux numéros de commit.
+On peut remplacer `HEAD^` et `HEAD` par deux numéros de commit.
 
 **Revenir en arrière**
 ```bash
@@ -62,17 +74,18 @@ On peut remplacer ``HEAD^`` et ``HEAD`` par deux numéros de commit.
 >> ls
 ```
 
-**Publication vers gitlab et mise à jour depuis gitlab**
+**Publication vers gitlab/github et mise à jour depuis gitlab/github**
 ```bash
 >> git status
->> git push    #(publication vers gitlab de tous les nouveaux commit)
+>> git push    #(publication vers gitlab/github de tous les nouveaux commits)
 >> git pull    #(récupération des changements publiés par d'autres)
 ```
 
-Si un collègue du projet à mis à jour le dépôt **gitlab**, alors il faut fusionner ces modifications avec vos propres travaux, localement sur votre machine. Avant de lancer la commande, pensez à commiter vos propres changements. Si la fusion pose problèmes (vous avez travaillé sur le même bout de code et vos corrections ne sont pas fusionable de manière automatique), alors git vos informe de la procédure manuelle à suivre.
+Si un collègue du projet à mis à jour le dépôt **gitlab/github**, alors il faut fusionner ces modifications avec vos propres travaux, localement sur votre machine. Avant de lancer la commande, pensez à `commiter` vos propres changements. Si la fusion pose problèmes (vous avez travaillé sur le même bout de code et vos corrections ne sont pas fusionable de manière automatique), alors git vos informe de la procédure manuelle à suivre.
 
 **Création d'une branche**
-Les branches sont essentiellement utilisées pour tester une idée sans perturber le projet. Si vous validez cette idée, alors il devient possible de fusionner la branche avec la branche principale:
+Les branches sont essentiellement utilisées pour tester une idée sans perturber le projet. Vous pouvez générer des `commits` sur la branche, indépendamment de la branche principale. 
+Si vous validez cette idée, alors il devient possible de fusionner la branche avec la branche principale:
 ```bash
 >> git branch essai                                #(on créé une nouvelle branche essai
 >> git branch
@@ -89,16 +102,18 @@ Les branches sont essentiellement utilisées pour tester une idée sans perturbe
 >> ls
 >> git branch -d essai                             #(destruction de la branche après merge)
 ```
-On peut très bien merger une branche et continuer son développement pour faire un second merge plus tard. On peut aussi publier la branche sur **gitlab** (pour l'instant elle ne reste que locale).
+On peut très bien `merger` une branche et continuer son développement pour faire un second merge plus tard. On peut aussi publier la branche sur **gitlab/github** (pour l'instant elle ne reste que locale).
 
 **Tagger une version**
 ```bash
 >> git tag -a v0.1 HEAD -m "my version 0.1"
 >> git tag                                  #(liste les tags)
->> git push --tags                          #(envoi des tag sur le dépôt gitlab)
+>> git push --tags                          #(envoi des tag sur le dépôt gitlab/github)
 ```
 
 **Archiver une version**
+La commande suivante permet de générer un fichier compressé comprenant l'état actuel de votre projet (il ne contient pas les fichiers spécifique au suivi par _git_, tels le répertoire _.git_ ou le fichier _.gitignore_).
+
 ```bash
 >> git archive --format=tgz --prefix=git-0.1/ HEAD >git-0.1.tgz
 >> ls

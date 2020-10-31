@@ -1,16 +1,16 @@
 # Template - Fiche de synthèse
 
-Ce document présente les consignes pour la rédaction de la fiche de synthèse (FS), à rendre avant l'examen écrit.
+Ce document présente les consignes pour la rédaction de la fiche de synthèse (FS), à rendre avant le jour de l'examen écrit.
 
 ---
 ## Consignes
 
  - Votre FS doit être rédigée avec le format `Markdown` et suivre le modèle présenté ci-dessous. Elle ne doit pas dépasser l'équivalent d'une dizaine de pages.  
  - Le contenu de la FS doit être géré entre vous, avec l'aide d'un projet _GitHub_. Le projet sera hébergé sur le compte de l'un des membres du groupe, qui autorisera l'accès en écriture au projet à tous les autres membres du projet ainsi qu'à moi-même (mon pseudo _GitHub_ : _SDerrode_).
- - Le groupe doit se déclarer sur ce [fichier partagé](https://partage.liris.cnrs.fr/index.php/s/4Q3JB8Xk3RtfcR3). On y déposera le titre de la fiche, l'adresse URL du projet _GitHub_ et les noms et pseudo des étudiants. Utilisez le premier onglet vide disponible sur le fichier partagé (si nécessaire ajouter des onglets).
+ - Le groupe doit se déclarer sur ce [fichier partagé](https://partage.liris.cnrs.fr/index.php/s/4Q3JB8Xk3RtfcR3), qui contient autant d'obglet qu'il y a de groupes. On y déposera le titre de la fiche, l'adresse URL du projet _GitHub_ et les noms et pseudo des étudiants. Utilisez le premier onglet vide disponible (si nécessaire, ajoutez des onglets).
  - Je récupérerai votre FS directement sur votre projet _GitHub_ le jour de l'examen. Le jour de l'examen constitue donc la date butoir pour terminer votre FS.
 
-> **Remarque** Le système de gestion de versions **git** est présenté en cours. Vous trouverez le scenario du tuto joué durant le cours dans le répertoire _tuto-git-gitlab_ de ce repo _GitHub_.
+*Remarque* Le système de gestion de versions **git** est présenté en cours. Vous trouverez le scenario du tuto joué durant le second cours dans le répertoire [tuto-git-gitlab](./tuto-git-gitlab) de ce projet _GitHub_.
 
 ---
 ## Markdown
