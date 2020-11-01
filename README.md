@@ -31,17 +31,17 @@ _Stéphane Derrode_, Prof. Ecole Centrale de Lyon
   > - Formez les groupes, déposez les noms et les adresses mail sur un fichier hébergé sur [cette plateforme de partage de fichiers](https://partage.liris.cnrs.fr/index.php/s/4Q3JB8Xk3RtfcR3). Commencez à réfléchir au sujet de votre FS.    
   > - Regardez les vidéos non vues en cours, dont les liens figurent dans les slides, et certaines des vidéos suivantes (cela pourra vous donner des idées sur le sujet de votre FS) :   
   >
-	 >   - [Le Big Data pour mieux nous comprendre](https://www.ted.com/talks/kenneth_cukier_big_data_is_better_data?language=fr)        
-	 >   - [_Let's pool our medical data_](https://www.ted.com/talks/john_wilbanks_let_s_pool_our_medical_data)    
-	 >   - [_Why privacy matters?_](https://www.ted.com/talks/glenn_greenwald_why_privacy_matters#t-46573)    
-   >   - [_Big Data will impact every part of your life_](https://www.youtube.com/watch?v=0Q3sRSUYmys)    
-   >   - [_Big data and dangerous ideas_](https://www.youtube.com/watch?v=tLQoncvCKxs)     
-   >   - [_Big Data and the Rise of Augmented Intelligence_](https://www.youtube.com/watch?v=mKZCa_ejbfg)     
-   >   - [_How Big Data Can Influence Decisions That Actually Matter_](https://www.youtube.com/watch?v=C6WKt6fJiso)     
-   >   - [_Is Big Data Killing Creativity?_](https://www.youtube.com/watch?v=A1XibEzp6K0)     
-   >   - [_Analyzing and modeling complex and big data_](https://www.youtube.com/watch?v=8DqQCZMawNg)      
-   >   - [_How to Monetize Big Data_](https://www.youtube.com/watch?v=8DqQCZMawNg)     
-   >   - [_How to predict the future with big data_](https://www.youtube.com/watch?v=J0bp2kUh9hw)    
+	  >   - [Le Big Data pour mieux nous comprendre](https://www.ted.com/talks/kenneth_cukier_big_data_is_better_data?language=fr)        
+	  >   - [_Let's pool our medical data_](https://www.ted.com/talks/john_wilbanks_let_s_pool_our_medical_data)    
+	  >   - [_Why privacy matters?_](https://www.ted.com/talks/glenn_greenwald_why_privacy_matters#t-46573)    
+    >   - [_Big Data will impact every part of your life_](https://www.youtube.com/watch?v=0Q3sRSUYmys)    
+    >   - [_Big data and dangerous ideas_](https://www.youtube.com/watch?v=tLQoncvCKxs)     
+    >   - [_Big Data and the Rise of Augmented Intelligence_](https://www.youtube.com/watch?v=mKZCa_ejbfg)     
+    >   - [_How Big Data Can Influence Decisions That Actually Matter_](https://www.youtube.com/watch?v=C6WKt6fJiso)     
+    >   - [_Is Big Data Killing Creativity?_](https://www.youtube.com/watch?v=A1XibEzp6K0)     
+    >   - [_Analyzing and modeling complex and big data_](https://www.youtube.com/watch?v=8DqQCZMawNg)      
+    >   - [_How to Monetize Big Data_](https://www.youtube.com/watch?v=8DqQCZMawNg)     
+    >   - [_How to predict the future with big data_](https://www.youtube.com/watch?v=J0bp2kUh9hw)    
 
 ---
 ### Séance #2 - Git
@@ -54,11 +54,11 @@ _Stéphane Derrode_, Prof. Ecole Centrale de Lyon
   > - Après avoir créé un compte sur la plateforme [GitLab](https://gitlab.com/users/sign_in), créez un projet privé pour la FS (me désigner `reporter`de chaque FS, mon pseudo : `SDerrode`), selon les modalités exposées dans le dossier [Template_FS](./Template_FS/README.md). Cela me permettra de voir vos travaux (espionnage de votre travail !).    
   > - Préparation de la séance #3:
   > 
-     >   - [L'open data à la loupe](https://www.youtube.com/watch?v=6WtviEVPkJI).
-     >   - [_Linked Open Data - What is it?_](https://www.youtube.com/watch?v=uju4wT9uBIA)
+    >   - [L'open data à la loupe](https://www.youtube.com/watch?v=6WtviEVPkJI).
+    >   - [_Linked Open Data - What is it?_](https://www.youtube.com/watch?v=uju4wT9uBIA)
     >   - [_How we found the worst place to park in New York City_](https://www.ted.com/talks/ben_wellington_how_we_found_the_worst_place_to_park_in_new_york_city_using_big_data).    
-     >   - [_Demand on a more open-source government_](https://www.ted.com/talks/beth_noveck_demand_a_more_open_source_government#t-66622)    
-     >   - [L'Open Data, Avenir des Big Data](https://www.youtube.com/watch?v=MUI6Rwn4Qq0)
+    >   - [_Demand on a more open-source government_](https://www.ted.com/talks/beth_noveck_demand_a_more_open_source_government#t-66622)    
+    >   - [L'Open Data, Avenir des Big Data](https://www.youtube.com/watch?v=MUI6Rwn4Qq0)
 
 ---
 ### Séance #3 - Open Data et _Linked Data_
