@@ -52,13 +52,13 @@ _Stéphane Derrode_, Prof. Ecole Centrale de Lyon
 
   - **Travail hebdomadaire à faire pour la semaine suivante**
   > - Après avoir créé un compte sur la plateforme [GitLab](https://gitlab.com/users/sign_in), créez un projet privé pour la FS (me désigner `reporter`de chaque FS, mon pseudo : `SDerrode`), selon les modalités exposées dans le dossier [Template_FS](./Template_FS/README.md). Cela me permettra de voir vos travaux (espionnage de votre travail !).    
-  > - Préparation de la séance #3:
-  > 
-    >   - [L'open data à la loupe](https://www.youtube.com/watch?v=6WtviEVPkJI).
-    >   - [_Linked Open Data - What is it?_](https://www.youtube.com/watch?v=uju4wT9uBIA)
-    >   - [_How we found the worst place to park in New York City_](https://www.ted.com/talks/ben_wellington_how_we_found_the_worst_place_to_park_in_new_york_city_using_big_data).    
-    >   - [_Demand on a more open-source government_](https://www.ted.com/talks/beth_noveck_demand_a_more_open_source_government#t-66622)    
-    >   - [L'Open Data, Avenir des Big Data](https://www.youtube.com/watch?v=MUI6Rwn4Qq0)
+  > - Préparation de la séance #3 :   
+  >
+  >   - [L'open data à la loupe](https://www.youtube.com/watch?v=6WtviEVPkJI).
+  >   - [_Linked Open Data - What is it?_](https://www.youtube.com/watch?v=uju4wT9uBIA)
+  >   - [_How we found the worst place to park in New York City_](https://www.ted.com/talks/ben_wellington_how_we_found_the_worst_place_to_park_in_new_york_city_using_big_data).    
+  >   - [_Demand on a more open-source government_](https://www.ted.com/talks/beth_noveck_demand_a_more_open_source_government#t-66622)    
+  >   - [L'Open Data, Avenir des Big Data](https://www.youtube.com/watch?v=MUI6Rwn4Qq0)
 
 ---
 ### Séance #3 - Open Data et _Linked Data_
