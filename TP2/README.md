@@ -1,10 +1,10 @@
 # TP #2 - Hadoop map-reduce
 
-Ce TP fait suite au cours sur le _framework_ libre et open source appelé [__Hadoop__](https://Hadoop.apache.org), développé et maintenu par la [Fondation Apache](https://www.apache.org).
+Ce TP fait suite au cours sur le _framework_ libre et open source appelé [__Hadoop__](https://qadoop.apache.org), développé et maintenu par la [Fondation Apache](https://www.apache.org).
 
 
 ---
-## Partie 1 - _wordcount_ _map-reduce_ en local
+## Partie 1 - _wordcount map-reduce_ en local
 
 Suivez  les consignes permettant d'exécuter l'algorithme _map-reduce_ de comptage de mots en local, sur le fichier contenant un livre (_Dracula_) au format texte : 
 > [Wordcount_Local.md](./Wordcount_Local.md)

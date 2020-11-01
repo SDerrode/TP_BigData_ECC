@@ -93,7 +93,7 @@ _Stéphane Derrode_, Prof. Ecole Centrale de Lyon
     > - Le dessin _RDF_ de la requête (vous pouvez utiliser [draw.io](https://app.diagrams.net) pour dessiner les graphiques),     
     > - Le code _SparQL_ de la requête (que je puisse la rejouer dans _Yasgui_),    
     > - Les 3 ou 4 premiers résultats de la requête (copie d'écran).   
-  > - N'oubliez pas de déposer votre nom sur le rapport, et de m'envoyer le rapport (fichier markdown et figures) sous forme d'un SEUL fichier compressé (nommé `nom_rendu1.zip`), par mail à _stephane.derrode@ec-lyon.fr_ **avant le début du cours suivant**. Votre mail doit avoir pour objet `[ECC - Rendu 1]`. 
+  > - N'oubliez pas de déposer votre nom sur le rapport, et de m'envoyer le rapport (fichier _Markdown_ et figures) sous forme d'un SEUL fichier compressé (nommé `nom_rendu1.zip`), par mail à _stephane.derrode@ec-lyon.fr_ **avant le début du cours suivant**. Votre mail doit avoir pour objet `[ECC - Rendu 1]`. 
   > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte l'originalité de la requête, et la qualité de son écriture bien sûr !
 
 
@@ -117,12 +117,10 @@ _Stéphane Derrode_, Prof. Ecole Centrale de Lyon
 
   - **Travail hebdomadaire à faire pour la semaine suivante**
   > - Terminer les questions du [TP #2](./TP2) et faire un compte-rendu personnel de TP. 
-  > - N'oubliez pas de déposer votre nom sur le rapport, et de m'envoyer le rapport (fichier markdown et figures) sous forme d'un SEUL fichier compressé (nommé `nom_rendu2.zip`), par mail à _stephane.derrode@ec-lyon.fr_ **avant le début du cours suivant**. Votre mail doit avoir pour objet `[ECC - Rendu 2]`. 
+  > - N'oubliez pas de déposer votre nom sur le rapport, et de m'envoyer le rapport (fichier _Markdown_ et figures) sous forme d'un SEUL fichier compressé (nommé `nom_rendu2.zip`), par mail à _stephane.derrode@ec-lyon.fr_ **avant le début du cours suivant**. Votre mail doit avoir pour objet `[ECC - Rendu 2]`. 
   > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
 
 
-
-# REVOIR A PARTIR D'ICI
 
 ---
 ### Séance #7 - Spark 
@@ -132,21 +130,22 @@ _Stéphane Derrode_, Prof. Ecole Centrale de Lyon
   > - Présentation du [TP #3](./TP3) qui se déroulera en séance #8.
 
   - **Travail hebdomadaire à faire pour la semaine suivante**
-  > - Réalisez la partie 1 du [TP #3](./TP3).
-  > - En préparation à la partie xx de ce TP, ...
+  > - Réalisez la partie 1 du [TP #3](./TP3), concernant la programmation fonctionnelle en _Python_.
+  > - Commencez la partie 2 du [TP #3](./TP3), jusqu’à la la section `wordcount en Spark` (y compris cette section).
   
 
 ---
 ### Séance #8 - TP Spark
 
   - **Travaux pratiques**
-  > - Terminer le [TP #3](./TP3) sur `Spark`.
+  > - Terminer le [TP #3](./TP3), depuis la section `Tester les scripts du cours` et faire un compte-rendu personnel de TP. 
+  > - La partie 4 de ce TP (portant sur _Spark streaming_) est optionnelle.
 
   - **Travail hebdomadaire à faire pour la semaine suivante**
-  > - Terminer les questions du TP #3 et faire un compte-rendu personnel de TP (à m'envoyer par mail, en utilisant l'objet : [ECC - Rendu 3]).
-  > - Spark streaming + Spark MLib ?
+  > - Pour le CR : n'oubliez pas de déposer votre nom sur le rapport, et de m'envoyer le rapport (fichier _Markdown_ et figures) sous forme d'un SEUL fichier compressé (nommé `nom_rendu3.zip`), par mail à _stephane.derrode@ec-lyon.fr_ **avant le début du cours suivant**. Votre mail doit avoir pour objet `[ECC - Rendu 3]`. 
+  > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
 
 ---
 ### Séance #9 - Examen
 
-Les conditions d'examens seront précisées plus tard
+Les conditions d'examens seront précisées plus tard.

@@ -32,7 +32,7 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
      ```   
      b. Créez et lancez les trois contenaires (les instructions `-p` permettent de faire un mapping entre les ports de la machine hôte et ceux du contenaire):
      ```shell
-     docker run -itd --net=hadoop -p 50070:50070 -p 8088:8088 -p 7077:7077 -p 16010:16010 \
+     docker run -itd --net=hadoop -p 50070:50070 -p 8088:8088 -p 7077:7077 -p 16010:16010 -p 9999:9999 \
               --name hadoop-master --hostname hadoop-master \
               liliasfaxi/spark-hadoop:hv-2.7.2
   
@@ -44,6 +44,8 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
               --name hadoop-slave2 --hostname hadoop-slave2 \
               liliasfaxi/spark-hadoop:hv-2.7.2
      ```     
+
+*Remarque* : Le port `9999` sera utilisé dans le TP, dans la partie 3 traintant de _Spark streaming_.
 
 ---
 ## Préparation au TP
