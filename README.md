@@ -30,7 +30,7 @@ _Stéphane Derrode_, Prof. Ecole Centrale de Lyon
   - **Travail hebdomadaire à faire pour la semaine suivante**
   > - Formez les groupes, déposez les noms et les adresses mail sur un fichier hébergé sur [cette plateforme de partage de fichiers](https://partage.liris.cnrs.fr/index.php/s/4Q3JB8Xk3RtfcR3). Commencez à réfléchir au sujet de votre FS.    
   > - Regardez les vidéos non vues en cours, dont les liens figurent dans les slides, et certaines des vidéos suivantes (cela pourra vous donner des idées sur le sujet de votre FS) :   
-
+  >
   >   - [Le Big Data pour mieux nous comprendre](https://www.ted.com/talkkenneth_cukier_big_data_is_better_data?language=fr)    
   >   - [_Let's pool our medical data_](https://www.ted.com/talks/john_wilbanks_let_s_pool_our_medical_data)    
   >   - [_Why privacy matters?_](https://www.ted.com/talks/glenn_greenwald_why_privacy_matters#t-46573)    
