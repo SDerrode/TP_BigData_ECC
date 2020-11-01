@@ -32,10 +32,9 @@ Copiez alors _arbresremarquablesparis2.csv_ sur _HDFS_ (dans le répertoires `in
 
 Écrivez des programmes _pyspark_ permettant 
 
-  1. d'afficher les coordonnées GPS, la taille et l'adresse de l'arbre le plus grand.
-
-    - Certains arbres n'ont pas de taille renseignée : on devra donc filtrer le RDD en supprimant les lignes dont la hauteur est égale à ''.       
-    - La hauteur sera considérée comme une chaîne de caractères. Pour la transformer en nombre réel : `float(hauteur)`.     
-    - Pour vérifier le résultat, vous pouvez utiliser [ce site](http://www.coordonnees-gps.fr/). Entrez les coordonnées GPS trouvées et vérifiez que l'adresse est bien la bonne !    
-  2. d'afficher les coordonnées GPS des arbres de plus grande circonférence pour chaque arrondissement de la ville de Paris.
-  3. d'afficher toutes les espèces d'arbre, triées par genre. 
+  1. d'afficher les coordonnées GPS, la taille et l'adresse de l'arbre le plus grand.   
+     - Certains arbres n'ont pas de taille renseignée : on devra donc filtrer le RDD en supprimant les lignes dont la hauteur est égale à ''.       
+     - La hauteur sera considérée comme une chaîne de caractères. Pour la transformer en nombre réel : `float(hauteur)`.     
+     - Pour vérifier le résultat, vous pouvez utiliser [ce site](http://www.coordonnees-gps.fr/). Entrez les coordonnées GPS trouvées et vérifiez que l'adresse est bien la bonne !    
+  1. d'afficher les coordonnées GPS des arbres de plus grande circonférence pour chaque arrondissement de la ville de Paris.
+  1. d'afficher toutes les espèces d'arbre, triées par genre. 
