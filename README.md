@@ -85,14 +85,14 @@ _Stéphane Derrode_, Prof. Ecole Centrale de Lyon
   - **Travail hebdomadaire à faire pour la semaine suivante**
   > - Choisissez une base de données `linked data` (autre que _DBPedia_) et inventez **deux requêtes** sur cette base. Vous pouvez utiliser une des bases vues en cours, ou en chercher un nouvelle à partir de ces sites :
   >
-    > - [The Linked Open Data Cloud](https://lod-cloud.net/datasets)    
-    > - [Linked open vocabularies](http://lov.okfn.org/)     
+  >   - [The Linked Open Data Cloud](https://lod-cloud.net/datasets)    
+  >   - [Linked open vocabularies](http://lov.okfn.org/)     
   >  
   > - Rédigez un petit rapport (rapport individuel de 2 pages maxi au format _Markdown_) comprenant, pour chaque requête :  
-    >
-    > - Le dessin _RDF_ de la requête (vous pouvez utiliser [draw.io](https://app.diagrams.net) pour dessiner les graphiques),     
-    > - Le code _SparQL_ de la requête (que je puisse la rejouer dans _Yasgui_),    
-    > - Les 3 ou 4 premiers résultats de la requête (copie d'écran).   
+  >
+  >   - Le dessin _RDF_ de la requête (vous pouvez utiliser [draw.io](https://app.diagrams.net) pour dessiner les graphiques),     
+  >   - Le code _SparQL_ de la requête (que je puisse la rejouer dans _Yasgui_),    
+  >   - Les 3 ou 4 premiers résultats de la requête (copie d'écran).   
   > - N'oubliez pas de déposer votre nom sur le rapport, et de m'envoyer le rapport (fichier _Markdown_ et figures) sous forme d'un SEUL fichier compressé (nommé `nom_rendu1.zip`), par mail à _stephane.derrode@ec-lyon.fr_ **avant le début du cours suivant**. Votre mail doit avoir pour objet `[ECC - Rendu 1]`. 
   > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte l'originalité de la requête, et la qualité de son écriture bien sûr !
 
