@@ -1,8 +1,8 @@
 # Travaux pratiques _Big Data_, ECC
 
-Cet espace recueille les énoncés et les fichiers nécessaires à la réalisation des travaux pratiques du cours de _Big Data_, enseignés à l'École Centrale de Casablanca. Les polycopiés de cours seront déposés sur un espace spécifié par ailleurs. 
+Cet espace recueille les slides de cours et les fichiers nécessaires à la réalisation des travaux pratiques du cours de _Big Data_, enseignés à l'École Centrale de Casablanca.
 
-_Stéphane Derrode_, Prof. Ecole Centrale de Lyon
+[_Stéphane Derrode_](mailto:stephane.derrode@ec-lyon.fr), Prof. Ecole Centrale de Lyon.
 
 ----
 ## Informations générales
@@ -93,7 +93,7 @@ _Stéphane Derrode_, Prof. Ecole Centrale de Lyon
   >   - Le dessin _RDF_ de la requête (vous pouvez utiliser [draw.io](https://app.diagrams.net) pour dessiner les graphiques),     
   >   - Le code _SparQL_ de la requête (que je puisse la rejouer dans _Yasgui_),    
   >   - Les 3 ou 4 premiers résultats de la requête (copie d'écran).   
-  > - N'oubliez pas de déposer votre nom sur le rapport, et de m'envoyer le rapport (fichier _Markdown_ et figures) sous forme d'un SEUL fichier compressé (nommé `nom_rendu1.zip`), par mail à _stephane.derrode@ec-lyon.fr_ **avant le début du cours suivant**. Votre mail doit avoir pour objet `[ECC - Rendu 1]`. 
+  > - N'oubliez pas de déposer votre nom sur le rapport, et de m'envoyer le rapport (fichier _Markdown_ et figures) sous forme d'un SEUL fichier compressé (nommé `nom_rendu1.zip`), par mail à [_Stéphane Derrode_](mailto:stephane.derrode@ec-lyon.fr) **avant le début du cours suivant**. Votre mail doit avoir pour objet `[ECC - Rendu 1]`. 
   > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte l'originalité de la requête, et la qualité de son écriture bien sûr !
 
 
@@ -117,7 +117,7 @@ _Stéphane Derrode_, Prof. Ecole Centrale de Lyon
 
   - **Travail hebdomadaire à faire pour la semaine suivante**
   > - Terminer les questions du [TP #2](./TP2) et faire un compte-rendu personnel de TP. 
-  > - N'oubliez pas de déposer votre nom sur le rapport, et de m'envoyer le rapport (fichier _Markdown_ et figures) sous forme d'un SEUL fichier compressé (nommé `nom_rendu2.zip`), par mail à _stephane.derrode@ec-lyon.fr_ **avant le début du cours suivant**. Votre mail doit avoir pour objet `[ECC - Rendu 2]`. 
+  > - N'oubliez pas de déposer votre nom sur le rapport, et de m'envoyer le rapport (fichier _Markdown_ et figures) sous forme d'un SEUL fichier compressé (nommé `nom_rendu2.zip`), par mail à [_Stéphane Derrode_](mailto:stephane.derrode@ec-lyon.fr) **avant le début du cours suivant**. Votre mail doit avoir pour objet `[ECC - Rendu 2]`. 
   > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
 
 
@@ -142,7 +142,7 @@ _Stéphane Derrode_, Prof. Ecole Centrale de Lyon
   > - La partie 4 de ce TP (portant sur _Spark streaming_) est optionnelle.
 
   - **Travail hebdomadaire à faire pour la semaine suivante**
-  > - Pour le CR : n'oubliez pas de déposer votre nom sur le rapport, et de m'envoyer le rapport (fichier _Markdown_ et figures) sous forme d'un SEUL fichier compressé (nommé `nom_rendu3.zip`), par mail à _stephane.derrode@ec-lyon.fr_ **avant le début du cours suivant**. Votre mail doit avoir pour objet `[ECC - Rendu 3]`. 
+  > - Pour le CR : n'oubliez pas de déposer votre nom sur le rapport, et de m'envoyer le rapport (fichier _Markdown_ et figures) sous forme d'un SEUL fichier compressé (nommé `nom_rendu3.zip`), par mail à [_Stéphane Derrode_](mailto:stephane.derrode@ec-lyon.fr) **avant le début du cours suivant**. Votre mail doit avoir pour objet `[ECC - Rendu 3]`. 
   > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
 
 ---
