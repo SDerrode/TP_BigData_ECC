@@ -2,7 +2,6 @@
 
 Ce TP fait suite au cours sur le _framework_ libre et open source appelé [__Hadoop__](https://qadoop.apache.org), développé et maintenu par la [Fondation Apache](https://www.apache.org).
 
-
 ---
 ## Partie 1 - _wordcount map-reduce_ en local
 
