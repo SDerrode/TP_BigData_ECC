@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Wordcount Local - TP de Big Data</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Wordcount Local";
+    var mkdocs_page_input_path = "TP2/Wordcount_Local.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> TP de Big Data</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Template_FS/">Template_FS</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../TP1/">TP1</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../">TP2</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../TP3/">TP3</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">git</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tuto-git-gitlab/tuto-git-gitlab/">Tuto git gitlab</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tuto-git-gitlab/git-commande/">Git commande</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">TP de Big Data</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Wordcount Local</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/SDerrode/TP_BigData_ECC/edit/master/docs/TP2/Wordcount_Local.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>Sommaire</strong></p>
+<div class="toc">
+<ul>
+<li><a href="#wordcount-en-local">Wordcount, en local</a><ul>
+<li><a href="#recuperation-et-lancement-des-scripts-python">Récupération et lancement des scripts Python</a></li>
+<li><a href="#exercice-1-amelioration-du-wordcount">Exercice 1 - Amélioration du wordcount</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="wordcount-en-local">Wordcount, en local<a class="headerlink" href="#wordcount-en-local" title="Permanent link">&para;</a></h1>
+<p>Nous allons ici faire fonctionner l&rsquo;algorithme <em>map-reduce</em> qui compte les mots d&rsquo;un fichier texte, en local, <em>i.e.</em> sans exploiter le parallélisme que propose le framework <strong>Hadoop</strong>. Le programme est constitué de deux scripts <em>Python</em> qui sont appelés successivement selon la méthode décrite ci-dessous. Il s&rsquo;agit ici surtout de comprendre la logique algorithmique.</p>
+<hr />
+<h2 id="recuperation-et-lancement-des-scripts-python">Récupération et lancement des scripts <em>Python</em><a class="headerlink" href="#recuperation-et-lancement-des-scripts-python" title="Permanent link">&para;</a></h2>
+<p>Pour récupérer le scripts, suivez les consignes:</p>
+<ul>
+<li>Ouvrez un <em>Terminal</em> et déplacez-vous dans votre dossier de travail (avec la commande <code>cd</code>). Tapez la commande permettant de récupérer les fichiers nécessaires à ce TP.   </li>
+</ul>
+<pre><code class="language-shell">git clone https://gitlab.ec-lyon.fr/sderrode/s9_mod21_bigdata_tp.git
+</code></pre>
+<p>Constatez, dans un gestionnaire de fichiers, que cette commande a permis de rapatrier des fichiers répartis dans 2 dossiers : <em>TP_Hadoop</em> et <em>TP_SparQL</em>. Nous allons ici travailler sur le dossier <em>TP_Hadoop</em>.</p>
+<ul>
+<li>Dans le <em>Terminal</em>, déplacez-vous dans le dossier <em>wordcount</em>, en lançant successivement les 3 commandes suivantes :</li>
+</ul>
+<pre><code class="language-shell">cd s9_mod21_bigdata_tp
+cd TP_Hadoop
+cd wordcount
+</code></pre>
+<p>ou plus simplement :    </p>
+<pre><code class="language-shell">cd s9_mod21_bigdata_tp/TP_Hadoop/wordcount
+</code></pre>
+<p>La commande <code>ls</code> permet de lister le contenu du dossier. Vous pouvez observer la présence des 2 fichiers <em>mapper.py</em> et <em>reducer.py</em>, ainsi que du livre <em>Dracula</em> (libre de droit, téléchargé depuis <a href="http://www.textfiles.com/etext/FICTION/dracula">cette adresse</a>).</p>
+<ul>
+<li>Lancez la commande suivante et observez le résultat:</li>
+</ul>
+<pre><code class="language-shell">cat dracula | python mapper.py
+</code></pre>
+<ul>
+<li>Lancez ensuite la commande entière et observez le résultat:</li>
+</ul>
+<pre><code class="language-shell">cat dracula | python mapper.py | sort | python reducer.py 
+</code></pre>
+<p><strong>Remarque Windows</strong> Pour les étudiants utilisant <em>Windows</em>, vous pourriez rencontrer des difficultés avec les 2 lignes suivantes, qui font appel à <em>Python</em> en ligne de commandes. La raison : l&rsquo;endroit où est stocké le programme <em>python.exe</em> n&rsquo;est pas connu de votre machine, il faut donc le préciser en modifiant la variable d&rsquo;environnement <em>PATH</em>. Pour cela, vous pouvez suivre les indications données dans la Section <code>Method 2: Manually add Python to Windows Path</code> de <a href="https://datatofish.com/add-python-to-windows-path/">ce lien</a>.</p>
+<hr />
+<h2 id="exercice-1-amelioration-du-wordcount">Exercice 1 - Amélioration du <em>wordcount</em><a class="headerlink" href="#exercice-1-amelioration-du-wordcount" title="Permanent link">&para;</a></h2>
+<p><em>Remarque</em> : Pour stocker le résultat d&rsquo;exécution du script dans un fichier appelé <em>result.txt</em>, on lancera</p>
+<pre><code class="language-shell">cat dracula | python mapper.py | sort | python reducer.py &gt; results.txt
+</code></pre>
+<p>Ouvrez ce fichier avec votre éditeur de texte préféré, et regardez les premières lignes. On constate de nombreux problèmes :</p>
+<ul>
+<li>la présence de signes de ponctuation dans les mots;</li>
+<li>les mots commençant par une majuscule sont distingués des mots commençant par une minuscule. </li>
+</ul>
+<p>Pour régler ces problèmes, veuillez</p>
+<ol>
+<li>Modifier les scripts <em>Python</em> précédents pour qu&rsquo;ils ne distinguent plus les mots qui comportent des majuscules et les mêmes mots qui n&rsquo;en comportent pas.    </li>
+<li>Modifier la version précédente, de telle manière que les signes de ponctuation ne soient plus pris en compte (consultez Internet pour trouver un moyen de supprimer les signes de ponctuation d&rsquo;une chaîne de caractères représentant un mot).</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright ©2020 Stéphane Derrode</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/SDerrode/TP_BigData_ECC/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

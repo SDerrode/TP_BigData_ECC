@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Wordcount Hadoop - TP de Big Data</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Wordcount Hadoop";
+    var mkdocs_page_input_path = "TP2/Wordcount_Hadoop.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> TP de Big Data</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Template_FS/">Template_FS</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../TP1/">TP1</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../">TP2</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../TP3/">TP3</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">git</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tuto-git-gitlab/tuto-git-gitlab/">Tuto git gitlab</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tuto-git-gitlab/git-commande/">Git commande</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">TP de Big Data</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Wordcount Hadoop</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/SDerrode/TP_BigData_ECC/edit/master/docs/TP2/Wordcount_Hadoop.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>Sommaire</strong></p>
+<div class="toc">
+<ul>
+<li><a href="#map-reduce-avec-hadoop">Map-reduce, avec Hadoop</a><ul>
+<li><a href="#lancement-du-daemon-hadoop">Lancement du daemon Hadoop</a></li>
+<li><a href="#preparation-des-fichiers-pour-wordcount">Préparation des fichiers pour wordcount</a></li>
+<li><a href="#wordcount-avec-hadoop">Wordcount avec Hadoop</a></li>
+<li><a href="#monitoring-du-cluster-et-des-jobs">Monitoring du cluster et des jobs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="map-reduce-avec-hadoop">Map-reduce, avec Hadoop<a class="headerlink" href="#map-reduce-avec-hadoop" title="Permanent link">&para;</a></h1>
+<p>Étant donnée l&rsquo;installation précédente, nous allons exploiter le parallélisme de votre processeur, souvent constitué de 4 cœurs, et donc susceptible de lancer 4 instructions en parallèle. Parmi ces 4 cœurs, nous n&rsquo;en exploiterons que 3 (1 pour le <em>Namenode</em> et 2 pour les <em>Datanodes</em>), le dernier cœur étant à disposition de votre machine pour toutes les autres tâches.</p>
+<hr />
+<h2 id="lancement-du-daemon-hadoop">Lancement du <em>daemon</em> <strong>Hadoop</strong><a class="headerlink" href="#lancement-du-daemon-hadoop" title="Permanent link">&para;</a></h2>
+<p>La première chose à faire sur le <em>Terminal</em> connecté au <code>hadoop-master</code> est de lancer les <em>daemon</em> <strong>Hadoop</strong> :</p>
+<pre><code class="language-shell">./start-hadoop.sh
+</code></pre>
+<p>Le résultat de l&rsquo;exécution de ce script ressemblera à :</p>
+<pre><code class="language-shell">Starting namenodes on [hadoop-master]
+hadoop-master: Warning: Permanently added 'hadoop-master,172.18.0.4' (ECDSA) to the list of known hosts.
+hadoop-master: starting namenode, logging to /usr/local/hadoop/logs/hadoop-root-namenode-hadoop-master.out
+hadoop-slave2: Warning: Permanently added 'hadoop-slave2,172.18.0.2' (ECDSA) to the list of known hosts.
+hadoop-slave1: Warning: Permanently added 'hadoop-slave1,172.18.0.3' (ECDSA) to the list of known hosts.
+hadoop-slave2: starting datanode, logging to /usr/local/hadoop/logs/hadoop-root-datanode-hadoop-slave2.out
+hadoop-slave1: starting datanode, logging to /usr/local/hadoop/logs/hadoop-root-datanode-hadoop-slave1.out
+Starting secondary namenodes [0.0.0.0]
+0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop/logs/hadoop-root-secondarynamenode-hadoop-master.out
+
+starting yarn daemons
+starting resourcemanager, logging to /usr/local/hadoop/logs/yarn--resourcemanager-hadoop-master.out
+hadoop-slave1: Warning: Permanently added 'hadoop-slave1,172.18.0.3' (ECDSA) to the list of known hosts.
+hadoop-slave2: Warning: Permanently added 'hadoop-slave2,172.18.0.2' (ECDSA) to the list of known hosts.
+hadoop-slave1: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-root-nodemanager-hadoop-slave1.out
+hadoop-slave2: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-root-nodemanager-hadoop-slave2.out
+</code></pre>
+<hr />
+<h2 id="preparation-des-fichiers-pour-wordcount">Préparation des fichiers pour <em>wordcount</em><a class="headerlink" href="#preparation-des-fichiers-pour-wordcount" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Remarque importante</strong> Le <em>Terminal</em> pointe sur un système <em>Linux</em> qui a son propre mode de stockage de fichier (appelé <em>ext3</em>). Il est alors possible de créer des dossiers, de déposer des fichiers, de les effacer&hellip; avec les commandes <em>Linux</em> traditionnelles (<code>mkdir</code>, <code>rm</code>&hellip;). Notons qu&rsquo;il n&rsquo;existe pas d&rsquo;éditeur de texte intégré au container que nous venons d&rsquo;installer (pour écrire les scripts <em>Python</em>), donc nous aurons recours à une astuce décrite ci-dessous.  <br />
+C&rsquo;est sur cet espace que nous stockerons les scripts <em>Python map-reduce</em> qui seront exécutés par <strong>Hadoop</strong>. Par contre, les fichiers volumineux, ceux pour lesquels nous déploierons des algorithmes de traitement, seront stockés sur une partie de votre disque dur gérée par <em>HDFS</em> (<em>Hadoop Distributed File System</em>). À l&rsquo;aide de commandes commençant par <em>&ldquo;<code>hadoop fs -</code> + commande&rdquo;</em>, il est possible de créer des dossiers sur <em>HDFS</em>, de copier des fichiers depuis <em>Linux</em> vers <em>HDFS</em>, et de rapatrier des fichiers depuis <em>HDFS</em> vers Linux.  </p>
+</blockquote>
+<p>Laissez-vous guider&hellip;</p>
+<ul>
+<li>Depuis le <em>Terminal</em>, créez un dossier <em>wordcount</em> et déplacez-vous dedans</li>
+</ul>
+<pre><code class="language-shell">mkdir wordcount
+cd wordcount
+</code></pre>
+<ul>
+<li>Téléchargez depuis internet le livre <em>dracula</em> à l&rsquo;aide de la commande</li>
+</ul>
+<pre><code class="language-shell">wget http://www.textfiles.com/etext/FICTION/dracula
+</code></pre>
+<ul>
+<li>Versez ce fichier volumineux sur l&rsquo;espace HDFS (après avoir créer un dossier pour le recevoir)</li>
+</ul>
+<pre><code class="language-shell">hadoop fs -mkdir -p input
+hadoop fs -put dracula input
+</code></pre>
+<p>Vérifiez que le fichier a bien été déposé:</p>
+<pre><code class="language-shell">hadoop fs -ls input
+</code></pre>
+<p>ce qui donnera quelque chose comme:</p>
+<pre><code class="language-shell">Found 1 items
+-rw-r--r--   2 root supergroup     844505 2020-10-16 05:02 input/dracula
+</code></pre>
+<ul>
+<li>Supprimer le fichier <em>dracula</em> de votre espace <em>Linux</em> (on n&rsquo;en a plus besoin!)</li>
+</ul>
+<pre><code class="language-shell">rm dracula
+</code></pre>
+<p>Il faut maintenant rapatrier, sur notre espace Linux, les scripts <em>mapper.py</em> et <em>reducer.py</em> que nous avons manipulés durant la première partie de ce TP. Pour cela, il faut ouvrir un <strong>second <em>Terminal</em></strong> (laissez le premier ouvert, il va nous resservir!), et vous déplacer dans le dossier de travail qui contient les scripts <em>mapper.py</em> et <em>reducer.py</em>, modifiés par vos soins durant la première partie. La commande suivante permet de copier ces 2 fichiers vers l&rsquo;espace Linux, dans le dossier <em>wordcount</em></p>
+<pre><code class="language-shell">docker cp mapper.py hadoop-master:/root/wordcount
+docker cp reducer.py hadoop-master:/root/wordcount
+</code></pre>
+<p>Retenez la syntaxe, car elle vous sera utile plus tard, pour rapatrier les nouveaux scripts <em>Python</em> que vous aurez développés.</p>
+<p>Revenez alors vers le <strong>premier <em>Terminal</em></strong> (ne fermez pas le second, il sera utile plus tard), et vérifiez avec la commande <code>ls</code> que les 2 fichiers sont bien présents. Il faut maintenant </p>
+<ul>
+<li>rendre ces 2 scripts exécutables:</li>
+</ul>
+<pre><code class="language-shell">chmod +x mapper.py
+chmod +x reducer.py
+</code></pre>
+<ul>
+<li>Pour les utilisateurs de <em>Windows</em> uniquement : il faut aussi convertir les caractères de saut de lignes, qui sont différents entre <em>Windows</em> et <em>Linux</em>. Pour chaque fichier texte (<em>p. ex.</em>, <em>fichier.py</em>) que vous rapatrierez depuis votre machine sur le compte <em>Linux</em>, il conviendra de lancer:</li>
+</ul>
+<pre><code class="language-shell">dos2unix fichier.py
+</code></pre>
+<p>Il faudra appliquer ce protocole aux fichiers <em>mapper.py</em> et <em>reducer.py</em>, à chaque fois que vous les aurez modifiés sous <em>Windows</em>.</p>
+<p>Souvenez-vous de cette manip., car il faudra aussi la mettre en place sur vos nouveaux scripts.</p>
+<p>Ça y est, nous sommes prêts à lancer notre premier script <em>map-reduce</em> sous <strong>Hadoop</strong>!</p>
+<hr />
+<h2 id="wordcount-avec-hadoop"><em>Wordcount</em> avec <strong>Hadoop</strong><a class="headerlink" href="#wordcount-avec-hadoop" title="Permanent link">&para;</a></h2>
+<p>À partir du premier <em>Terminal</em>, nous allons donc lancer les scripts permettant de compter le nombre de mots sur le fichier du livre <em>dracula</em>.</p>
+<ul>
+<li>Tout d&rsquo;abord, stockez le lien vers la librairie permettant de programmer avec <em>Python</em> dans une variable système :</li>
+</ul>
+<pre><code class="language-shell">export STREAMINGJAR='/usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar'
+</code></pre>
+<p>Je vous rappelle que <em><strong>Hadoop</strong> map-reduce</em> fonctionne avec le langage <strong>Java</strong> ; il faut donc utiliser une bibliothèque capable de transformer des instructions <em>Python</em> en instruction <strong>Java</strong>. C&rsquo;est le rôle de cette bibliothèque <em>hadoop-streaming-2.7.2.jar</em> (on appelle cela un <em>wrapper</em>).  <br />
+  - Ensuite, lancez le <em>job</em> <strong>Hadoop</strong> avec l&rsquo;instruction suivante (copiez tout le bloc d&rsquo;instrcution et collez-le dans le <em>Terminal</em>):</p>
+<pre><code class="language-shell">hadoop jar $STREAMINGJAR -input input/dracula -output sortie -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
+</code></pre>
+<p>Les options <code>-file</code> permettent de copier les fichiers nécessaires pour qu&rsquo;ils soit exécutés sur tous les nœuds du cluster. Le résultat du comptage de mots est stocké dans le dossier <em>sortie</em> sous <em>HDFS</em>. Vous pouvez voir son contenu en lançant la commande:</p>
+<pre><code class="language-shell">hadoop fs -ls sortie/
+</code></pre>
+<p>qui donnera quelque chose comme</p>
+<pre><code class="language-shell">Found 2 items
+-rw-r--r--   2 root supergroup          0 2020-10-16 06:58 sortie/_SUCCESS
+-rw-r--r--   2 root supergroup         25 2020-10-16 06:58 sortie/part-00000
+</code></pre>
+<p>Le premier fichier <em>_SUCCESS</em> est un fichier vide (0 octet!), dont la simple présence indique que le <em>job</em> s&rsquo;est terminé avec succès. Le second fichier <em>part-00000</em> contient le résultat de l&rsquo;algorithme. Vous pouvez visualiser les dernières lignes du fichier avec la commande :</p>
+<pre><code class="language-shell">hadoop fs -tail sortie/part-00000
+</code></pre>
+<p>ou voir tout le fichier avec la commande :</p>
+<pre><code class="language-shell">hadoop fs -cat sortie/part-00000
+</code></pre>
+<p>Le résultat devrait être exactement le même que lors de la première partie du TP.</p>
+<p><em>Remarque - N&rsquo;oubliez pas!</em> : Entre 2 exécutions, il faut soit utiliser un nouveau nom pour le dossier <em>sortie</em>, soit le supprimer de la manière suivante :</p>
+<pre><code class="language-shell">hadoop fs -rm -r -f sortie
+</code></pre>
+<p>La présence d&rsquo;un seul fichier <code>part-0000x</code>  montre qu&rsquo;un seul nœud a été utilisé pour le <em>reducer</em> (le nombre de nœuds est estimé par le <em>Namenode</em>). Il est possible de forcer le nombre de <em>reducer</em> :</p>
+<pre><code class="language-shell">hadoop jar $STREAMINGJAR -D mapred.reduce.tasks=2 -input input/dracula -output sortie -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
+</code></pre>
+<p>La commande :</p>
+<pre><code class="language-shell">hadoop fs -ls sortie/
+</code></pre>
+<p>donnera alors :</p>
+<pre><code class="language-shell">Found 3 items
+-rw-r--r--   2 root supergroup          0 2020-10-17 15:24 sortie/_SUCCESS
+-rw-r--r--   2 root supergroup     117444 2020-10-17 15:24 sortie/part-00000
+-rw-r--r--   2 root supergroup     118967 2020-10-17 15:24 sortie/part-00001
+</code></pre>
+<hr />
+<h2 id="monitoring-du-cluster-et-des-jobs">Monitoring du cluster et des <em>jobs</em><a class="headerlink" href="#monitoring-du-cluster-et-des-jobs" title="Permanent link">&para;</a></h2>
+<p><strong>Hadoop</strong> offre plusieurs interfaces web pour pouvoir observer le comportement de ses différentes composantes. Vous pouvez afficher ces pages en local sur votre machine grâce à l&rsquo;option <em>-p</em> de la commande <code>docker run</code>. </p>
+<ul>
+<li>Le <strong>port 50070</strong> permet d&rsquo;afficher les informations de votre <em>Namenode</em>.      </li>
+<li>Le <strong>port 8088</strong> permet d&rsquo;afficher les informations du <em>resource manager</em> (apeplé <em>Yarn</em>) et visualiser le comportement des différents jobs.</li>
+</ul>
+<p>Une fois votre cluster lancé et prêt à l&rsquo;emploi, utilisez votre navigateur préféré pour observer la page <em>http://localhost:50070</em>. <em>Attention</em> : lors de l&rsquo;installation, certains étudiants auront du supprimer le <em>mapping</em> de ce port, ils ne leur sera donc pas possible de visualiser la page, semblable à:</p>
+<p><img alt="interface 50070" src="../figures/interface50070.png" /></p>
+<p>Prenez le temps de naviguer dans les menus et d’observer les informations indiquées.</p>
+<p>Vous pouvez également visualiser l&rsquo;avancement et les résultats de vos <em>jobs</em> (<em>map-reduce</em> ou autre) en allant à l&rsquo;adresse <em>http://localhost:8088</em>. Prenez le temps là-aussi de naviguer dans les menus et d’observer les informations indiquées.</p>
+<p><em>Dernier point</em> : Il est également possible de voir le comportement des nœuds <em>Datanodes</em>, en allant à l&rsquo;adresse: <em>http://localhost:8041</em> pour <em>slave1</em>, et <em>http://localhost:8042</em> pour <em>slave2</em>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright ©2020 Stéphane Derrode</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/SDerrode/TP_BigData_ECC/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

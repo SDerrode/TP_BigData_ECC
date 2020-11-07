@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Test Spark - TP de Big Data</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Test Spark";
+    var mkdocs_page_input_path = "TP3/Test_Spark.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> TP de Big Data</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Template_FS/">Template_FS</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../TP1/">TP1</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../TP2/">TP2</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../">TP3</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">git</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tuto-git-gitlab/tuto-git-gitlab/">Tuto git gitlab</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tuto-git-gitlab/git-commande/">Git commande</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">TP de Big Data</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Test Spark</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/SDerrode/TP_BigData_ECC/edit/master/docs/TP3/Test_Spark.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>Sommaire</strong></p>
+<div class="toc">
+<ul>
+<li><a href="#tests-de-spark-avec-la-librairie-pyspark">Tests de Spark, avec la librairie pyspark</a><ul>
+<li><a href="#relancer-le-cluster">Relancer le cluster</a></li>
+<li><a href="#wordcount-en-spark">wordcount en Spark</a></li>
+<li><a href="#tester-les-scripts-du-cours">Tester les scripts du cours</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="tests-de-spark-avec-la-librairie-pyspark">Tests de <em>Spark</em>, avec la librairie <em>pyspark</em><a class="headerlink" href="#tests-de-spark-avec-la-librairie-pyspark" title="Permanent link">&para;</a></h1>
+<p>Nous allons ici faire fonctionner l&rsquo;algorithme de comptage de mot, mais rédigé avec <em>pyspsark</em>, la librairie <em>Python</em> qui permet de programmer <em>Spark</em>.</p>
+<hr />
+<h2 id="relancer-le-cluster">Relancer le cluster<a class="headerlink" href="#relancer-le-cluster" title="Permanent link">&para;</a></h2>
+<p>Il faut dans un premier temps, relancez le cluster que nous avions installé pour <em>Hadoop map-reduce</em>, avec son <em>Namenode</em> et ses deux <em>Datanodes</em>. Tout d&rsquo;abord, lancer <code>Docker Desktop</code>. Puis, dans un premier <em>Terminal</em>, tapez :</p>
+<pre><code class="language-shell">docker start hadoop-master hadoop-slave1 hadoop-slave2
+</code></pre>
+<p>Puis entrez dans le shell du <em>Namenode</em> :</p>
+<pre><code class="language-shell">docker exec -it hadoop-master bash
+</code></pre>
+<p>Lancez alors le <em>daemon hadoop</em> :</p>
+<pre><code class="language-shell">./start-hadoop.sh
+</code></pre>
+<p>Vérifiez alors que <em>HDFS</em> est bien monté, avec la commande :</p>
+<pre><code class="language-shell">hadoop fs -ls
+</code></pre>
+<hr />
+<h2 id="wordcount-en-spark"><em>wordcount</em> en Spark<a class="headerlink" href="#wordcount-en-spark" title="Permanent link">&para;</a></h2>
+<p>Entrez dans le répertoire <em>wordcount</em>, listez les fichiers contenus dans ce répertoire :</p>
+<pre><code class="language-shell">cd wordcount
+ls
+</code></pre>
+<p>Il s&rsquo;agit des scripts python <em>Hadoop</em> du <a href="./TP2">TP2</a>. Nous allons maintenant importer le même programme mais rédigé en <em>pyspark</em> (ie. <em>Spark</em> pour <em>Python</em>). Depuis un second <em>Terminal</em>, ouvert dans le répertoire où vous avez téléchargé le contenu du répertoire <em>scripts</em>, tapez la commande</p>
+<pre><code class="language-shell">docker cp PySpark_wc.py hadoop-master:/root/wordcount
+</code></pre>
+<p>Revenez au premier <em>Terminal</em>, et vérifiez que le fichier est là où il est attendu !</p>
+<p>Avant de lancer le script, il convient de vérifier que le répertoire <em>sortie</em> n&rsquo;existe pas déjà sous <em>HDFS</em>. Pour faire cela, on tente de l&rsquo;effacer (qu&rsquo;il existe ou non !) :</p>
+<pre><code class="language-shell">hadoop fs -rm -r -f sortie
+</code></pre>
+<p>et il convient de faire connaître à <em>Spark</em> la version de <em>Python</em> à utiliser, à travers une variable d&rsquo;environnement :</p>
+<pre><code class="language-shell">export PYSPARK_PYTHON=python2.7
+</code></pre>
+<p>Ensuite, lancez le comptage de mots sur le livre <em>dracula</em>, en local, avec 2 cœurs de votre processeur : </p>
+<pre><code class="language-shell">spark-submit --master local[2] PySpark_wc.py input/dracula
+</code></pre>
+<p>Pour vérifier le résultat, scruter le contenu du répertoire <em>sortie</em> sou <em>HDFS</em> :</p>
+<pre><code class="language-shell">dfs dfs –ls sortie
+</code></pre>
+<p>et le contenu des deux fichiers de sortie</p>
+<pre><code class="language-shell">hdfs dfs –text sortie/part-00000
+hdfs dfs –text sortie/part-00001
+</code></pre>
+<p><strong>Travail à faire</strong> Faites évoluer la version précédente de telle manière que l&rsquo;on ne garde que les mots qui apparaissent dans le texte au moins <em>X</em> fois, la valeur de <em>X</em> étant fixée par un argument supplémentaire lors de l’appel à <code>spark-submit</code>. Par exemple :</p>
+<pre><code class="language-shell">spark-submit --master local[2] PySpark_wc.py input/dracula 1000
+</code></pre>
+<hr />
+<h2 id="tester-les-scripts-du-cours">Tester les scripts du cours<a class="headerlink" href="#tester-les-scripts-du-cours" title="Permanent link">&para;</a></h2>
+<p>D&rsquo;abord, créez et entrez dans un nouveau répertoire, à la racine de votre compte :</p>
+<pre><code class="language-shell">cd ..          # pour remonter d'un  niveau de répertoire dans l'arborescence
+mkdir pyspark
+cd pyspark
+</code></pre>
+<p>Dans le second <em>Terminal</em>, rapatriez l&rsquo;ensemble des scripts <em>PySpark_ex*.py</em> dans le répertoire que nous venons de créer :</p>
+<pre><code class="language-shell">for f in PySpark_ex*.py; do docker cp $f hadoop-master:/root/pyspark; done
+</code></pre>
+<p>et rapatriez également le programme qui donne une approximation de <em>pi</em> :</p>
+<pre><code class="language-shell">docker cp PySpark_Pi.py hadoop-master:/root/pyspark
+</code></pre>
+<p><em>Remarque</em> Pour le script <em>PySpark_exemple5.py</em>, vous aurez besoin du fichier <em>baby_names_2013.csv</em>, que j&rsquo;ai mis à votre disposition dans le même répertoire que ce fichier. N&rsquo;oubliez pas de le déposer sur <em>HDFS</em> avant de lancer le script (vous savez comment faire maintenant&hellip;).</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright ©2020 Stéphane Derrode</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/SDerrode/TP_BigData_ECC/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

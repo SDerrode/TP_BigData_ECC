@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Install Docker Hadoop - TP de Big Data</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Install Docker Hadoop";
+    var mkdocs_page_input_path = "TP2/Install_Docker_Hadoop.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> TP de Big Data</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Template_FS/">Template_FS</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../TP1/">TP1</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../">TP2</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../TP3/">TP3</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">git</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tuto-git-gitlab/tuto-git-gitlab/">Tuto git gitlab</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tuto-git-gitlab/git-commande/">Git commande</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">TP de Big Data</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Install Docker Hadoop</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/SDerrode/TP_BigData_ECC/edit/master/docs/TP2/Install_Docker_Hadoop.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>Sommaire</strong></p>
+<div class="toc">
+<ul>
+<li><a href="#installation-de-hadoop-via-docker">Installation de Hadoop via Docker</a><ul>
+<li><a href="#installation-de-docker-et-des-nuds">Installation de Docker et des nœuds</a></li>
+<li><a href="#preparation-au-tp">Préparation au TP</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="installation-de-hadoop-via-docker">Installation de <strong>Hadoop</strong> via <em>Docker</em><a class="headerlink" href="#installation-de-hadoop-via-docker" title="Permanent link">&para;</a></h1>
+<p>Les étapes pour installer <strong>Hadoop</strong> via <em>Docker</em> sont largement adaptées de la page de <a href="https://insatunisia.github.io/TP-BigData/">Lilia Sfaxi</a>, elles-mêmes reposant sur le projet <a href="https://github.com/kiwenlau/Hadoop-cluster-docker">github de Kai LIU</a>.</p>
+<hr />
+<h2 id="installation-de-docker-et-des-nuds">Installation de <em>Docker</em> et des nœuds<a class="headerlink" href="#installation-de-docker-et-des-nuds" title="Permanent link">&para;</a></h2>
+<p>Pour installer <em>Docker</em>, merci de suivre les <a href="https://docs.docker.com/desktop/">consignes disponibles ici</a>, en fonction de votre système d&rsquo;exploitation (lisez les <em>System requirements</em> pour vérifier que votre machine est adaptée). Si votre machine est trop ancienne, ou avec peu d&rsquo;espace disque ou mémoire RAM, il y a de bonnes chances que l&rsquo;installation ne fonctionne pas. Si c&rsquo;est le cas, </p>
+<ul>
+<li>soit vous pouvez travailler avec votre voisin,    </li>
+<li>soit vous pouvez aller directement à la seconde partie du TP, et réaliser les exercices en local (sans <strong>Hadoop</strong>).</li>
+</ul>
+<p>Nous allons utiliser tout au long de ce TP trois contenaires représentant respectivement un nœud maître (le <em>Namenode</em>) et deux nœuds esclaves (les <em>Datanodes</em>).</p>
+<ol>
+<li>Depuis un <em>Terminal</em>, téléchargez l&rsquo;image docker depuis <a href="https://hub.docker.com"><em>dockerhub</em></a> (volume à télécharger &gt; 1.5 GB !) :</li>
+</ol>
+<pre><code class="language-shell">docker pull stephanederrode/docker-cluster-hadoop-spark-python:1.0
+</code></pre>
+<p>Ce container contient une distribution <em>Linux/Ubuntu</em>, et les librairies nécessaires pour utiliser <strong>Hadoop</strong> et <strong>Spark</strong>. Il contient également <em>Python2.7</em>.</p>
+<ol start="2">
+<li>Créez les trois contenaires à partir de l&rsquo;image téléchargée. Pour cela:</li>
+</ol>
+<p>a. Créez un réseau qui permettra de relier les trois contenaires:</p>
+<pre><code class="language-shell">docker network create --driver=bridge hadoop
+</code></pre>
+<p>b. Créez et lancez les trois contenaires (les instructions <code>-p</code> permettent de faire un <em>mapping</em> entre les ports de la machine hôte et ceux du contenaire):</p>
+<pre><code class="language-shell">docker run -itd --net=hadoop -p 50070:50070 -p 8088:8088 -p 7077:7077 -p 16010:16010 -p 9999:9999 --name hadoop-master --hostname hadoop-master stephanederrode/docker-cluster-hadoop-spark-python:1.0
+
+docker run -itd -p 8040:8042 --net=hadoop --name hadoop-slave1 --hostname hadoop-slave1 stephanederrode/docker-cluster-hadoop-spark-python:1.0
+
+docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2 stephanederrode/docker-cluster-hadoop-spark-python:1.0
+</code></pre>
+<p><strong>Remarques</strong> </p>
+<ul>
+<li>Sur certaines machines, la première ligne de commande ne s’exécute pas correctement. L&rsquo;erreur provient sans doute du port <code>50070</code> que doit déjà être utilisé par une autre application installée sur votre machine. Vous pouvez alors supprimer ce port de la première ligne de commande :</li>
+</ul>
+<pre><code class="language-shell">docker run -itd --net=hadoop -p 8088:8088 -p 7077:7077 -p 16010:16010 --name hadoop-master --hostname hadoop-master stephanederrode/docker-cluster-hadoop-spark-python:1.0
+</code></pre>
+<ul>
+<li>Le port <code>9999</code> sera utilisé dans la partie 3 de ce TP, au sujet de <em>Spark streaming</em>.</li>
+</ul>
+<hr />
+<h2 id="preparation-au-tp">Préparation au TP<a class="headerlink" href="#preparation-au-tp" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Entrez dans le contenaire <code>hadoop-master</code> pour commencer à l&rsquo;utiliser</li>
+</ul>
+<pre><code class="language-shell">docker exec -it hadoop-master bash
+</code></pre>
+<p>Le résultat de cette exécution sera le suivant:</p>
+<pre><code class="language-shell">root@hadoop-master:~#
+</code></pre>
+<p>Il s&rsquo;agit du <code>shell</code>  ou <code>bash</code> (<em>Linux/Ubuntu</em>) du nœud maître. </p>
+<ul>
+<li>La commande <code>ls</code>, qui liste les fichiers et dossiers du dossier en cours, doit faire état des fichiers suivants :</li>
+</ul>
+<pre><code class="language-shell">hdfs start-hadoop.sh ventes
+</code></pre>
+<p>Le dossier <em>ventes</em> contient un fichier <em>purchases.txt</em> qui sera utilisé lors de la seconde partie du TP.</p>
+<p><strong>Remarque</strong> Ces étapes de configuration ne doivent être réalisées qu&rsquo;une seule fois. Pour relancer le cluster (une fois qu&rsquo;on a fermer et relancer son ordinateur p. ex.), il suffira </p>
+<ol>
+<li>de lancer l&rsquo;application <code>Docker Desktop</code>, qui lance les <em>daemon Docker</em>.   </li>
+<li>de lancer la commande suivante :</li>
+</ol>
+<pre><code class="language-shell">docker start hadoop-master hadoop-slave1 hadoop-slave2
+</code></pre>
+<p>Vous pouvez alors entrer dans le <em>Namenode</em> :</p>
+<pre><code class="language-shell">docker exec -it hadoop-master bash
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright ©2020 Stéphane Derrode</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/SDerrode/TP_BigData_ECC/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>TP de Big Data</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "README.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> TP de Big Data</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#informations-generales">Informations générales</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#deroule-des-sequences">Déroulé des séquences</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#seance-1-introduction-au-big-data">Séance #1 - Introduction au Big Data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#seance-2-git">Séance #2 - Git</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#seance-3-open-data-et-linked-data">Séance #3 - Open Data et Linked Data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#seance-4-tp-linked-data-et-sparql">Séance #4 - TP Linked Data et SparQL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#seance-5-hadoop">Séance #5 - Hadoop</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#seance-6-tp-hadoop">Séance #6 - TP Hadoop</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#seance-7-spark">Séance #7 - Spark</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#seance-8-tp-spark">Séance #8 - TP Spark</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#seance-9-examen">Séance #9 - Examen</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Template_FS/">Template_FS</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="TP1/">TP1</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="TP2/">TP2</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="TP3/">TP3</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">git</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="tuto-git-gitlab/tuto-git-gitlab/">Tuto git gitlab</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="tuto-git-gitlab/git-commande/">Git commande</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="about/">About</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">TP de Big Data</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/SDerrode/TP_BigData_ECC/edit/master/docs/README.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="tp-big-data-ecc">TP <em>Big Data</em>, ECC<a class="headerlink" href="#tp-big-data-ecc" title="Permanent link">&para;</a></h1>
+<p>Cet espace recueille les slides de cours et les fichiers nécessaires à la réalisation des travaux pratiques du cours de <em>Big Data</em>, enseignés à l&rsquo;École Centrale de Casablanca.</p>
+<p><a href="mailto:stephane.derrode@ec-lyon.fr"><em>Stéphane Derrode</em></a>, Prof. Ecole Centrale de Lyon.</p>
+<hr />
+<h2 id="informations-generales">Informations générales<a class="headerlink" href="#informations-generales" title="Permanent link">&para;</a></h2>
+<p><strong>Volume de cours et travail personnel</strong> : </p>
+<ul>
+<li>9 séances de 2h de cours (cf détails ci-dessous);     </li>
+<li>à cela s&rsquo;ajoutent des <em>homeworks</em> à faire entre 2 séances (pour un équivalent d&rsquo;environ 2h de travail hebdomadaire).</li>
+</ul>
+<p><strong>Évaluation</strong> :</p>
+<ul>
+<li>une fiche de synthèse (FS) à réaliser. Voir les explications données à la fin du premier cours, et le patron <code>Markdown</code> pour rédiger la FS sur le  répertoire <a href="Template_FS/">Template_FS</a>;    </li>
+<li>des exercices de TP et des travaux personnels à rendre régulièrement (le travail à faire est spécifié à chaque séance);    </li>
+<li>un examen écrit de 2h en fin de séquence (la date reste à préciser).</li>
+</ul>
+<hr />
+<h2 id="deroule-des-sequences">Déroulé des séquences<a class="headerlink" href="#deroule-des-sequences" title="Permanent link">&para;</a></h2>
+<h3 id="seance-1-introduction-au-big-data">Séance #1 - Introduction au <em>Big Data</em><a class="headerlink" href="#seance-1-introduction-au-big-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Objectif du cours</strong></p>
+<blockquote>
+<ul>
+<li>Introduction au <em>Big Data</em>: enjeux éthiques, économiques, scientifiques.   </li>
+<li>Présentation de la FS par groupe de 4 à 5 étudiants. Celle-ci doit être préparée tout au long du module, la date de remise est fixée à la date d&rsquo;examen. Les consignes pour la rédaction (utilisation de <em>Markdown</em> et de <em>git</em>) et le rendu sont détaillés dans le répertoire <a href="Template_FS/">Template_FS</a>.</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>Travail hebdomadaire à faire pour la semaine suivante</strong></p>
+<blockquote>
+<ul>
+<li>Formez les groupes, déposez les noms et les adresses mail sur un fichier hébergé sur <a href="https://partage.liris.cnrs.fr/index.php/s/4Q3JB8Xk3RtfcR3">cette plateforme de partage de fichiers</a>. Commencez à réfléchir au sujet de votre FS.    </li>
+<li>
+<p>Regardez les vidéos non vues en cours, dont les liens figurent dans les slides, et certaines des vidéos suivantes (cela pourra vous donner des idées sur le sujet de votre FS) :   </p>
+<blockquote>
+<ul>
+<li><a href="https://www.ted.com/talkkenneth_cukier_big_data_is_better_data?language=fr">Le Big Data pour mieux nous comprendre</a>    </li>
+<li><a href="https://www.ted.com/talks/john_wilbanks_let_s_pool_our_medical_data"><em>Let&rsquo;s pool our medical data</em></a>    </li>
+<li><a href="https://www.ted.com/talks/glenn_greenwald_why_privacy_matters#t-46573"><em>Why privacy matters?</em></a>    </li>
+<li><a href="https://www.youtube.com/watch?v=0Q3sRSUYmys"><em>Big Data will impact every part of your life</em></a>    </li>
+<li><a href="https://www.youtube.com/watch?v=tLQoncvCKxs"><em>Big data and dangerous ideas</em></a>     </li>
+<li><a href="https://www.youtube.com/watch?v=mKZCa_ejbfg"><em>Big Data and the Rise of Augmented Intelligence</em></a>     </li>
+<li><a href="https://www.youtube.com/watch?v=C6WKt6fJiso"><em>How Big Data Can Influence Decisions That Actually Matter</em></a>     </li>
+<li><a href="https://www.youtube.com/watch?v=A1XibEzp6K0"><em>Is Big Data Killing Creativity?</em></a>     </li>
+<li><a href="https://www.youtube.com/watch?v=8DqQCZMawNg"><em>Analyzing and modeling complex and big data</em></a>      </li>
+<li><a href="https://www.youtube.com/watch?v=8DqQCZMawNg"><em>How to Monetize Big Data</em></a>     </li>
+<li><a href="https://www.youtube.com/watch?v=J0bp2kUh9hw"><em>How to predict the future with big data</em></a>    </li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3 id="seance-2-git">Séance #2 - Git<a class="headerlink" href="#seance-2-git" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Objectif du cours</strong></p>
+<blockquote>
+<ul>
+<li>Apprentissage de <em>git</em>, avec l’outil <em>GitHub Desktop</em> et directement en ligne de commandes (avec un <em>Terminal</em>). </li>
+<li>Les scénarios des tutoriels sont disponibles dans le dossier <a href="./tuto-git-gitlab">tuto-git-gitlab</a>.</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>Travail hebdomadaire à faire pour la semaine suivante</strong></p>
+<blockquote>
+<ul>
+<li>Après avoir créé un compte sur la plateforme <a href="https://gitlab.com/users/sign_in">GitLab</a>, créez un projet privé pour la FS (me désigner <code>reporter</code>de chaque FS, mon pseudo : <code>SDerrode</code>), selon les modalités exposées dans le dossier <a href="Template_FS/">Template_FS</a>. Cela me permettra de voir vos travaux (espionnage de votre travail !).    </li>
+<li>
+<p>Préparation de la séance #3 :   </p>
+<blockquote>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=6WtviEVPkJI">L&rsquo;open data à la loupe</a>.</li>
+<li><a href="https://www.youtube.com/watch?v=uju4wT9uBIA"><em>Linked Open Data - What is it?</em></a></li>
+<li><a href="https://www.ted.com/talks/   ben_wellington_how_we_found_the_worst_place_to_park_in_new_york_city_using_big_data"><em>How we found the worst place to park in New York City</em></a>.    </li>
+<li><a href="https://www.ted.com/talks/beth_noveck_demand_a_more_open_source_government#t-66622"><em>Demand on a more open-source government</em></a>    </li>
+<li><a href="https://www.youtube.com/watch?v=MUI6Rwn4Qq0">L&rsquo;Open Data, Avenir des Big Data</a></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3 id="seance-3-open-data-et-linked-data">Séance #3 - Open Data et <em>Linked Data</em><a class="headerlink" href="#seance-3-open-data-et-linked-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Objectif du cours</strong></p>
+<blockquote>
+<ul>
+<li>Introduction à l&rsquo;<em>Open Data</em> et aux données liées (<em>linked data</em>).    </li>
+<li>Présentation du <a href="./TP1">TP1</a> sur <code>SparQL</code>.</li>
+<li>
+<p>Vidéos vues en cours :</p>
+<blockquote>
+<ul>
+<li><a href="https://www.ted.com/talks/tim_berners_lee_the_next_web">Tim Berners-Lee : <em>The next Web</em></a></li>
+<li><a href="https://www.youtube.com/watch?v=4x_xzT5eF5Q"><em>What is Linked Data?</em></a></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>Travail hebdomadaire à faire pour la semaine suivante</strong></p>
+<blockquote>
+<ul>
+<li>Préparer les requêtes 2 à 6 du TP, la solution de la requête 1 est déjà donnée dans l&rsquo;énoncé. N&rsquo;hésitez pas à sauvegarder vos requêtes dans un fichier texte (au format markdown ?) pour pouvoir les rejouer plus tard.</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3 id="seance-4-tp-linked-data-et-sparql">Séance #4 - TP <em>Linked Data</em> et <em>SparQL</em><a class="headerlink" href="#seance-4-tp-linked-data-et-sparql" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Travaux pratiques</strong></p>
+<blockquote>
+<ul>
+<li>Terminer le <a href="./TP1">TP #1</a> sur <code>SparQL</code> (requêtes 7 à 14).</li>
+<li>Commencez le travail hebdomadaire pour la semaine suivante (travail à rendre).</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>Travail hebdomadaire à faire pour la semaine suivante</strong></p>
+<blockquote>
+<ul>
+<li>
+<p>Choisissez une base de données <code>linked data</code> (autre que <em>DBPedia</em>) et inventez <strong>deux requêtes</strong> sur cette base. Vous pouvez utiliser une des bases vues en cours, ou en chercher un nouvelle à partir de ces sites :</p>
+<blockquote>
+<ul>
+<li><a href="https://lod-cloud.net/datasets">The Linked Open Data Cloud</a>    </li>
+<li><a href="http://lov.okfn.org/">Linked open vocabularies</a>     </li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>Rédigez un petit rapport (rapport individuel de 2 pages maxi au format <em>Markdown</em>) comprenant, pour chaque requête :  </p>
+</li>
+<li>
+<p>Le dessin <em>RDF</em> de la requête (vous pouvez utiliser <a href="https://app.diagrams.net">draw.io</a> pour dessiner les graphiques),     </p>
+</li>
+<li>Le code <em>SparQL</em> de la requête (que je puisse la rejouer dans <em>Yasgui</em>),    </li>
+<li>Les 3 ou 4 premiers résultats de la requête (copie d&rsquo;écran).   </li>
+<li>N&rsquo;oubliez pas de déposer votre nom sur le rapport, et de m&rsquo;envoyer le rapport (fichier <em>Markdown</em> et figures) sous forme d&rsquo;un SEUL fichier compressé (nommé <code>nom_rendu1.zip</code>), par mail à <a href="mailto:stephane.derrode@ec-lyon.fr"><em>Stéphane Derrode</em></a> <strong>avant le début du cours suivant</strong>. Votre mail doit avoir pour objet <code>[ECC - Rendu 1]</code>. </li>
+<li>Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte l&rsquo;originalité de la requête, et la qualité de son écriture bien sûr !</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3 id="seance-5-hadoop">Séance #5 - Hadoop<a class="headerlink" href="#seance-5-hadoop" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Objectif du cours</strong></p>
+<blockquote>
+<ul>
+<li>Présentation du framework <em>Hadoop</em>/<em>map-reduce</em></li>
+<li>Présentation du <a href="./TP2">TP #2</a> qui se déroulera en séance #6.</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>Travail hebdomadaire à faire pour la semaine suivante</strong></p>
+<blockquote>
+<ul>
+<li>Réalisez la partie 1 du <a href="./TP2">TP #2</a>.</li>
+<li>En préparation à la partie 2 de ce TP, installez <em>Docker</em> et le container <em>Docker Linux/Hadoop</em> (le suite de cette partie sera faite en séance #6) selon les consignes. Attention, le téléchargement est très volumineux et nécessite une machine avec au moins 2 GO libre sur votre disque dur.</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3 id="seance-6-tp-hadoop">Séance #6 - TP Hadoop<a class="headerlink" href="#seance-6-tp-hadoop" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Travaux pratiques</strong></p>
+<blockquote>
+<ul>
+<li>Avancer sur le <a href="./TP2">TP #2</a> sur <code>Hadoop map-reduce</code>. Pensez à prendre des notes de votre travail, car vous devrez rédiger un CR (<em>cf</em> ci-dessous).</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>Travail hebdomadaire à faire pour la semaine suivante</strong></p>
+<blockquote>
+<ul>
+<li>Terminer les questions du <a href="./TP2">TP #2</a> et faire un compte-rendu personnel de TP. </li>
+<li>N&rsquo;oubliez pas de déposer votre nom sur le rapport, et de m&rsquo;envoyer le rapport (fichier <em>Markdown</em> et figures) sous forme d&rsquo;un SEUL fichier compressé (nommé <code>nom_rendu2.zip</code>), par mail à <a href="mailto:stephane.derrode@ec-lyon.fr"><em>Stéphane Derrode</em></a> <strong>avant le début du cours suivant</strong>. Votre mail doit avoir pour objet <code>[ECC - Rendu 2]</code>. </li>
+<li>Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3 id="seance-7-spark">Séance #7 - Spark<a class="headerlink" href="#seance-7-spark" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Objectif du cours</strong></p>
+<blockquote>
+<ul>
+<li>Présentation du framework <em>Spark</em>.</li>
+<li>Présentation du <a href="./TP3">TP #3</a> qui se déroulera en séance #8.</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>Travail hebdomadaire à faire pour la semaine suivante</strong></p>
+<blockquote>
+<ul>
+<li>Réalisez la partie 1 du <a href="./TP3">TP #3</a>, concernant la programmation fonctionnelle en <em>Python</em>.</li>
+<li>Commencez la partie 2 du <a href="./TP3">TP #3</a>, jusqu’à la la section <code>wordcount en Spark</code> (y compris cette section).</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3 id="seance-8-tp-spark">Séance #8 - TP Spark<a class="headerlink" href="#seance-8-tp-spark" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Travaux pratiques</strong></p>
+<blockquote>
+<ul>
+<li>Terminer le <a href="./TP3">TP #3</a>, depuis la section <code>Tester les scripts du cours</code> et faire un compte-rendu personnel de TP. </li>
+<li>La partie 4 de ce TP (portant sur <em>Spark streaming</em>) est optionnelle.</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>Travail hebdomadaire à faire pour la semaine suivante</strong></p>
+<blockquote>
+<ul>
+<li>Pour le CR : n&rsquo;oubliez pas de déposer votre nom sur le rapport, et de m&rsquo;envoyer le rapport (fichier <em>Markdown</em> et figures) sous forme d&rsquo;un SEUL fichier compressé (nommé <code>nom_rendu3.zip</code>), par mail à <a href="mailto:stephane.derrode@ec-lyon.fr"><em>Stéphane Derrode</em></a> <strong>avant le début du cours suivant</strong>. Votre mail doit avoir pour objet <code>[ECC - Rendu 3]</code>. </li>
+<li>Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h3 id="seance-9-examen">Séance #9 - Examen<a class="headerlink" href="#seance-9-examen" title="Permanent link">&para;</a></h3>
+<p>Les conditions d&rsquo;examens seront précisées plus tard.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Template_FS/" class="btn btn-neutral float-right" title="Template_FS">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright ©2020 Stéphane Derrode</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/SDerrode/TP_BigData_ECC/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+        <span style="margin-left: 15px"><a href="Template_FS/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.1.2
+Build Date UTC : 2020-11-07 17:26:31.627290+00:00
+-->

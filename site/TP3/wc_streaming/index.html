@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Wc streaming - TP de Big Data</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Wc streaming";
+    var mkdocs_page_input_path = "TP3/wc_streaming.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> TP de Big Data</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Template_FS/">Template_FS</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../TP1/">TP1</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../TP2/">TP2</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../">TP3</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">git</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tuto-git-gitlab/tuto-git-gitlab/">Tuto git gitlab</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../tuto-git-gitlab/git-commande/">Git commande</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">TP de Big Data</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Wc streaming</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/SDerrode/TP_BigData_ECC/edit/master/docs/TP3/wc_streaming.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>Sommaire</strong></p>
+<div class="toc">
+<ul>
+<li><a href="#spark-streaming">Spark streaming</a><ul>
+<li><a href="#wordcount-en-streaming">wordcount en streaming</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="spark-streaming"><em>Spark streaming</em><a class="headerlink" href="#spark-streaming" title="Permanent link">&para;</a></h1>
+<p><em>Spark streaming</em> (<a href="https://spark.apache.org/docs/1.5.0/streaming-programming-guide.html"><em>Spark streaming programming guide</em></a>) est une extension de la librairie principale de <em>Spark</em>, qui permet de traiter des flux continus de données. Elle est tolérante aux erreurs et permet de réaliser des algorithmes complexes grâce à des fonctions de haut niveau comme <em>map</em>, <em>reduce</em>, <em>join</em>, <em>window</em>. Finalement, les données traitées peuvent être sauvegardées sur différents systèmes de fichiers, dans des bases de données ou dans des tableaux de bord interactifs. Vous pouvez également appliquer des algorithmes <em>Spark</em> de <a href="https://spark.apache.org/docs/1.5.0/mllib-guide.html">Machine Learning</a> ou de <a href="https://spark.apache.org/docs/1.5.0/graphx-programming-guide.html">traitement de graphes</a> sur les flux de données.</p>
+<p><img alt="streaming-arch" src="../figures/streaming-arch.png" /></p>
+<p><em>Spark Streaming</em> reçoit les flux de données et les divise en paquets qui sont traités par le <em>Spark Engine</em> pour générer le résultat sous forme de paquets.</p>
+<p><img alt="streaming-flow" src="../figures/streaming-flow.png" /></p>
+<p>La librairie fournit des objets appelés <code>DStream</code>, pour <em>Discretized Stream</em>, qui représente un flux continu de données. Les <code>DStream</code> peuvent soit être créés par des flux de données entrants (HDFS), soit par des sources provenant de <em>Kafka</em>, <em>Flume</em> ou <em>Kinesis</em>, ou encore par des opérations sur des <code>DStreams</code>. En interne, un <code>DStream</code> est représenté par une séquence de RDDs.</p>
+<hr />
+<h2 id="wordcount-en-streaming"><em>wordcount</em> en <em>streaming</em><a class="headerlink" href="#wordcount-en-streaming" title="Permanent link">&para;</a></h2>
+<p>Dans le <em>Namenode</em>, créez un nouveau répertoire et déplacez-vous dedans :</p>
+<pre><code class="language-shell">cd ..
+mkdir sparkstreaming
+cd sparkstreaming/
+</code></pre>
+<p>Depuis le second <em>Terminal</em>, copiez le fichier <em>SparkStreaming_wc.py</em> dans le <em>Namenode</em> :</p>
+<pre><code class="language-shell">docker cp SparkStreaming_wc.py hadoop-master:/root/sparkstreaming
+</code></pre>
+<p>Dans le premier <em>Terminal</em>, installez le serveur de données <code>netcat</code></p>
+<pre><code class="language-shell">apt-get install netcat
+</code></pre>
+<p>Ouvrez un <strong>troisième</strong> <em>Terminal</em>, et entrez dans le <em>Namenode</em> </p>
+<pre><code class="language-shell">docker exec -it hadoop-master bash
+</code></pre>
+<p>Ainsi, si vous suivez bien, les <em>Terminaux</em> 1 et 3 pointent tous deux sur le <em>Namenode</em>. Dans ce troisième <em>Terminal</em>, lancez le serveur de données <code>netcat</code> sur le port <em>9999</em> de la manière suivante :</p>
+<pre><code class="language-shell">nc -l -p 9999
+</code></pre>
+<p>Dans le premier <em>Terminal</em>, lancez</p>
+<pre><code class="language-shell">spark-submit --master local[2] SparkStreaming_wc.py localhost 9999
+</code></pre>
+<p>Disposez les fenêtres des <em>Terminaux</em> 1 et 3 côte à côte. Sur le <em>Terminal</em> 3, tapez des mots rapidement, vous devriez voir le comptage de mot, chaque seconde, sur le <em>Terminal</em> 1.</p>
+<p><em>Remarques</em> : pour entrer un série de mots d&rsquo;un coup sur le <em>Terminal</em> 3, vous pouvez soit </p>
+<ul>
+<li>écrire une ligne de mots séparés par des espaces. Envoyez alors la ligne d&rsquo;un coup, en appuyant sur la touche <code>entrée</code> de votre clavier.</li>
+<li>copier en mémoire (<code>CTRL+C</code> ou <code>CMD+C</code>) une ligne d&rsquo;un texte quelconque, et la coller (<code>CTRL+V</code> ou <code>CMD+V</code>) dans le <em>Terminal</em> 3.</li>
+</ul>
+<p>Les paquets de données correspondent à une durée d&lsquo;1 seconde. Pour allonger le temps associé aux paquets de données, il suffit de modifier la ligne <code>ssc = StreamingContext(sc, 1)</code>, en remplaçant la valeur 1 par la valeur souhaitée en secondes.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright ©2020 Stéphane Derrode</p>
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/SDerrode/TP_BigData_ECC/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
