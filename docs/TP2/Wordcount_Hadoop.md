@@ -1,6 +1,7 @@
 **Sommaire**
 
-[[_TOC_]]
+[TOC]
+
 
 # Map-reduce, avec Hadoop
 
@@ -44,32 +45,32 @@ hadoop-slave2: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-root
 Laissez-vous guider...
 
    - Depuis le _Terminal_, créez un dossier _wordcount_ et déplacez-vous dedans
-   ```shell
-   mkdir wordcount
-   cd wordcount
-   ```    
+```shell
+mkdir wordcount
+cd wordcount
+```    
    - Téléchargez depuis internet le livre _dracula_ à l'aide de la commande
-   ```shell
-   wget http://www.textfiles.com/etext/FICTION/dracula
-   ```   
+```shell
+wget http://www.textfiles.com/etext/FICTION/dracula
+```   
    - Versez ce fichier volumineux sur l'espace HDFS (après avoir créer un dossier pour le recevoir)
-   ```shell
-   hadoop fs -mkdir -p input
-   hadoop fs -put dracula input
-   ```
+```shell
+hadoop fs -mkdir -p input
+hadoop fs -put dracula input
+```
    Vérifiez que le fichier a bien été déposé:
-   ```shell
-   hadoop fs -ls input
-   ```
+```shell
+hadoop fs -ls input
+```
    ce qui donnera quelque chose comme:
-   ```shell
-   Found 1 items
-   -rw-r--r--   2 root supergroup     844505 2020-10-16 05:02 input/dracula
-   ```    
+```shell
+Found 1 items
+-rw-r--r--   2 root supergroup     844505 2020-10-16 05:02 input/dracula
+```    
    - Supprimer le fichier _dracula_ de votre espace _Linux_ (on n'en a plus besoin!)
-   ```shell
-   rm dracula
-   ```     
+```shell
+rm dracula
+```     
 
 Il faut maintenant rapatrier, sur notre espace Linux, les scripts _mapper.py_ et _reducer.py_ que nous avons manipulés durant la première partie de ce TP. Pour cela, il faut ouvrir un **second _Terminal_** (laissez le premier ouvert, il va nous resservir!), et vous déplacer dans le dossier de travail qui contient les scripts _mapper.py_ et _reducer.py_, modifiés par vos soins durant la première partie. La commande suivante permet de copier ces 2 fichiers vers l'espace Linux, dans le dossier _wordcount_
 ```shell
@@ -81,15 +82,15 @@ Retenez la syntaxe, car elle vous sera utile plus tard, pour rapatrier les nouve
 Revenez alors vers le **premier _Terminal_** (ne fermez pas le second, il sera utile plus tard), et vérifiez avec la commande ```ls``` que les 2 fichiers sont bien présents. Il faut maintenant 
 
   - rendre ces 2 scripts exécutables:
-  ```shell
-  chmod +x mapper.py
-  chmod +x reducer.py
-  ```
+```shell
+chmod +x mapper.py
+chmod +x reducer.py
+```
 
   - Pour les utilisateurs de _Windows_ uniquement : il faut aussi convertir les caractères de saut de lignes, qui sont différents entre _Windows_ et _Linux_. Pour chaque fichier texte (_p. ex._, _fichier.py_) que vous rapatrierez depuis votre machine sur le compte _Linux_, il conviendra de lancer:
-  ```shell
-  dos2unix fichier.py
-  ```
+```shell
+dos2unix fichier.py
+```
   Il faudra appliquer ce protocole aux fichiers _mapper.py_ et _reducer.py_, à chaque fois que vous les aurez modifiés sous _Windows_.
 
 Souvenez-vous de cette manip., car il faudra aussi la mettre en place sur vos nouveaux scripts.
@@ -103,55 +104,55 @@ Souvenez-vous de cette manip., car il faudra aussi la mettre en place sur vos no
 
 À partir du premier _Terminal_, nous allons donc lancer les scripts permettant de compter le nombre de mots sur le fichier du livre _dracula_.
 
-  - Tout d'abord, stockez le lien vers la librairie permettant de programmer avec _Python_ dans une variable système :
-  ```shell
-  export STREAMINGJAR='/usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar'
-  ```    
+- Tout d'abord, stockez le lien vers la librairie permettant de programmer avec _Python_ dans une variable système :
+```shell
+export STREAMINGJAR='/usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar'
+```    
   Je vous rappelle que _**Hadoop** map-reduce_ fonctionne avec le langage **Java** ; il faut donc utiliser une bibliothèque capable de transformer des instructions _Python_ en instruction **Java**. C'est le rôle de cette bibliothèque _hadoop-streaming-2.7.2.jar_ (on appelle cela un _wrapper_).    
   - Ensuite, lancez le _job_ **Hadoop** avec l'instruction suivante (copiez tout le bloc d'instrcution et collez-le dans le _Terminal_):
-  ```shell
-  hadoop jar $STREAMINGJAR -input input/dracula -output sortie -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
-  ``` 
+```shell
+hadoop jar $STREAMINGJAR -input input/dracula -output sortie -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
+``` 
   Les options ```-file``` permettent de copier les fichiers nécessaires pour qu'ils soit exécutés sur tous les nœuds du cluster. Le résultat du comptage de mots est stocké dans le dossier _sortie_ sous _HDFS_. Vous pouvez voir son contenu en lançant la commande:
-  ```shell
-  hadoop fs -ls sortie/
-  ```
+```shell
+hadoop fs -ls sortie/
+```
   qui donnera quelque chose comme
-  ```shell
-  Found 2 items
-  -rw-r--r--   2 root supergroup          0 2020-10-16 06:58 sortie/_SUCCESS
-  -rw-r--r--   2 root supergroup         25 2020-10-16 06:58 sortie/part-00000
-  ```
+```shell
+Found 2 items
+-rw-r--r--   2 root supergroup          0 2020-10-16 06:58 sortie/_SUCCESS
+-rw-r--r--   2 root supergroup         25 2020-10-16 06:58 sortie/part-00000
+```
   Le premier fichier _\_SUCCESS_ est un fichier vide (0 octet!), dont la simple présence indique que le _job_ s'est terminé avec succès. Le second fichier _part-00000_ contient le résultat de l'algorithme. Vous pouvez visualiser les dernières lignes du fichier avec la commande :
-  ```shell
-  hadoop fs -tail sortie/part-00000
-  ```
+```shell
+hadoop fs -tail sortie/part-00000
+```
   ou voir tout le fichier avec la commande :
-  ```shell
-  hadoop fs -cat sortie/part-00000
-  ```
+```shell
+hadoop fs -cat sortie/part-00000
+```
   Le résultat devrait être exactement le même que lors de la première partie du TP.
 
   *Remarque - N'oubliez pas!* : Entre 2 exécutions, il faut soit utiliser un nouveau nom pour le dossier _sortie_, soit le supprimer de la manière suivante :
-  ```shell
-  hadoop fs -rm -r -f sortie
-  ``` 
+```shell
+hadoop fs -rm -r -f sortie
+``` 
 
   La présence d'un seul fichier ```part-0000x```  montre qu'un seul nœud a été utilisé pour le _reducer_ (le nombre de nœuds est estimé par le _Namenode_). Il est possible de forcer le nombre de _reducer_ :
-  ```shell
-  hadoop jar $STREAMINGJAR -D mapred.reduce.tasks=2 -input input/dracula -output sortie -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
-  ```
+```shell
+hadoop jar $STREAMINGJAR -D mapred.reduce.tasks=2 -input input/dracula -output sortie -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
+```
   La commande :
-  ```shell
-  hadoop fs -ls sortie/
-  ```
+```shell
+hadoop fs -ls sortie/
+```
   donnera alors :
-  ```shell
-  Found 3 items
-  -rw-r--r--   2 root supergroup          0 2020-10-17 15:24 sortie/_SUCCESS
-  -rw-r--r--   2 root supergroup     117444 2020-10-17 15:24 sortie/part-00000
-  -rw-r--r--   2 root supergroup     118967 2020-10-17 15:24 sortie/part-00001
-  ```
+```shell
+Found 3 items
+-rw-r--r--   2 root supergroup          0 2020-10-17 15:24 sortie/_SUCCESS
+-rw-r--r--   2 root supergroup     117444 2020-10-17 15:24 sortie/part-00000
+-rw-r--r--   2 root supergroup     118967 2020-10-17 15:24 sortie/part-00001
+```
 
 ---
 ## Monitoring du cluster et des _jobs_
@@ -163,7 +164,7 @@ Souvenez-vous de cette manip., car il faudra aussi la mettre en place sur vos no
 
 Une fois votre cluster lancé et prêt à l'emploi, utilisez votre navigateur préféré pour observer la page _http://localhost:50070_. _Attention_ : lors de l'installation, certains étudiants auront du supprimer le _mapping_ de ce port, ils ne leur sera donc pas possible de visualiser la page, semblable à:
 
-<center><img src="figures/interface50070.png" style="width:75%"/></center>
+![interface 50070](figures/interface50070.png)
 
 Prenez le temps de naviguer dans les menus et d’observer les informations indiquées.
 

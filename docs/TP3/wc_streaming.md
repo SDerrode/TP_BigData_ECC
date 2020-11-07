@@ -1,17 +1,18 @@
 **Sommaire**
 
-[[_TOC_]]
+[TOC]
+
 
 # _Spark streaming_
 
 
 _Spark streaming_ ([_Spark streaming programming guide_](https://spark.apache.org/docs/1.5.0/streaming-programming-guide.html)) est une extension de la librairie principale de _Spark_, qui permet de traiter des flux continus de données. Elle est tolérante aux erreurs et permet de réaliser des algorithmes complexes grâce à des fonctions de haut niveau comme _map_, _reduce_, _join_, _window_. Finalement, les données traitées peuvent être sauvegardées sur différents systèmes de fichiers, dans des bases de données ou dans des tableaux de bord interactifs. Vous pouvez également appliquer des algorithmes _Spark_ de [Machine Learning](https://spark.apache.org/docs/1.5.0/mllib-guide.html) ou de [traitement de graphes](https://spark.apache.org/docs/1.5.0/graphx-programming-guide.html) sur les flux de données.
 
-<center><img src="figures/streaming-arch.png" style="width:70%"/></center>
+![streaming-arch](figures/streaming-arch.png)
 
 _Spark Streaming_ reçoit les flux de données et les divise en paquets qui sont traités par le _Spark Engine_ pour générer le résultat sous forme de paquets.
 
-<center><img src="figures/streaming-flow.png" style="width:70%"/></center>
+![streaming-flow](figures/streaming-flow.png)
 
 La librairie fournit des objets appelés `DStream`, pour _Discretized Stream_, qui représente un flux continu de données. Les `DStream` peuvent soit être créés par des flux de données entrants (HDFS), soit par des sources provenant de _Kafka_, _Flume_ ou _Kinesis_, ou encore par des opérations sur des `DStreams`. En interne, un `DStream` est représenté par une séquence de RDDs.
 

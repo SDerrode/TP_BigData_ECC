@@ -1,6 +1,7 @@
 **Sommaire**
 
-[[_TOC_]]
+[TOC]
+
 
 # TP avec _Spark_ : Il est où le bel arbre ?
 

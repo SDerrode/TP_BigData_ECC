@@ -1,6 +1,7 @@
 **Sommaire**
 
-[[_TOC_]]
+[TOC]
+
 
 # Tests de _Spark_, avec la librairie _pyspark_
 

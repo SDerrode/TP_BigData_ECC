@@ -1,6 +1,6 @@
 **Sommaire**
 
-[[_TOC_]]
+[TOC]
 
 # Installation de **Hadoop** via _Docker_
 
@@ -24,54 +24,55 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
 
 2. Créez les trois contenaires à partir de l'image téléchargée. Pour cela:
 
-     a. Créez un réseau qui permettra de relier les trois contenaires:
-     ```shell
-     docker network create --driver=bridge hadoop
-     ```   
-     b. Créez et lancez les trois contenaires (les instructions `-p` permettent de faire un _mapping_ entre les ports de la machine hôte et ceux du contenaire):
-     ```shell
-     docker run -itd --net=hadoop -p 50070:50070 -p 8088:8088 -p 7077:7077 -p 16010:16010 -p 9999:9999 --name hadoop-master --hostname hadoop-master stephanederrode/docker-cluster-hadoop-spark-python:1.0
+a. Créez un réseau qui permettra de relier les trois contenaires:
+```shell
+docker network create --driver=bridge hadoop
+```     
 
-     docker run -itd -p 8040:8042 --net=hadoop --name hadoop-slave1 --hostname hadoop-slave1 stephanederrode/docker-cluster-hadoop-spark-python:1.0
+b. Créez et lancez les trois contenaires (les instructions `-p` permettent de faire un _mapping_ entre les ports de la machine hôte et ceux du contenaire):
+```shell
+docker run -itd --net=hadoop -p 50070:50070 -p 8088:8088 -p 7077:7077 -p 16010:16010 -p 9999:9999 --name hadoop-master --hostname hadoop-master stephanederrode/docker-cluster-hadoop-spark-python:1.0
 
-     docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2 stephanederrode/docker-cluster-hadoop-spark-python:1.0
-     ```     
+docker run -itd -p 8040:8042 --net=hadoop --name hadoop-slave1 --hostname hadoop-slave1 stephanederrode/docker-cluster-hadoop-spark-python:1.0
+
+docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2 stephanederrode/docker-cluster-hadoop-spark-python:1.0
+```     
 
 **Remarques** 
 
   - Sur certaines machines, la première ligne de commande ne s’exécute pas correctement. L'erreur provient sans doute du port `50070` que doit déjà être utilisé par une autre application installée sur votre machine. Vous pouvez alors supprimer ce port de la première ligne de commande :
-  ```shell
-  docker run -itd --net=hadoop -p 8088:8088 -p 7077:7077 -p 16010:16010 --name hadoop-master --hostname hadoop-master stephanederrode/docker-cluster-hadoop-spark-python:1.0
-  ```
+```shell
+docker run -itd --net=hadoop -p 8088:8088 -p 7077:7077 -p 16010:16010 --name hadoop-master --hostname hadoop-master stephanederrode/docker-cluster-hadoop-spark-python:1.0
+```
   - Le port `9999` sera utilisé dans la partie 3 de ce TP, au sujet de _Spark streaming_.
 
 ---
 ## Préparation au TP
 
   - Entrez dans le contenaire `hadoop-master` pour commencer à l'utiliser
-  ```shell
-  docker exec -it hadoop-master bash
-  ```
+```shell
+docker exec -it hadoop-master bash
+```
+
   Le résultat de cette exécution sera le suivant:
-  ```shell
-  root@hadoop-master:~#
-  ```
+```shell
+root@hadoop-master:~#
+```
   Il s'agit du ```shell```  ou ```bash``` (_Linux/Ubuntu_) du nœud maître. 
   
   - La commande ```ls```, qui liste les fichiers et dossiers du dossier en cours, doit faire état des fichiers suivants :
-  ```shell
-  hdfs start-hadoop.sh ventes
-  ```
+```shell
+hdfs start-hadoop.sh ventes
+```
  Le dossier _ventes_ contient un fichier _purchases.txt_ qui sera utilisé lors de la seconde partie du TP.
 
 **Remarque** Ces étapes de configuration ne doivent être réalisées qu'une seule fois. Pour relancer le cluster (une fois qu'on a fermer et relancer son ordinateur p. ex.), il suffira 
 
   1. de lancer l'application ```Docker Desktop```, qui lance les _daemon Docker_.   
   1. de lancer la commande suivante :
-   ```shell
-   docker start hadoop-master hadoop-slave1 hadoop-slave2
-   ```
-
+```shell
+docker start hadoop-master hadoop-slave1 hadoop-slave2
+```
 Vous pouvez alors entrer dans le _Namenode_ :
 ```shell
 docker exec -it hadoop-master bash

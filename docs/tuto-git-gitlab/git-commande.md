@@ -1,4 +1,4 @@
-### Tuto des principales commandes git
+## Tuto des principales commandes git
 
 Ce tuto présente les principales commandes _git_, lorsqu'on souhaite l'utiliser en mode _Terminal_ (à l'aide de commandes manuelles). 
 

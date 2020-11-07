@@ -1,29 +1,27 @@
-**Sommaire**
 
-[[TOC]]
-
-
-# Tuto sur git/gitlab
+## Tuto sur git/gitlab
 
 Ce document présente un tuto à l'usage de **git**/**gitlab**. Il est consultable sous forme de vidéo sur le Moodle du cours, à l'adresse https://pedagogie1.ec-lyon.fr/course/view.php?id=969.
 
 Comme tout tutoriel, ce document a besoin de vos retours pour s'améliorer! N’hésitez pas à m'envoyez un mail décrivant vos difficultés et, éventuellement, les solutions que vous auriez trouvées pour les contourner.
 
 ---
-## Installer **git** et *Github Desktop*
+### Installer **git** et *Github Desktop*
 
 **git** est disponible par défaut sur les machines *Mac OS X* et *Linux*. S'il est absent de *Windows* (pour le savoir, lancez la commande *git* dans un Terminal/Invite de commandes), alors installez-le à partir de ce lien : [git-scm](https://git-scm.com/download/win). Lors de l'installation, validez les choix par défaut qui vous sont proposés.
 
 L'interface *Github Desktop* que nous allons installer n'est absolument pas nécessaire pour travailler avec git. Mais elle évite, dans un premier temps, d'utiliser des commandes manuelles à partir d'un Terminal.
 
  1. Téléchargez, installez et lancez l'application [Github Desktop](https://desktop.github.com/).
- <center><img src="figures/GithubDesktop_vierge.png" style="width:50%"/></center>
+ 
+ ![GithubDesktop_vierge](figures/GithubDesktop_vierge.png)
+
  1. Configurer *Github Desktop* (cette étape n'est nécessaire que si vous ne l'avez pas déjà fait lors de l'installation du logiciel) : aller dans le menu ``Préférences / git``    
     - entrez votre nom et votre adresse émail.
 
 
 ---
-## Gérer son premier projet git avec gitlab
+### Gérer son premier projet git avec gitlab
 
  1. Montrer l'interface de **gitlab**    
     - Adresse: https://gitlab.ec-lyon.fr;    
@@ -34,7 +32,7 @@ L'interface *Github Desktop* que nous allons installer n'est absolument pas néc
     - Description: Mon premier projet gitlab;    
     - Discuter *Public/Internal/Private*;   
     - Sélectionner *Initialize repository with a README*;
-    <center><img src="figures/Gitlab_newproject.png" style="width:50%"/></center>
+     ![Gitlab_newproject](figures/Gitlab_newproject.png)
     - Cliquer sur l'icône ``Clone`` et copiez le lien ``Clone with HTTPS``, qui ressemble à https://gitlab.ec-lyon.fr/xyyyyy/helloworld.git. 
  1. Basculer sur *Github Desktop*,     
     - Sélectionner l'option ``Clone a Repository from the Internet``, puis l'onglet ``URL`` (ou menu ``File``, ``Clone repository``).
@@ -43,8 +41,8 @@ L'interface *Github Desktop* que nous allons installer n'est absolument pas néc
     - Basculer sur l'onglet ``history``     
  1. Pour éviter que certains fichiers temporaires ne soient suivis par **git**, on va spécifier les fichiers a exclure dans un fichier appelé *.gitignore* (il s'agit d'un fichier caché). Pour cela    
     - Aller dans le menu ``Repository``, sous-menu ``Repository settings``, puis ``Ignored Files``.   
-    - Copier le contenu du fichier qui se trouve à l'adresse https://github.com/github/gitignore/blob/master/Python.gitignore dans l'espace réservé, puis ``Save``.    
-    <center><img src="figures/gitignore.png" style="width:50%"/></center>      
+    - Copier le contenu du fichier qui se trouve à l'adresse https://github.com/github/gitignore/blob/master/Python.gitignore dans l'espace réservé, puis ``Save``.      
+    ![gitignore](figures/gitignore.png)      
     - On doit alors *Commiter* les changements (le texte par défaut qui décrit le ``commit`` est OK). Plus de détails sur ces ``commit`` plus loin.      
  1. Éditer le fichier *readme.md* avec *Sublime Text* et enregistrer les changements localement:
     - Basculer vers *Github Desktop* et discuter les changements qui interviennent sur l'interface.    
@@ -64,7 +62,8 @@ De manière synthétique, une fois le projet créé,
    2. quand vous êtes content de votre travail, et que vos jugez vos algorithmes fonctionnels, vous publiez vos précédents ``commit`` sur **gitlab** avec un ``push``.
 
 Ce comportement est illustré par le schéma de la figure suivante:
-<center><img src="figures/PrincipeGit.png" style="width:75%"/></center>   
+
+![PrincipeGit](figures/PrincipeGit.png)      
 
 -----
 Pour détruire ce projet (sans grand interêt), il faut :

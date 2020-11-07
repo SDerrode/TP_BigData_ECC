@@ -1,6 +1,7 @@
 **Sommaire**
 
-[[_TOC_]]
+[TOC]
+
 
 # Travaux pratiques sous **Hadoop**
 
@@ -47,10 +48,10 @@ hadoop fs -put purchases_extrait100.txt input
  1. programmez vos scripts _map_ et _reduce_ avec votre IDE préférée (et pourquoi pas _Spyder_);    
  1. stockez vos fichiers (appelés _vente\_map.py_ et _vente\_reduce.py_) dans un dossier _vente_ que vous aurez créé sur votre machine (à côté du répertoire _wordcount_ de la première partie du TP?);    
  1. envoyez vos 2 fichiers vers le _Namenode_ :
- ```shell
- docker cp vente_map.py hadoop-master:/root/ventes
- docker cp vente_reduce.py hadoop-master:/root/ventes
- ```
+```shell
+docker cp vente_map.py hadoop-master:/root/ventes
+docker cp vente_reduce.py hadoop-master:/root/ventes
+```
  
 Avant de lancer le _job_ que vous aurez prévu dans les fichiers _vente_map.py_ et _vente_reduce.py_
 ```shell

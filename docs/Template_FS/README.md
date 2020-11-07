@@ -49,8 +49,9 @@ Si vous souhaitez intégrer des diagrammes ou des schéma (ou tout autre diagram
 
 Vous pouvez sauvegarder vos graphiques _diagram.net_ sur votre machine (cf exemple dans le dossier _figures_, à côté de ce fichier) et les convertir dans des images aux formats _png_, _svg_... pour les intégrer ensuite dans `Markdown` selon l'exemple suivant :
 
-    la commande <center><img src="figures/test.png" style="width:40%"/></center> donne
-<center><img src="figures/test.png" style="width:40%"/></center>
+    la commande ![test](figures/test.png) donne
+![test](figures/test.png)
 
-    la commande  <center><img src="figures/test.svg" style="width:40%"/></center> donne
-<center><img src="figures/test.svg" style="width:40%"/></center>
+
+    la commande  ![test](figures/test.svg) donne
+![test](figures/test.svg)
