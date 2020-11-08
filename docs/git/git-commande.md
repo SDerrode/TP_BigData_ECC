@@ -4,7 +4,7 @@ Ce tuto présente les principales commandes _git_, lorsqu'on souhaite l'utiliser
 
 > *Remarque* :Vous devez savoir ouvrir un _Terminal_ sur votre machine, quelque soit le système d'exploitation (_Windows_, _Linux_, ou _Mac OS X_). Sous _Windows 10_ (et antérieur), vous pourrez utiliser le programme _Windows powershell_ qui est très similaires au _Terminal_ de _Linux_ et de _Mac OS X_. 
 Vous devez aussi savoir a minima naviguer dans vos dossiers à l'aide de la commande ```cd```. Typiquement :
-```shell
+```bash
 cd c:\Users\stephane\TP_Hadoop # Windows
 cd ~\stephane\TP_Hadoop        # Mac, linux
 ```

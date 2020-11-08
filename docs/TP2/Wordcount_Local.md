@@ -13,31 +13,31 @@ Nous allons ici faire fonctionner l'algorithme _map-reduce_ qui compte les mots 
 Pour récupérer le scripts, suivez les consignes:
 
   - Ouvrez un _Terminal_ et déplacez-vous dans votre dossier de travail (avec la commande ```cd```). Tapez la commande permettant de récupérer les fichiers nécessaires à ce TP.   
-```shell
+```bash
 git clone https://gitlab.ec-lyon.fr/sderrode/s9_mod21_bigdata_tp.git
 ```
   Constatez, dans un gestionnaire de fichiers, que cette commande a permis de rapatrier des fichiers répartis dans 2 dossiers : _TP\_Hadoop_ et _TP\_SparQL_. Nous allons ici travailler sur le dossier _TP\_Hadoop_.
 
   - Dans le _Terminal_, déplacez-vous dans le dossier _wordcount_, en lançant successivement les 3 commandes suivantes :
-```shell
+```bash
 cd s9_mod21_bigdata_tp
 cd TP_Hadoop
 cd wordcount
 ```
   ou plus simplement :    
-```shell
+```bash
 cd s9_mod21_bigdata_tp/TP_Hadoop/wordcount
 ```
 
   La commande ```ls``` permet de lister le contenu du dossier. Vous pouvez observer la présence des 2 fichiers _mapper.py_ et _reducer.py_, ainsi que du livre _Dracula_ (libre de droit, téléchargé depuis [cette adresse](http://www.textfiles.com/etext/FICTION/dracula)).
 
   - Lancez la commande suivante et observez le résultat:
-```shell
+```bash
 cat dracula | python mapper.py
 ```
 
   - Lancez ensuite la commande entière et observez le résultat:
-```shell
+```bash
 cat dracula | python mapper.py | sort | python reducer.py 
 ```
 
@@ -47,7 +47,7 @@ cat dracula | python mapper.py | sort | python reducer.py
 ## Exercice 1 - Amélioration du *wordcount*
 
 *Remarque* : Pour stocker le résultat d'exécution du script dans un fichier appelé _result.txt_, on lancera
-```shell
+```bash
 cat dracula | python mapper.py | sort | python reducer.py > results.txt
 ```
 

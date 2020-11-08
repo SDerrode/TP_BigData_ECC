@@ -20,31 +20,31 @@ La librairie fournit des objets appelés `DStream`, pour _Discretized Stream_, q
 ## _wordcount_ en _streaming_
 
 Dans le _Namenode_, créez un nouveau répertoire et déplacez-vous dedans :
-```shell
+```bash
 cd ..
 mkdir sparkstreaming
 cd sparkstreaming/
 ```
 Depuis le second _Terminal_, copiez le fichier _SparkStreaming_wc.py_ dans le _Namenode_ :
-```shell
+```bash
 docker cp SparkStreaming_wc.py hadoop-master:/root/sparkstreaming
 ```
 
 Dans le premier _Terminal_, installez le serveur de données `netcat`
-```shell
+```bash
 apt-get install netcat
 ```
 
 Ouvrez un **troisième** _Terminal_, et entrez dans le _Namenode_ 
-```shell
+```bash
 docker exec -it hadoop-master bash
 ```
 Ainsi, si vous suivez bien, les _Terminaux_ 1 et 3 pointent tous deux sur le _Namenode_. Dans ce troisième _Terminal_, lancez le serveur de données `netcat` sur le port _9999_ de la manière suivante :
-```shell
+```bash
 nc -l -p 9999
 ```
 Dans le premier _Terminal_, lancez
-```shell
+```bash
 spark-submit --master local[2] SparkStreaming_wc.py localhost 9999
 ```
 

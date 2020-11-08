@@ -12,11 +12,11 @@
 ## Préparation et conseils
 
 Dans le _shell_ du _Namenode_, déplacez-vous dans le dossier _ventes_ (à partir du premier _Terminal_) :
-```shell
+```bash
 cd ../ventes
 ```
 Les `..` permettent de remonter dans l'arborescence des dossiers d'un niveau (nous étions dans le répertoire _wordcount_). Pour observer le contenu du fichier présent dans ce dossier :
-```shell
+```bash
 more purchases.txt
 ```
 
@@ -32,13 +32,13 @@ La commande `more` affiche  le contenu du fichier page par page. La barre d'espa
 Les colonnes sont séparées par une tabulation. Ce caractère  est codé par _\t_ en _Python_. Exemple : `print("avant\tapres")` permet d'obtenir l'impression de la chaîne "_avant&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;apres_".
 
 La commande _Linux_ `wc -l purchases.txt` permet d'obtenir le nombre de lignes du fichier (soit 4 138 476 lignes!). Ce fichier est sans doute trop volumineux pour régler vos algorithmes (le temps de debug en serait largement augmenté). Aussi, il est conseillé de travailler avec un extrait du fichier :
-```shell
+```bash
 cat purchases.txt | head -n 100 > purchases_extrait100.txt
 ```
 Cette commande extrait les 100 premières lignes du fichier et les stocke dans un fichier appelé _purchases_extrait100.txt_. N'oubliez cependant pas de vérifier vos scripts définitifs avec le fichier original.
 
 Pensez à envoyer ces deux fichiers sur HDFS, dans le dossier _input_ :
-```shell
+```bash
 hadoop fs -put purchases.txt input
 hadoop fs -put purchases_extrait100.txt input
 ```
@@ -48,17 +48,17 @@ hadoop fs -put purchases_extrait100.txt input
  1. programmez vos scripts _map_ et _reduce_ avec votre IDE préférée (et pourquoi pas _Spyder_);    
  1. stockez vos fichiers (appelés _vente\_map.py_ et _vente\_reduce.py_) dans un dossier _vente_ que vous aurez créé sur votre machine (à côté du répertoire _wordcount_ de la première partie du TP?);    
  1. envoyez vos 2 fichiers vers le _Namenode_ :
-```shell
+```bash
 docker cp vente_map.py hadoop-master:/root/ventes
 docker cp vente_reduce.py hadoop-master:/root/ventes
 ```
  
 Avant de lancer le _job_ que vous aurez prévu dans les fichiers _vente_map.py_ et _vente_reduce.py_
-```shell
+```bash
 hadoop jar $STREAMINGJAR -input input/purchases_extrait100.txt -output sortie -mapper vente_map.py -reducer vente_reduce.py -file vente_map.py -file vente_reduce.py
 ``` 
 dans le _shell_ du _Namenode_, pensez à rendre vos scripts exécutables :
-```shell
+```bash
 chmod +x vente_map.py
 chmod +x vente_reduce.py
 ```

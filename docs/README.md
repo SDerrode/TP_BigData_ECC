@@ -3,7 +3,7 @@
 
 Cet espace recueille les slides de cours et les fichiers nécessaires à la réalisation des travaux pratiques du cours de _Big Data_, enseignés à l'École Centrale de Casablanca.
 
-[_Stéphane Derrode_](mailto:stephane.derrode@ec-lyon.fr), Prof. Ecole Centrale de Lyon.
+[_Stéphane Derrode_](mailto:stephane.derrode@ec-lyon.fr), École Centrale de Lyon, Dpt MI.
 
 ----
 ## Informations générales

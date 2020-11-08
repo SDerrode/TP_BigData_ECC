@@ -8,7 +8,7 @@
 On considère ici le fichier de données [Opendata Paris](http://opendata.paris.fr), de type CSV, concernant des arbres remarquables à Paris. Ce fichier est disponible au [téléchargement](https://opendata.paris.fr/explore/dataset/arbresremarquablesparis/information/). Choisissez le menu `Export`et le format `csv`.
 
 Copiez ce fichier dans le _Namenoe_ (`hadoop-master`). La commande 
-```shell
+```bash
 more arbresremarquablesparis.csv
 ```
 montre que chaque ligne décrit un arbre : 
@@ -18,7 +18,7 @@ montre que chaque ligne décrit un arbre :
   - année de plantation, hauteur, circonférence, etc. 
 
 Le séparateur entre les colonnes est le caractère ';'. La première ligne du fichier contient les titres des colonnes ; pour la supprimer, il suffit d'écrire:
-```shell
+```bash
 sed '1d' arbresremarquablesparis.csv > arbresremarquablesparis2.csv 
 ```
 Copiez alors _arbresremarquablesparis2.csv_ sur _HDFS_ (dans le répertoires `input`).
