@@ -6,9 +6,9 @@ Ce document présente les consignes pour la rédaction de la fiche de synthèse 
 ## Consignes
 
  - Votre FS doit être rédigée avec le format `Markdown` et suivre le modèle présenté ci-dessous. Elle ne doit pas dépasser l'équivalent d'une dizaine de pages.  
- - Le contenu de la FS doit être géré entre vous, avec l'aide d'un projet _GitHub_. Le projet sera hébergé sur le compte de l'un des membres du groupe, qui autorisera l'accès en écriture au projet à tous les autres membres du projet ainsi qu'à moi-même (mon pseudo _GitHub_ : _SDerrode_).
- - Le groupe doit se déclarer sur ce [fichier partagé](https://partage.liris.cnrs.fr/index.php/s/4Q3JB8Xk3RtfcR3), qui contient autant d'onglets qu'il y a de groupes. On y déposera le titre de la fiche, l'adresse URL du projet _GitHub_ et les noms et pseudo _GitHub_ des étudiants. Utilisez le premier onglet vide disponible (si nécessaire, ajoutez des onglets).
- - Je récupérerai votre FS directement sur votre projet _GitHub_ le jour de la dernière séance de cours. La dernière séance de cours constitue donc la date butoir pour terminer votre FS.
+ - Le contenu de la FS doit être géré entre vous, avec l'aide d'un projet _GitLab_. Le projet sera hébergé sur le compte de l'un des membres du groupe, qui autorisera l'accès en écriture au projet à tous les autres membres du projet ainsi qu'à moi-même (mon pseudo _GitLab_ : _Derrode_).
+ - Le groupe doit se déclarer sur ce [fichier partagé](https://partage.liris.cnrs.fr/index.php/s/4Q3JB8Xk3RtfcR3), qui contient autant d'onglets qu'il y a de groupes. On y déposera le titre de la fiche, l'adresse URL du projet _GitLab_ et les noms et pseudo _GitLab_ des étudiants. Utilisez le premier onglet vide disponible (si nécessaire, ajoutez des onglets).
+ - Je récupérerai votre FS directement sur votre projet _GitLab_ le jour de la dernière séance de cours. La dernière séance de cours constitue donc la date butoir pour terminer votre FS.
 
 *Remarque* Le système de gestion de versions **git** est présenté en cours. Vous trouverez le scenario du tuto joué durant le second cours dans le répertoire [git](./tuto-git-gitlab).
 
@@ -17,7 +17,7 @@ Ce document présente les consignes pour la rédaction de la fiche de synthèse 
 
  - `Markdown` est un simple format texte dans lequel on ajoute des balises, pour mettre en gras, inclure des images, faire des liens hypertextes... Ces balises peuvent être interprétées par différents moteurs pour obtenir un rendu en _html_, en _pdf_, en _rtf_ ou en _word_... Pour apprendre les quelques balises nécessaires à une mise en page minimaliste (mais suffisante la plupart du temps), vous trouverez de nombreux tutoriaux sur internet, dont celui-ci : [Markdown - Wikipédia](https://fr.wikipedia.org/wiki/Markdown).
 
- - La totalité des éditeurs de textes généralistes, tels _Sublime Text_, _Geany_..., gèrent très bien ce format, et incluent des convertisseurs automatiques. Remarquez d'ailleurs que _GitHub_ interprètent automatiquement les fichiers `Markdown` que vous déposez sur leur site.
+ - La totalité des éditeurs de textes généralistes, tels _Sublime Text_, _Geany_..., gèrent très bien ce format, et incluent des convertisseurs automatiques. Remarquez d'ailleurs que _GitLab_ interprètent automatiquement les fichiers `Markdown` que vous déposez sur leur site.
 
  - Voici cependant quelques outils _open source_ spécifiques qui pourraient vous aider pour débuter:    
     - [ghostwriter](https://wereturtle.github.io/ghostwriter/) : _Linux_ et _Windows_

@@ -51,14 +51,17 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
 ### Séance #2 - Git & _Open Data_
 
   - **Objectif du cours**
-  > - Apprentissage de _git_, avec l’outil _GitHub Desktop_ et directement en ligne de commandes (avec un _Terminal_). Les scénarios des tutoriels sont disponibles dans le dossier [git](./tuto-git-gitlab).
+  > - Sondage [wooclap](https://www.wooclap.com/FETQLU)
   > - Introduction à l'_Open Data_. Vidéos:
        > 
      >   - [L'open data à la loupe](https://www.youtube.com/watch?v=6WtviEVPkJI).    
-     >   - [_How we found the worst place to park in New York City_](https://www.ted.com/talks/ben_wellington_how_we_found_the_worst_place_to_park_in_new_york_city_using_big_data).   
+     >   - [_How we found the worst place to park in New York City_](https://www.ted.com/talks/ben_wellington_how_we_found_the_worst_place_to_park_in_new_york_city_using_big_data).
+       >
+  > - Apprentissage de _git_, avec l’outil _GitHub Desktop_ et directement en ligne de commandes (avec un _Terminal_). Les scénarios des tutoriels sont disponibles dans le dossier [git](./tuto-git-gitlab).
+  
 
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - Après avoir créé un compte sur la plateforme [GitLab](https://gitlab.com/users/sign_in), créez un projet privé pour la FS (me désigner `reporter` de chaque FS, mon pseudo : `SDerrode`), selon les modalités exposées dans le dossier [Template_FS](./Template_FS/README.md). Cela me permettra de voir vos travaux (espionnage de votre travail !).    
+  > - Après avoir créé un compte sur la plateforme [GitLab](https://gitlab.com/users/sign_in), créez un projet privé pour la FS (me désigner `reporter` de chaque FS, mon pseudo : `Derrode`), selon les modalités exposées dans le dossier [Template_FS](./Template_FS/README.md). Cela me permettra de voir vos travaux (espionnage de votre travail !).    
   > - Complément sur la séance #2 et préparation de la séance #3 :   
        >  
      >   - [_Demand on a more open-source government_](https://www.ted.com/talks/beth_noveck_demand_a_more_open_source_government#t-66622)    
