@@ -72,7 +72,8 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
 ### Séance #3 - _Linked Data_
 
   - **Objectif du cours**
-  > - Introduction aux données liées (_linked data_).    
+  > - Sondage [wooclap](https://www.wooclap.com/MIZTRT)
+  > - Introduction aux données liées (_Linked Data_ ou _Linked Open Data_).    
   > - Présentation du [TP1](./TP1) sur `SparQL`.
   > - Vidéos vues en cours :
        > 
@@ -80,7 +81,7 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
      >   - [_What is Linked Data? Manu Sporny_](https://www.youtube.com/watch?v=4x_xzT5eF5Q)
 
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - Préparer les requêtes 2 à 6 du TP, la solution de la requête 1 est déjà donnée dans l'énoncé. N'hésitez pas à sauvegarder vos requêtes dans un fichier texte (au format _Markdown_ ?) pour pouvoir les rejouer plus tard.
+  > - Préparer les requêtes 2 à 6 du TP1](./TP1), la solution de la requête 1 est déjà donnée dans l'énoncé. N'hésitez pas à sauvegarder vos requêtes dans un fichier texte (au format _Markdown_ ?) pour pouvoir les rejouer plus tard.
     
 
 ---
