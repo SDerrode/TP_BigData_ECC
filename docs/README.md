@@ -74,22 +74,26 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
   - **Objectif du cours**
   > - Sondage [wooclap](https://www.wooclap.com/MIZTRT)
   > - Introduction aux données liées (_Linked Data_ ou _Linked Open Data_).    
-  > - Présentation du [TP1](./TP1) sur `SparQL`.
   > - Vidéos vues en cours :
        > 
      >   - [Tim Berners-Lee : _The next Web_](https://www.ted.com/talks/tim_berners_lee_the_next_web)
      >   - [_What is Linked Data? Manu Sporny_](https://www.youtube.com/watch?v=4x_xzT5eF5Q)
 
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - Préparer les requêtes 2 à 6 du TP1](./TP1), la solution de la requête 1 est déjà donnée dans l'énoncé. N'hésitez pas à sauvegarder vos requêtes dans un fichier texte (au format _Markdown_ ?) pour pouvoir les rejouer plus tard.
+  > - Travailler sur votre fiche de synthèse
+
+  Préparer les requêtes 2 à 6 du [TP1](./TP1), la solution de la requête 1 est déjà donnée dans l'énoncé. N'hésitez pas à sauvegarder vos requêtes dans un fichier texte (au format _Markdown_ ?) pour pouvoir les rejouer plus tard.
     
 
 ---
 ### Séance #4 - TP _Linked Data_ et _SparQL_
  
+  - **Objectif du cours**
+  > - Fin de l'introduction aux données liées et présentation du [TP1](./TP1) sur `SparQL`.
+
   - **Travaux pratiques**
-  > - Terminez le [TP #1](./TP1) sur `SparQL` (requêtes 7 à 14).
-  > - Commencez le travail hebdomadaire pour la séance suivante (travail à rendre).
+  > - Codez les requêtes du [TP1](./TP1), la solution de la requête 1 est déjà donnée dans l'énoncé. N'hésitez pas à sauvegarder vos requêtes dans un fichier texte (au format _Markdown_ ?) pour pouvoir les rejouer plus tard.
+  > - Éventuellement, commencez le travail hebdomadaire pour la séance suivante (travail à rendre).
 
   - **Travail hebdomadaire à faire pour la séance suivante**
   > - Choisissez une base de données `linked data` (autre que _DBPedia_) et inventez **deux requêtes** sur cette base. Vous pouvez utiliser une des bases vues en cours, ou en chercher un nouvelle à partir de ces sites :
@@ -97,7 +101,7 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
      >   - [The Linked Open Data Cloud](https://lod-cloud.net/datasets)    
      >   - [Linked open vocabularies](http://lov.okfn.org/)     
   >  
-  > - Rédigez un petit rapport (rapport individuel de 2 pages maxi, au format _Markdown_) comprenant, pour chaque requête :  
+  > - Rédigez un petit rapport (rapport individuel de 2 pages maxi, au format _Markdown_) comprenant, pour chacune des 2 requêtes :  
        > 
      >   - Le dessin _RDF_ de la requête (vous pouvez utiliser [draw.io](https://app.diagrams.net) pour dessiner les graphiques),     
      >   - Le code _SparQL_ de la requête (que je puisse la rejouer dans _Yasgui_),    
