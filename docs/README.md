@@ -86,17 +86,28 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
     
 
 ---
-### Séance #4 - TP _Linked Data_ et _SparQL_
+### Séance #4 - TP _Linked Data_ et _SparQL_ (1/2)
  
-  - **Objectif du cours**
-  > - Fin de l'introduction aux données liées et présentation du [TP1](./TP1) sur `SparQL`.
+  - **Objectif de la séance**
+  > - Fin de l'introduction aux données liées et présentation du [TP1](./TP1) sur _SparQL_.    
+  > - Début du [TP1](./TP1) sur _SparQL_.
 
   - **Travaux pratiques**
-  > - Codez les requêtes du [TP1](./TP1), la solution de la requête 1 est déjà donnée dans l'énoncé. N'hésitez pas à sauvegarder vos requêtes dans un fichier texte (au format _Markdown_ ?) pour pouvoir les rejouer plus tard.
-  > - Éventuellement, commencez le travail hebdomadaire pour la séance suivante (travail à rendre).
+  > - Commencez à coder les requêtes du [TP1](./TP1). Pour un bon départ, la solution de la requête 1 est donnée dans l'énoncé. 
+  > - N'hésitez pas à sauvegarder vos requêtes dans un fichier texte (au format _Markdown_ ?), de manière à pouvoir les rejouer plus tard.
 
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - Choisissez une base de données `linked data` (autre que _DBPedia_) et inventez **deux requêtes** sur cette base. Vous pouvez utiliser une des bases vues en cours, ou en chercher un nouvelle à partir de ces sites :
+  > - Terminez les requêtes du [TP1](./TP1).
+
+---
+### Séance #5 - TP _Linked Data_ et _SparQL_ (2/2)
+ 
+  - **Objectif de la séance**
+  > - Présentation des derniers slides du cours LOD, sur les points d'accès.
+  > - Travaillez sur le rendu de TP (cf ci-dessous).
+
+  - **Travail à rendre pour la prochaine séance**
+  > - Choisissez une base de données `linked data` (autre que _DBPedia_) et inventez **deux requêtes** sur cette base. Vous pouvez utiliser une des bases vues en cours, ou en chercher une nouvelle à partir de ces sites :
        > 
      >   - [The Linked Open Data Cloud](https://lod-cloud.net/datasets)    
      >   - [Linked open vocabularies](http://lov.okfn.org/)     
@@ -106,12 +117,11 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
      >   - Le dessin _RDF_ de la requête (vous pouvez utiliser [draw.io](https://app.diagrams.net) pour dessiner les graphiques),     
      >   - Le code _SparQL_ de la requête (que je puisse la rejouer dans _Yasgui_),    
      >   - Les 3 ou 4 premiers résultats de la requête (copie d'écran).   
-     > - N'oubliez pas d'inscrire votre nom sur le rapport, et de déposer un seul fichier compressé nommé `VotreNom_rendu1.zip`, sur [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le jour du cours suivant**. Le site de dépôt de la plateforme est programmé pour ne plus accepter de CR au-delà. 
+     > - N'oubliez pas d'inscrire votre nom sur le rapport, et de déposer un seul fichier compressé nommé _VotreNom_rendu1.zip_, sur [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le jour du cours suivant**. Le site de dépôt de la plateforme est programmé pour ne plus accepter de CR au-delà. 
      > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte l'originalité de la requête, et la qualité de son écriture bien sûr !
 
-
 ---
-### Séance #5 - Hadoop 
+### Séance #6 - Hadoop 
 
   - **Objectif du cours**
   > - Présentation du framework _Hadoop_/_map-reduce_
@@ -123,19 +133,19 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
   
 
 ---
-### Séance #6 - TP Hadoop
+### Séance #7 - TP Hadoop
 
   - **Travaux pratiques**
   > - Avancer sur le [TP #2](./TP2) sur `Hadoop map-reduce`. Pensez à prendre des notes de votre travail, car vous devrez rédiger un CR (_cf_ ci-dessous).
 
   - **Travail hebdomadaire à faire pour la séance suivante**
   > - Terminez les questions du [TP #2](./TP2) et faire un CR personnel de TP. 
-  > - N'oubliez pas d'inscrire votre nom sur le rapport, et de déposer un seul fichier compressé nommé `VotreNom_rendu2.zip`, sur [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le jour du cours suivant**. Le site de dépôt de la plateforme est programmé pour ne plus accepter de CR au-delà. 
+  > - N'oubliez pas d'inscrire votre nom sur le rapport, et de déposer un seul fichier compressé nommé _VotreNom_rendu2.zip_, sur [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le jour du cours suivant**. Le site de dépôt de la plateforme est programmé pour ne plus accepter de CR au-delà. 
   > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
 
 
 ---
-### Séance #7 - Spark 
+### Séance #8 - Spark 
 
   - **Objectif du cours**
   > - Présentation du framework _Spark_.
@@ -147,18 +157,15 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
   
 
 ---
-### Séance #8 - TP Spark
+### Séance #9 - TP Spark
 
   - **Travaux pratiques**
   > - Terminez le [TP #3](./TP3), depuis la section `Tester les scripts du cours` et faire un CR personnel de TP. 
   > - La partie 4 de ce TP (portant sur _Spark streaming_) est optionnelle.
 
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - N'oubliez pas d'inscrire votre nom sur le rapport, et de déposer un seul fichier compressé nommé `VotreNom_rendu3.zip`, sur [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le jour du cours suivant**. Le site de dépôt de la plateforme est programmé pour ne plus accepter de CR au-delà. 
+  > - N'oubliez pas d'inscrire votre nom sur le rapport, et de déposer un seul fichier compressé nommé _VotreNom_rendu3.zip_, sur [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le jour du cours suivant**. Le site de dépôt de la plateforme est programmé pour ne plus accepter de CR au-delà. 
   > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
-
----
-### Séance #9 - A suivre...
 
 ---
 ### Séance #10 - A suivre...
