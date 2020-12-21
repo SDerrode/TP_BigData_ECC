@@ -83,3 +83,27 @@ Voici une liste de questions que vous pouvez aborder dans l'ordre (ou non!) :
  1. À quelle heure les clients dépensent-ils le plus ?
 
 Il est conseillé de développer un couple de fichiers différent pour chaque question (pour garder trace de vos algorithmes).
+
+
+---
+## Exercice 3 - Énoncé du CR
+
+Étant donné un fichier de mots (cf [fichier exemple](./mots.txt)), écrivez un script map-reduce qui organise les mots en listes des mots ayant EXACTEMENT les mêmes lettres (mais dans un ordre différent). 
+
+Ainsi, par exemple, le fichier de mots suivant
+
+> melon barre deviner lemon    
+> arbre fiable fable vendre    
+> devenir faible barbe
+
+donnera en sortie cette liste:
+
+> barbe    
+> faible, fiable    
+> fable    
+> arbre, barre    
+> devenir, deviner    
+> vendre    
+> lemon, melon
+
+Cet algorithme devra fonctionné sous environnement _Hadoop_, avec plusieurs _mapper_ et _reducer_ en parallèle. L'algorithme ne devra pas tenir  compte de la présence éventuelle de majuscules dans les mots.

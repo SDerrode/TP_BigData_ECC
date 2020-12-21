@@ -5,7 +5,7 @@ Cet espace recueille les fichiers nécessaires à la réalisation des travaux pr
 
 Les cours sont disponibles sur [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179).
 
-Ce document sera complété au fur et à mesure de l’avancement des cours. Merci de le consulter régulièrement, pour prendre en compte les changements.
+Ce document sera complété au fur et à mesure de l'avancement des cours. Merci de le consulter régulièrement, pour prendre en compte les changements.
 
 [_Stéphane Derrode_](mailto:stephane.derrode@ec-lyon.fr), École Centrale de Lyon, Dpt MI, LIRIS (CNRS UMR 5205)
 
@@ -23,7 +23,7 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
 > - des Compte-Rendus (CR) de TP à rendre régulièrement (le travail à faire est spécifié dans les séances concernées).    
 
 ----
-## Déroulé des séquences
+## Déroulé des séances
 
 ### Séance #1 - Introduction au _Big Data_
 
@@ -57,7 +57,7 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
      >   - [L'open data à la loupe](https://www.youtube.com/watch?v=6WtviEVPkJI).    
      >   - [_How we found the worst place to park in New York City_](https://www.ted.com/talks/ben_wellington_how_we_found_the_worst_place_to_park_in_new_york_city_using_big_data).
        >
-  > - Apprentissage de _git_, avec l’outil _GitHub Desktop_ et directement en ligne de commandes (avec un _Terminal_). Les scénarios des tutoriels sont disponibles dans le dossier [git](./tuto-git-gitlab).
+  > - Apprentissage de _git_, avec l'outil _GitHub Desktop_ et directement en ligne de commandes (avec un _Terminal_). Les scénarios des tutoriels sont disponibles dans le dossier [git](./tuto-git-gitlab).
   
 
   - **Travail hebdomadaire à faire pour la séance suivante**
@@ -128,24 +128,30 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
   > - Présentation du [TP #2](./TP2) qui se déroulera en séance #6.
 
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - Réalisez la partie 1 du [TP #2](./TP2), qui ne nécessite pas d'installation particulière.
-  > - En préparation à la partie 2 de ce TP, installez _Docker_ et le container _Docker Linux/Hadoop_ (le suite de cette partie sera faite en séance #6) selon les consignes. Attention, le téléchargement est très volumineux et nécessite une machine avec au moins 3 GO libre sur votre disque dur.
+  > - En préparation à la partie 2 de ce TP, installez _Docker_ et le container _Docker Linux/Hadoop_ selon les consignes données dans le TP. Attention, le téléchargement est très volumineux et nécessite une machine avec au moins 3 GO libre sur votre disque dur.
   
-
 ---
-### Séance #7 - TP Hadoop
+### Séance #7 - TP Hadoop (1/2)
 
   - **Travaux pratiques**
-  > - Avancer sur le [TP #2](./TP2) sur `Hadoop map-reduce`. Pensez à prendre des notes de votre travail, car vous devrez rédiger un CR (_cf_ ci-dessous).
+  > - Avancez sur le [TP #2](./TP2) sur `Hadoop map-reduce`.
 
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - Terminez les questions du [TP #2](./TP2) et faire un CR personnel de TP. 
-  > - N'oubliez pas d'inscrire votre nom sur le rapport, et de déposer un seul fichier compressé nommé _VotreNom_rendu2.zip_, sur [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le jour du cours suivant**. Le site de dépôt de la plateforme est programmé pour ne plus accepter de CR au-delà. 
-  > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
-
+  > - Rattrapez votre retard si vous en avez! L'objectif est d'avoir fini l'énoncé de TP à la fin de la séance #8.
 
 ---
-### Séance #8 - Spark 
+### Séance #8 - TP Hadoop (2/2)
+
+  - **Travaux pratiques**
+  > - finir le [TP #2](./TP2) sur `Hadoop map-reduce`.
+
+  - **Travail hebdomadaire à faire pour la séance suivante**
+  > - Déposez l'algorithme _map-reduce_ correspondant à l'exercice 3 du TP (uniquement cet exercice) sur la plateforme [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le jour du cours suivant**. Le site de la plateforme est programmé pour ne plus accepter de dépôt au-delà. 
+  > - N'oubliez pas d'inscrire votre nom sur les scripts, et de déposer un seul fichier compressé nommé _VotreNom_rendu2.zip_.
+  > - Cet algorithme sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
+
+---
+### Séance #9 - Spark 
 
   - **Objectif du cours**
   > - Présentation du framework _Spark_.
@@ -153,11 +159,11 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
 
   - **Travail hebdomadaire à faire pour la séance suivante**
   > - Réalisez la partie 1 du [TP #3](./TP3), concernant la programmation fonctionnelle en _Python_.
-  > - Commencez la partie 2 du [TP #3](./TP3), jusqu’à la la section `wordcount en Spark` (y compris cette section).
+  > - Commencez la partie 2 du [TP #3](./TP3), jusqu'à la la section `wordcount en Spark` (y compris cette section).
   
 
 ---
-### Séance #9 - TP Spark
+### Séance #10 - TP Spark
 
   - **Travaux pratiques**
   > - Terminez le [TP #3](./TP3), depuis la section `Tester les scripts du cours` et faire un CR personnel de TP. 
@@ -166,9 +172,6 @@ Ce document sera complété au fur et à mesure de l’avancement des cours. Mer
   - **Travail hebdomadaire à faire pour la séance suivante**
   > - N'oubliez pas d'inscrire votre nom sur le rapport, et de déposer un seul fichier compressé nommé _VotreNom_rendu3.zip_, sur [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le jour du cours suivant**. Le site de dépôt de la plateforme est programmé pour ne plus accepter de CR au-delà. 
   > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
-
----
-### Séance #10 - A suivre...
 
 ---
 ### Séance #11 - A suivre...
