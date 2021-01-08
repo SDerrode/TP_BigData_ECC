@@ -86,9 +86,9 @@ Il est conseillé de développer un couple de fichiers différent pour chaque qu
 
 
 ---
-## Exercice 3 - Énoncé du CR
+## Exercice 3 - Énoncé du CR de TP2
 
-Étant donné un fichier de mots (cf [fichier exemple](./mots.txt)), écrivez un script map-reduce qui organise les mots en listes des mots ayant EXACTEMENT les mêmes lettres (mais dans un ordre différent). 
+Étant donné un fichier de mots, écrivez un script _map-reduce_ qui détecte les mots ayant **EXACTEMENT** les mêmes lettres (mais dans un ordre différent). 
 
 Ainsi, par exemple, le fichier de mots suivant
 
@@ -97,13 +97,14 @@ Ainsi, par exemple, le fichier de mots suivant
 > devenir faible barbe
 
 donnera en sortie cette liste:
-
-> barbe    
-> faible, fiable    
-> fable    
+   
+> faible, fiable       
 > arbre, barre    
 > devenir, deviner    
-> vendre    
 > lemon, melon
 
-Cet algorithme devra fonctionné sous environnement _Hadoop_, avec plusieurs _mapper_ et _reducer_ en parallèle. L'algorithme ne devra pas tenir  compte de la présence éventuelle de majuscules dans les mots.
+En sortie, on ne retiendra que les réponses avec aux moins 2 mots. Dans cet exemple, les mots `fable` ou `barbe` n'apparaissent pas car ce sont les seuls mots de la liste avec ces lettres.
+
+Pour vos tests, vous pourrez utiliser le fichier suivant : [liste mots anglais](./mots.txt).
+
+Cet algorithme devra fonctionné sous environnement _Hadoop_, avec plusieurs _mapper_ et _reducer_ en parallèle. L'algorithme ne devra pas tenir compte de la présence éventuelle de majuscules dans les mots.

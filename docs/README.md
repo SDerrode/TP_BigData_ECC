@@ -121,23 +121,25 @@ Ce document sera complété au fur et à mesure de l'avancement des cours. Merci
      > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte l'originalité de la requête, et la qualité de son écriture bien sûr !
 
 ---
-### Séance #6 - Hadoop 
+### Séance #6 - Hadoop (1/2)
 
   - **Objectif du cours**
   > - Présentation du framework _Hadoop_/_map-reduce_
   > - Présentation du [TP #2](./TP2) qui se déroulera en séance #6.
 
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - En préparation à la partie 2 de ce TP, installez _Docker_ et le container _Docker Linux/Hadoop_ selon les consignes données dans le TP. Attention, le téléchargement est très volumineux et nécessite une machine avec au moins 3 GO libre sur votre disque dur.
-  
----
-### Séance #7 - TP Hadoop (1/2)
+  > - En préparation à la partie 2 de ce TP, installez _Docker_ et le container _Docker Linux/Hadoop_ selon les consignes données dans le [TP #2](./TP2). Attention, le téléchargement est très volumineux et nécessite une machine avec au moins 3 GO libre sur votre disque dur. Prenez-vous en avance pour faire cette installation!
 
-  - **Travaux pratiques**
-  > - Avancez sur le [TP #2](./TP2) sur `Hadoop map-reduce`.
+---
+### Séance #7 - Hadoop (2/2)
+
+  - **Objectif du cours**
+  > - Retour sur les CRs du [TP #1](./TP1)
+  > - Fin de la présentation du cours sur le framework _Hadoop_/_map-reduce_
+  > - Bilan des installations de _Docker_ et du container.
 
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - Rattrapez votre retard si vous en avez! L'objectif est d'avoir fini l'énoncé de TP à la fin de la séance #8.
+  > - Faire la partie 1 du [TP #2](./TP2) (cette partie est indépendante de Hadoop, et donc de l'installation de _Docker_).
 
 ---
 ### Séance #8 - TP Hadoop (2/2)
@@ -178,3 +180,4 @@ Ce document sera complété au fur et à mesure de l'avancement des cours. Merci
 
 ---
 ### Séance #12 - A suivre...
+
