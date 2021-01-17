@@ -19,18 +19,17 @@ La librairie fournit des objets appelés `DStream`, pour _Discretized Stream_, q
 ---
 ## _wordcount_ en _streaming_
 
-Dans le _Namenode_, créez un nouveau répertoire et déplacez-vous dedans :
+Dans le _Namenode_, créez un nouveau sous-répertoire et déplacez-vous dedans :
 ```bash
-cd ..
 mkdir sparkstreaming
 cd sparkstreaming/
 ```
-Depuis le second _Terminal_, copiez le fichier _SparkStreaming_wc.py_ dans le _Namenode_ :
+Depuis le second _Terminal_, copiez le fichier _SparkStreaming_wc.py_ du répertoire _s9_mod21_bigdata_tp/TP\_Spark/scripts_ dans le _Namenode_ :
 ```bash
-docker cp SparkStreaming_wc.py hadoop-master:/root/sparkstreaming
+docker cp SparkStreaming_wc.py hadoop-master:/root/pyspark/sparkstreaming
 ```
 
-Dans le premier _Terminal_, installez le serveur de données `netcat`
+Dans le premier _Terminal_, installez le serveur de données `netcat` (NOTE de l'auteur: cette commande n'est plus necessaire avec la MAJ du container)
 ```bash
 apt-get install netcat
 ```
@@ -48,7 +47,7 @@ Dans le premier _Terminal_, lancez
 spark-submit --master local[2] SparkStreaming_wc.py localhost 9999
 ```
 
-Disposez les fenêtres des _Terminaux_ 1 et 3 côte à côte. Sur le _Terminal_ 3, tapez des mots rapidement, vous devriez voir le comptage de mot, chaque seconde, sur le _Terminal_ 1.
+Disposez les fenêtres des _Terminaux_ 1 et 3 côte à côte. Sur le _Terminal_ 3, tapez des mots rapidement, vous devriez voir le comptage de mot apparaître sur le _Terminal_ 1, chaque seconde.
 
 *Remarques* : pour entrer un série de mots d'un coup sur le _Terminal_ 3, vous pouvez soit 
 
@@ -56,4 +55,4 @@ Disposez les fenêtres des _Terminaux_ 1 et 3 côte à côte. Sur le _Terminal_ 
   - copier en mémoire (`CTRL+C` ou `CMD+C`) une ligne d'un texte quelconque, et la coller (`CTRL+V` ou `CMD+V`) dans le _Terminal_ 3.
 
 
-Les paquets de données correspondent à une durée d'1 seconde. Pour allonger le temps associé aux paquets de données, il suffit de modifier la ligne `ssc = StreamingContext(sc, 1)`, en remplaçant la valeur 1 par la valeur souhaitée en secondes.
+Les paquets de données correspondent à une durée d'une seconde. Pour allonger le temps associé aux paquets de données, il suffit de modifier la ligne `ssc = StreamingContext(sc, 1)`, en remplaçant la valeur 1 par la valeur souhaitée en secondes.

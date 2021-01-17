@@ -29,22 +29,26 @@ cd wordcount
 cd s9_mod21_bigdata_tp/TP_Hadoop/wordcount
 ```
 
-  La commande ```ls``` permet de lister le contenu du dossier. Vous pouvez observer la présence des 2 fichiers _mapper.py_ et _reducer.py_, ainsi que du livre _Dracula_ (libre de droit, téléchargé depuis [cette adresse](http://www.textfiles.com/etext/FICTION/dracula)).
+  La commande ```ls``` permet de lister le contenu du dossier. Vous pouvez observer la présence des 2 fichiers _mapper.py_ et _reducer.py_, ainsi que du livre _Dracula_ (libre de droit. Ce dernier peut être téléchargé depuis [cette adresse](http://www.textfiles.com/etext/FICTION/dracula), ou en exécutant, depuis un _Terminal_, la commande 
+```bash
+wget http://www.textfiles.com/etext/FICTION/dracula
+```  
 
   - Lancez la commande suivante et observez le résultat:
 ```bash
-more dracula | python mapper.py
+cat dracula | python mapper.py
 ```
+  *Remarque* Si vous utilisez _Windows_, remplacer `python` par `python.exe`. Pensez à faire ce changement partout dans l'énoncé.
 
   - Lancez ensuite la commande entière et observez le résultat:
 ```bash
-more dracula | python mapper.py | sort | python reducer.py 
+cat dracula | python mapper.py | sort | python reducer.py 
 ```
 
-**Remarque Windows** Pour les étudiants utilisant _Windows_, vous pourriez rencontrer des difficultés avec les 2 lignes suivantes, qui font appel à _Python_ en ligne de commandes. La raison : l'endroit où est stocké le programme _python.exe_ n'est pas connu de votre machine, il faut donc le préciser en modifiant la variable d'environnement _PATH_. Pour cela, vous pouvez suivre les indications données dans la Section `Method 2: Manually add Python to Windows Path` de [ce lien](https://datatofish.com/add-python-to-windows-path/).
+**Remarque Windows** Pour les étudiants utilisant _Windows_, vous pourriez rencontrer des difficultés avec les 2 lignes suivantes, qui font appel à _Python_ en ligne de commandes. La raison : l'endroit où est stocké le programme _python.exe_ n'est pas connu de votre machine, il faut donc le préciser en modifiant la variable d'environnement _PATH_. Pour cela, vous pouvez suivre les indications données dans la Section _Method 2: Manually add Python to Windows Path_ de [ce lien](https://datatofish.com/add-python-to-windows-path/).
 
 **Remarque importante** La première ligne de tous vos scripts _Python_ devra être
-```shell
+```bash
 #!/usr/bin/env python2.7
 ```
 Cette ligne indique que si le script doit être exécuté, alors c'est avec _python2.7_ qu'il doit l'être.
@@ -54,7 +58,7 @@ Cette ligne indique que si le script doit être exécuté, alors c'est avec _pyt
 
 *Remarque* : Pour stocker le résultat d'exécution du script dans un fichier appelé _result.txt_, on lancera
 ```bash
-more dracula | python mapper.py | sort | python reducer.py > results.txt
+cat dracula | python mapper.py | sort | python reducer.py > results.txt
 ```
 
 Ouvrez ce fichier avec votre éditeur de texte préféré, et regardez les premières lignes. On constate de nombreux problèmes :

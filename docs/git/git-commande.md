@@ -14,7 +14,7 @@ Si vous souhaitez remonter d'un niveau dans la hiérarchie des dossiers: ```cd .
 
 **Configuration de git** (à faire une fois pour toute)
 ```bash
->> more ~/.gitconfig
+>> cat ~/.gitconfig
 >> git config --global color.ui true
 >> git config --global user.name "votre_pseudo"
 >> git config --global user.email moi@email.com
@@ -22,7 +22,7 @@ Si vous souhaitez remonter d'un niveau dans la hiérarchie des dossiers: ```cd .
 >> git config --global core.editor "/App.../Sublime\ Text.app/.../bin/subl -w" # for Mac if installed
 >> git config --global core.autocrlf true                                      # for Windows
 >> git config --list
->> more ~/.gitconfig
+>> cat ~/.gitconfig
 ```
 
 **git clone / status / log**
@@ -47,7 +47,7 @@ Il s'agit ici du clonage, sur votre machine, d'un projet existant stocké sur **
 ```bash
 >> touch prog.py                          # création d''un nouveau fichier vide
 >> subl prog.py                           # écriture d''un programme dans le fichier
->> python prog.py
+>> python prog.py                         # Windows: >> python.exe prog.py
 >> git status
 >> git add prog.py                        # suivi du fichier par git
 >> git add -A                             # suivi de tous les nouveaux fichiers 

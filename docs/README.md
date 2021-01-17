@@ -121,17 +121,17 @@ Ce document sera complété au fur et à mesure de l'avancement des cours. Merci
      > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte l'originalité de la requête, et la qualité de son écriture bien sûr !
 
 ---
-### Séance #6 - Hadoop (1/2)
+### Séance #6 - cours Hadoop (1/2)
 
   - **Objectif du cours**
   > - Présentation du framework _Hadoop_/_map-reduce_
   > - Présentation du [TP #2](./TP2) qui se déroulera en séance #6.
 
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - En préparation à la partie 2 de ce TP, installez _Docker_ et le container _Docker Linux/Hadoop_ selon les consignes données dans le [TP #2](./TP2). Attention, le téléchargement est très volumineux et nécessite une machine avec au moins 3 GO libre sur votre disque dur. Prenez-vous en avance pour faire cette installation!
+  > - En préparation à la partie 2 de ce TP, installez _Docker_ et le container _Docker Linux/Hadoop_ selon les consignes données dans le [TP #2](./TP2). Attention, le téléchargement est très volumineux et nécessite une machine avec au moins 3 GO libre de disque dur. Prenez-vous en avance pour faire cette installation!
 
 ---
-### Séance #7 - Hadoop (2/2)
+### Séance #7 - cours Hadoop (2/2)
 
   - **Objectif du cours**
   > - Retour sur les CRs du [TP #1](./TP1)
@@ -142,22 +142,23 @@ Ce document sera complété au fur et à mesure de l'avancement des cours. Merci
   > - Faire la partie 1 du [TP #2](./TP2) (cette partie est indépendante de Hadoop, et donc de l'installation de _Docker_).
 
 ---
-### Séance #8 - TP Hadoop (2/2)
+### Séance #8 et #9 - TP Hadoop
 
   - **Travaux pratiques**
-  > - finir le [TP #2](./TP2) sur `Hadoop map-reduce`.
+  > - Avancez sur le [TP #2](./TP2) sur `Hadoop map-reduce` et commencez le travail à rendre pour la semaine suivante.
 
   - **Travail hebdomadaire à faire pour la séance suivante**
   > - Déposez l'algorithme _map-reduce_ correspondant à l'exercice 3 du TP (uniquement cet exercice) sur la plateforme [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le jour du cours suivant**. Le site de la plateforme est programmé pour ne plus accepter de dépôt au-delà. 
+  > - Sur le CR, rédigé en *markdown*, merci d'inclure les scripts permettant de répondre à la question posée, et d'ajouter un extrait des résultats obtenus sur le fichier proposé. Tout ajout, *p. ex.* une variante de l'algorithme, ou un test sur d'autres fichiers de vocabulaires..., sera TRES apprécié. Inscrivez sur le CR toute les informations me permettant de rejouer ces ajouts.  
   > - N'oubliez pas d'inscrire votre nom sur les scripts, et de déposer un seul fichier compressé nommé _VotreNom_rendu2.zip_.
   > - Cet algorithme sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
 
 ---
-### Séance #9 - Spark 
+### Séance #10 - cours Spark 
 
   - **Objectif du cours**
   > - Présentation du framework _Spark_.
-  > - Présentation du [TP #3](./TP3) qui se déroulera en séance #8.
+  > - Présentation du [TP #3](./TP3) qui se déroulera en séances #11 et #123.
 
   - **Travail hebdomadaire à faire pour la séance suivante**
   > - Réalisez la partie 1 du [TP #3](./TP3), concernant la programmation fonctionnelle en _Python_.
@@ -165,7 +166,7 @@ Ce document sera complété au fur et à mesure de l'avancement des cours. Merci
   
 
 ---
-### Séance #10 - TP Spark
+### Séance #11 et #12 - TP Spark
 
   - **Travaux pratiques**
   > - Terminez le [TP #3](./TP3), depuis la section `Tester les scripts du cours` et faire un CR personnel de TP. 
@@ -175,8 +176,6 @@ Ce document sera complété au fur et à mesure de l'avancement des cours. Merci
   > - N'oubliez pas d'inscrire votre nom sur le rapport, et de déposer un seul fichier compressé nommé _VotreNom_rendu3.zip_, sur [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le jour du cours suivant**. Le site de dépôt de la plateforme est programmé pour ne plus accepter de CR au-delà. 
   > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
 
----
-### Séance #11 - A suivre...
 
 ---
 ### Séance #12 - A suivre...

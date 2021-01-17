@@ -17,15 +17,15 @@ La première chose à faire sur le _Terminal_ connecté au `hadoop-master` est d
 ```
 Le résultat de l'exécution de ce script ressemblera à :
 ```bash
-Starting namenodes on [hadoop-master]
+Starting Namenodes on [hadoop-master]
 hadoop-master: Warning: Permanently added 'hadoop-master,172.18.0.4' (ECDSA) to the list of known hosts.
-hadoop-master: starting namenode, logging to /usr/local/hadoop/logs/hadoop-root-namenode-hadoop-master.out
+hadoop-master: starting Namenode, logging to /usr/local/hadoop/logs/hadoop-root-Namenode-hadoop-master.out
 hadoop-slave2: Warning: Permanently added 'hadoop-slave2,172.18.0.2' (ECDSA) to the list of known hosts.
 hadoop-slave1: Warning: Permanently added 'hadoop-slave1,172.18.0.3' (ECDSA) to the list of known hosts.
 hadoop-slave2: starting datanode, logging to /usr/local/hadoop/logs/hadoop-root-datanode-hadoop-slave2.out
 hadoop-slave1: starting datanode, logging to /usr/local/hadoop/logs/hadoop-root-datanode-hadoop-slave1.out
-Starting secondary namenodes [0.0.0.0]
-0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop/logs/hadoop-root-secondarynamenode-hadoop-master.out
+Starting secondary Namenodes [0.0.0.0]
+0.0.0.0: starting secondaryNamenode, logging to /usr/local/hadoop/logs/hadoop-root-secondaryNamenode-hadoop-master.out
 
 starting yarn daemons
 starting resourcemanager, logging to /usr/local/hadoop/logs/yarn--resourcemanager-hadoop-master.out
@@ -86,8 +86,8 @@ Revenez alors vers le **premier _Terminal_** (ne fermez pas le second, il sera u
 chmod +x mapper.py
 chmod +x reducer.py
 ```
-  Vérifiez, avec la commande `more mapper.py`, que la première ligne du fichier est bien la suivante :
-```shell
+  Vérifiez, avec la commande `cat mapper.py`, que la première ligne du fichier est bien la suivante :
+```bash 
 #!/usr/bin/env python2.7
 ```   
   Si non, alors corrigez le fichier en conséquence!
@@ -165,7 +165,7 @@ Found 3 items
 **Hadoop** offre plusieurs interfaces web pour pouvoir observer le comportement de ses différentes composantes. Vous pouvez afficher ces pages en local sur votre machine grâce à l'option _-p_ de la commande `docker run`. 
  
  - Le **port 50070** permet d'afficher les informations de votre _Namenode_.      
- - Le **port 8088** permet d'afficher les informations du _resource manager_ (apeplé _Yarn_) et visualiser le comportement des différents jobs.
+ - Le **port 8088** permet d'afficher les informations du _resource manager_ (appelé _Yarn_) et visualiser le comportement des différents jobs.
 
 Une fois votre cluster lancé et prêt à l'emploi, utilisez votre navigateur préféré pour observer la page _http://localhost:50070_. _Attention_ : lors de l'installation, certains étudiants auront du supprimer le _mapping_ de ce port, ils ne leur sera donc pas possible de visualiser la page, semblable à:
 

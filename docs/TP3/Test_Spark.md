@@ -10,11 +10,11 @@ Nous allons ici faire fonctionner l'algorithme de comptage de mot, mais rédigé
 ----
 ## Relancer le cluster
 
-Il faut dans un premier temps, relancez le cluster que nous avions installé pour _Hadoop map-reduce_, avec son _Namenode_ et ses deux _Datanodes_. Tout d'abord, lancer `Docker Desktop`. Puis, dans un premier _Terminal_, tapez :
+Il faut dans un premier temps, relancez le cluster que nous avions installé pour _Hadoop map-reduce_, avec son _Namenode_ et ses deux _Datanodes_. Tout d'abord, lancer `Docker Desktop` (pour lancer les _daemon Docker_). Puis, dans un premier _Terminal_, tapez :
 ```bash
 docker start hadoop-master hadoop-slave1 hadoop-slave2
 ```
-Puis entrez dans le shell du _Namenode_ :
+Puis entrez dans le _bash_ du _Namenode_ :
 ```bash
 docker exec -it hadoop-master bash
 ```
@@ -35,8 +35,13 @@ Entrez dans le répertoire _wordcount_, listez les fichiers contenus dans ce ré
 cd wordcount
 ls
 ```
-Il s'agit des scripts python _Hadoop_ du [TP2](./TP2). Nous allons maintenant importer le même programme mais rédigé en _pyspark_ (ie. _Spark_ pour _Python_). Depuis un second _Terminal_, ouvert dans le répertoire où vous avez téléchargé le contenu du répertoire _scripts_, tapez la commande
+Vous voyez apparaître les scripts python _Hadoop_ du [TP2](./TP2). Nous allons maintenant importer le même programme mais rédigé en _pyspark_ (_ie._ _Spark_ pour _Python_). Depuis un second _Terminal_, rendez-vous dans le répertoire de votre machine ou vous avez cloné le dépôt _git_ initial du [TP2](./TP2). Le répertoire que vous cherchez porte le nom : _s9_mod21_bigdata_tp_. Nous allons mettre à jour ce dépôt en tirant les mises-à-jour que j'ai faites:
 ```bash
+git pull
+```
+De nouveaux fichiers viennent d'être copiés dans le répertoire _s9_mod21_bigdata_tp/TP\_Spark_. Copiez le fichier déposé dans le sous-répertoire _s9_mod21_bigdata_tp/TP\_Spark/wordcount_ sur le _Namenode_ à l'aide de la commande
+```bash
+cd TP_Spark/wordcount
 docker cp PySpark_wc.py hadoop-master:/root/wordcount
 ```
 Revenez au premier _Terminal_, et vérifiez que le fichier est là où il est attendu !
@@ -45,7 +50,7 @@ Avant de lancer le script, il convient de vérifier que le répertoire _sortie_ 
 ```bash
 hadoop fs -rm -r -f sortie
 ```
-et il convient de faire connaître à _Spark_ la version de _Python_ à utiliser, à travers une variable d'environnement :
+et il convient de faire connaître à _Spark_ la version de _Python_ à utiliser, à travers une variable d'environnement (NOTE de l'auteur: Cette commande n'est plus nécessaire avec la MAJ du container) :
 ```bash
 export PYSPARK_PYTHON=python2.7
 ```
@@ -56,12 +61,12 @@ spark-submit --master local[2] PySpark_wc.py input/dracula
 ```
 Pour vérifier le résultat, scruter le contenu du répertoire _sortie_ sou _HDFS_ :
 ```bash
-dfs dfs –ls sortie
+hadoop fs –ls sortie
 ```
 et le contenu des deux fichiers de sortie
 ```bash
-hdfs dfs –text sortie/part-00000
-hdfs dfs –text sortie/part-00001
+hadoop fs –text sortie/part-00000
+hadoop fs –text sortie/part-00001
 ```
 
 **Travail à faire** Faites évoluer la version précédente de telle manière que l'on ne garde que les mots qui apparaissent dans le texte au moins _X_ fois, la valeur de _X_ étant fixée par un argument supplémentaire lors de l’appel à `spark-submit`. Par exemple :
@@ -74,18 +79,19 @@ spark-submit --master local[2] PySpark_wc.py input/dracula 1000
 
 D'abord, créez et entrez dans un nouveau répertoire, à la racine de votre compte :
 ```bash
-cd ..          # pour remonter d'un  niveau de répertoire dans l'arborescence
+cd ..
 mkdir pyspark
 cd pyspark
 ```
 
-Dans le second _Terminal_, rapatriez l'ensemble des scripts _PySpark_ex*.py_ dans le répertoire que nous venons de créer :
+Dans le second _Terminal_, rapatriez l'ensemble des scripts _PySpark_ex*.py_ du répertoire _s9_mod21_bigdata_tp/TP\_Spark/scripts_ dans le répertoire répertoire que nous venons de créer :
 ```bash
 for f in PySpark_ex*.py; do docker cp $f hadoop-master:/root/pyspark; done
 ```
-et rapatriez également le programme qui donne une approximation de _pi_ :
+et rapatriez également le programme qui donne une approximation de _pi_ et le fichier _baby_names_2013.csv_ (utilisé par _PySpark_exemple5.py_) :
 ```bash
 docker cp PySpark_Pi.py hadoop-master:/root/pyspark
+docker cp baby_names_2013.csv hadoop-master:/root/pyspark
 ```
 
-*Remarque* Pour le script _PySpark_exemple5.py_, vous aurez besoin du fichier _baby_names_2013.csv_, que j'ai mis à votre disposition dans le même répertoire que ce fichier. N'oubliez pas de le déposer sur _HDFS_ avant de lancer le script (vous savez comment faire maintenant...).
+*Remarque* N'oubliez pas de déposer _baby_names_2013.csv_ sur _HDFS_ avant de lancer le script (vous savez comment faire maintenant...).
