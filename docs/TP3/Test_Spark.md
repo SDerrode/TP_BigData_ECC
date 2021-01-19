@@ -35,7 +35,20 @@ Entrez dans le répertoire _wordcount_, listez les fichiers contenus dans ce ré
 cd wordcount
 ls
 ```
-Vous voyez apparaître les scripts python _Hadoop_ du [TP2](./TP2). Nous allons maintenant importer le même programme mais rédigé en _pyspark_ (_ie._ _Spark_ pour _Python_). Depuis un second _Terminal_, rendez-vous dans le répertoire de votre machine ou vous avez cloné le dépôt _git_ initial du [TP2](./TP2). Le répertoire que vous cherchez porte le nom : _s9_mod21_bigdata_tp_. Nous allons mettre à jour ce dépôt en tirant les mises-à-jour que j'ai faites:
+Vous voyez apparaître les scripts python _Hadoop_ du [TP2](./TP2). Nous allons maintenant importer le même programme mais rédigé en _pyspark_ (_ie._ _Spark_ pour _Python_). 
+
+Depuis un second _Terminal_, dans un répertoire temporaire, exécutez 
+```bash
+git clone https://gitlab.ec-lyon.fr/sderrode/TP_BigData_ECL.git
+```
+Copiez le fichier déposé dans le sous-répertoire _TP\_BigData\_ECL/TP\_Spark/wordcount_ sur le _Namenode_ à l'aide de la commande
+```bash
+cd TP_Spark/wordcount
+docker cp PySpark_wc.py hadoop-master:/root/wordcount
+```
+Revenez au premier _Terminal_, et vérifiez que le fichier est là où il est attendu !
+<!-- 
+Depuis un second _Terminal_, rendez-vous dans le répertoire de votre machine ou vous avez cloné le dépôt _git_ initial du [TP2](./TP2). Le répertoire que vous cherchez porte le nom : _s9_mod21_bigdata_tp_. Nous allons mettre à jour ce dépôt en tirant les mises-à-jour que j'ai faites:
 ```bash
 git pull
 ```
@@ -45,6 +58,7 @@ cd TP_Spark/wordcount
 docker cp PySpark_wc.py hadoop-master:/root/wordcount
 ```
 Revenez au premier _Terminal_, et vérifiez que le fichier est là où il est attendu !
+-->
 
 Avant de lancer le script, il convient de vérifier que le répertoire _sortie_ n'existe pas déjà sous _HDFS_. Pour faire cela, on tente de l'effacer (qu'il existe ou non !) :
 ```bash

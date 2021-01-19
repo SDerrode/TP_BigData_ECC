@@ -24,7 +24,7 @@ Dans le _Namenode_, créez un nouveau sous-répertoire et déplacez-vous dedans 
 mkdir sparkstreaming
 cd sparkstreaming/
 ```
-Depuis le second _Terminal_, copiez le fichier _SparkStreaming_wc.py_ du répertoire _s9_mod21_bigdata_tp/TP\_Spark/scripts_ dans le _Namenode_ :
+Depuis le second _Terminal_, copiez le fichier _SparkStreaming_wc.py_ du répertoire _TP\_BigData\_ECL/TP\_Spark/scripts_ dans le _Namenode_ :
 ```bash
 docker cp SparkStreaming_wc.py hadoop-master:/root/pyspark/sparkstreaming
 ```
