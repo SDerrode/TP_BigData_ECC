@@ -66,7 +66,7 @@ hdfs start-hadoop.sh ventes
 ```
  Le dossier _ventes_ contient un fichier _purchases.txt_ qui sera utilisé lors de la seconde partie du TP.
 
-**Remarque** Ces étapes de configuration ne doivent être réalisées qu'une seule fois. Pour relancer le cluster (une fois qu'on a fermer et relancer son ordinateur p. ex.), il suffira 
+**Remarque** Ces étapes de configuration ne doivent être réalisées qu'une seule fois. Pour relancer le cluster (une fois qu'on a fermé et relancé son ordinateur p. ex.), il suffira 
 
   1. de lancer l'application ```Docker Desktop```, qui lance les _daemon Docker_.   
   1. de lancer la commande suivante :

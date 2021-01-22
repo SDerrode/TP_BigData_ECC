@@ -72,7 +72,7 @@ Et si vous utilisez _Windows_, pensez également à convertir les fins de ligne 
 Vous êtes maintenant équipés pour développer les scripts _map-reduce_ permettant de répondre aux questions suivantes.
 
 ---
-## Exercice 2 - Questionner le fichier de ventes
+## Exercice - Questionner le fichier de ventes
 
 Voici une liste de questions que vous pouvez aborder dans l'ordre (ou non!) :
 
@@ -82,11 +82,14 @@ Voici une liste de questions que vous pouvez aborder dans l'ordre (ou non!) :
  1. Dans quelle ville la catégorie _Women's Clothing_ a permis de générer le plus d'argent _Cash_ ?
  1. À quelle heure les clients dépensent-ils le plus ? (type de réponse attendue : "entre 16h et 17h" par exemple)
 
+
 Il est conseillé de développer un couple de fichiers différent pour chaque question (pour garder trace de vos algorithmes).
 
 
 ---
-## Exercice 3 - Énoncé du CR de TP2
+## Énoncé du CR de TP2
+
+### Partie I
 
 Il est conseillé de créer un nouveau répertoire pour réaliser cette partie :
 ```bash
@@ -118,3 +121,10 @@ wget https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt
 ```
 
 Cet algorithme devra fonctionné sous environnement _Hadoop_, avec plusieurs _mapper_ et _reducer_ en parallèle. L'algorithme ne devra pas tenir compte de la présence éventuelle de majuscules dans les mots.
+
+### Partie II
+
+Proposez une **requête originale et complexe** sur le fichier de données. Dans le CR, veuillez:
+
+ - Décrite la requête en quelques phrases, et montrer le résultat obtenu (ou un extrait si trop volumineux).
+ - Inclure le code de la requête dans le zip.

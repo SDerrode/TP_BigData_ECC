@@ -29,7 +29,7 @@ cd wordcount
 cd TP_BigData_ECL/TP_Hadoop/wordcount
 ```
 
-  La commande ```ls``` permet de lister le contenu du dossier. Vous pouvez observer la présence des 2 fichiers _mapper.py_ et _reducer.py_, ainsi que du livre _Dracula_ (libre de droit. Ce dernier peut être téléchargé depuis [cette adresse](http://www.textfiles.com/etext/FICTION/dracula), ou en exécutant, depuis un _Terminal_, la commande 
+  La commande ```ls``` permet de lister le contenu du dossier. Vous pouvez observer la présence des 2 fichiers _mapper.py_ et _reducer.py_, ainsi que du livre _Dracula_ (libre de droit). Ce dernier peut être téléchargé depuis [cette adresse](http://www.textfiles.com/etext/FICTION/dracula), ou en exécutant, depuis un _Terminal_, la commande 
 ```bash
 wget http://www.textfiles.com/etext/FICTION/dracula
 ```  

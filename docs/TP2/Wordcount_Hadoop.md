@@ -53,7 +53,7 @@ cd wordcount
 ```bash
 wget http://www.textfiles.com/etext/FICTION/dracula
 ```   
-   - Versez ce fichier volumineux sur l'espace HDFS (après avoir créer un dossier pour le recevoir)
+   - Versez ce fichier volumineux sur l'espace HDFS (après avoir créé un dossier pour le recevoir)
 ```bash
 hadoop fs -mkdir -p input
 hadoop fs -put dracula input
@@ -114,7 +114,7 @@ Souvenez-vous de cette manip., car il faudra aussi la mettre en place sur vos no
 export STREAMINGJAR='/usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar'
 ```    
   Je vous rappelle que _**Hadoop** map-reduce_ fonctionne avec le langage **Java** ; il faut donc utiliser une bibliothèque capable de transformer des instructions _Python_ en instruction **Java**. C'est le rôle de cette bibliothèque _hadoop-streaming-2.7.2.jar_ (on appelle cela un _wrapper_).    
-  - Ensuite, lancez le _job_ **Hadoop** avec l'instruction suivante (copiez tout le bloc d'instrcution et collez-le dans le _Terminal_):
+  - Ensuite, lancez le _job_ **Hadoop** avec l'instruction suivante (copiez tout le bloc d'instructions et collez-le dans le _Terminal_):
 ```bash
 hadoop jar $STREAMINGJAR -input input/dracula -output sortie -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
 ``` 
@@ -171,8 +171,8 @@ Une fois votre cluster lancé et prêt à l'emploi, utilisez votre navigateur pr
 
 ![interface 50070](figures/interface50070.png)
 
-Prenez le temps de naviguer dans les menus et d’observer les informations indiquées.
+Prenez le temps de naviguer dans les menus et d'observer les informations indiquées.
 
-Vous pouvez également visualiser l'avancement et les résultats de vos _jobs_ (_map-reduce_ ou autre) en allant à l'adresse _http://localhost:8088_. Prenez le temps là-aussi de naviguer dans les menus et d’observer les informations indiquées.
+Vous pouvez également visualiser l'avancement et les résultats de vos _jobs_ (_map-reduce_ ou autre) en allant à l'adresse _http://localhost:8088_. Prenez le temps là-aussi de naviguer dans les menus et d'observer les informations indiquées.
 
 _Dernier point_ : Il est également possible de voir le comportement des nœuds _Datanodes_, en allant à l'adresse: _http://localhost:8040_ pour _slave1_, et _http://localhost:8041_ pour _slave2_.
