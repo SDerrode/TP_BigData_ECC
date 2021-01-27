@@ -21,14 +21,18 @@ Pour lancer votre premier script _pyspsark_, suivez  les consignes exposées dan
 Le travail à réaliser durant la séance de TP est présenté dans le fichier :
 > [Enonce_TP_Spark.md](./Enonce_TP_Spark.md)
 
+Ce dernier contient également l'énoncé de l'exercice à réaliser pour le CR.
 
 ---
 ## Partie 4 - _Spark streaming_
+
+Cette partie n'est à faire que par les étudiants qui ont terminé leur CR.
 
 _Spark streaming_  est une extension de la librairie principale de _Spark_, qui permet de traiter des flux continus de données. Suivez les consignes décrites dans ce fichier pour mettre en place un petite manip:
 > [wc_streaming.md](./wc_streaming.md)
 
 
+<!--
 ---
 ## Partie 5 - _Spark MLib_
 
@@ -42,4 +46,4 @@ _Spark streaming_  est une extension de la librairie principale de _Spark_, qui 
 > - Persistence: saving and load algorithms, models, and Pipelines
 > - Utilities: linear algebra, statistics, data handling, etc.
 
-
+-->

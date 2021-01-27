@@ -121,7 +121,7 @@ Ce document sera complété au fur et à mesure de l'avancement des cours. Merci
      > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte l'originalité de la requête, et la qualité de son écriture bien sûr !
 
 ---
-### Séance #6 - cours Hadoop (1/2)
+### Séance #6 - cours _Hadoop_ (1/2)
 
   - **Objectif du cours**
   > - Présentation du framework _Hadoop_/_map-reduce_
@@ -131,7 +131,7 @@ Ce document sera complété au fur et à mesure de l'avancement des cours. Merci
   > - En préparation à la partie 2 de ce TP, installez _Docker_ et le container _Docker Linux/Hadoop_ selon les consignes données dans le [TP #2](./TP2). Attention, le téléchargement est très volumineux et nécessite une machine avec au moins 3 GO libre de disque dur. Prenez-vous en avance pour faire cette installation!
 
 ---
-### Séance #7 - cours Hadoop (2/2)
+### Séance #7 - cours _Hadoop_ (2/2)
 
   - **Objectif du cours**
   > - Retour sur les CRs du [TP #1](./TP1)
@@ -142,7 +142,7 @@ Ce document sera complété au fur et à mesure de l'avancement des cours. Merci
   > - Faire la partie 1 du [TP #2](./TP2) (cette partie est indépendante de Hadoop, et donc de l'installation de _Docker_).
 
 ---
-### Séance #8 et #9 - TP Hadoop
+### Séance #8 et #9 - TP _Hadoop_
 
   - **Travaux pratiques**
   > - Avancez sur le [TP #2](./TP2) sur `Hadoop map-reduce` et commencez le travail à rendre pour la semaine suivante.
@@ -154,29 +154,28 @@ Ce document sera complété au fur et à mesure de l'avancement des cours. Merci
   > - Cet algorithme sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
 
 ---
-### Séance #10 - cours Spark 
+### Séance #10 - cours _Spark_ 
 
   - **Objectif du cours**
   > - Présentation du framework _Spark_.
-  > - Présentation du [TP #3](./TP3) qui se déroulera en séances #11 et #123.
+  > - Présentation du [TP #3](./TP3) qui se déroulera en séances #11 et #12.
 
   - **Travail hebdomadaire à faire pour la séance suivante**
   > - Réalisez la partie 1 du [TP #3](./TP3), concernant la programmation fonctionnelle en _Python_.
-  > - Commencez la partie 2 du [TP #3](./TP3), jusqu'à la la section `wordcount en Spark` (y compris cette section).
+  > - Réalisez uniquement la première section de la partie 2 du TP.
   
 
 ---
-### Séance #11 et #12 - TP Spark
+### Séance #11 et #12 - TP _Spark_
 
   - **Travaux pratiques**
-  > - Terminez le [TP #3](./TP3), depuis la section `Tester les scripts du cours` et faire un CR personnel de TP. 
+  > - Terminez le [TP #3](./TP3), depuis la section `Tester les scripts du cours`. 
   > - La partie 4 de ce TP (portant sur _Spark streaming_) est optionnelle.
 
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - N'oubliez pas d'inscrire votre nom sur le rapport, et de déposer un seul fichier compressé nommé _VotreNom_rendu3.zip_, sur [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le jour du cours suivant**. Le site de dépôt de la plateforme est programmé pour ne plus accepter de CR au-delà. 
-  > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
+  > - Déposez le CR (écrit en _Markdown_) qui portera sur l'algorithme _pyspark_ correspondant à la partie 2 du TP (uniquement cet exercice portant sur une base de films) sur la plateforme [edunao](https://centrale-casablanca.edunao.com/course/view.php?id=179) **au plus tard le vendredi 12 février 2021 - 23h55**. Le site de la plateforme est programmé pour ne plus accepter de dépôt au-delà. 
+  > - N'oubliez pas d'inscrire votre nom sur le rapport, et de déposer un seul fichier compressé nommé _VotreNom_rendu3.zip_.
+  > - Ce rapport sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme), ainsi que l'originalité et la complexité de la requête que vous aurez choisie !
 
 
----
-### Séance #12 - A suivre...
 
