@@ -81,8 +81,8 @@ hadoop fs -ls sortie
 ```
 et le contenu des deux fichiers de sortie
 ```bash
-hadoop fs –text sortie/part-00000
-hadoop fs –text sortie/part-00001
+hadoop fs -text sortie/part-00000
+hadoop fs -text sortie/part-00001
 ```
 
 **Travail à faire** Faites évoluer la version précédente de telle manière que l'on ne garde que les mots qui apparaissent dans le texte au moins _X_ fois, la valeur de _X_ étant fixée par un argument supplémentaire lors de l’appel à `spark-submit`. Par exemple :
@@ -104,7 +104,9 @@ Dans le second _Terminal_, rapatriez l'ensemble des scripts _PySpark_ex*.py_ du 
 ```bash
 for f in PySpark_ex*.py; do docker cp $f hadoop-master:/root/pyspark; done
 ```
-et rapatriez également le programme qui donne une approximation de _pi_ ainsi que le fichier _baby_names_2013.csv_ (utilisé par _PySpark_exemple5.py_) :
+Cette boucle ne fonctionnera peut être pas sous _Windows_ : faites alors le transfert fichier par fichier.
+
+Rapatriez également le programme qui donne une approximation de _pi_ ainsi que le fichier _baby_names_2013.csv_ (utilisé par _PySpark_exemple5.py_) :
 ```bash
 docker cp PySpark_Pi.py hadoop-master:/root/pyspark
 docker cp baby_names_2013.csv hadoop-master:/root/pyspark

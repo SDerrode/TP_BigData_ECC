@@ -124,7 +124,7 @@ Cet algorithme devra fonctionné sous environnement _Hadoop_, avec plusieurs _ma
 
 ### Partie II
 
-Proposez une **requête originale et complexe** sur le fichier de données. Dans le CR, veuillez:
+Proposez une **requête originale et complexe** sur le fichier de ventes. Dans le CR, veuillez:
 
  - Décrite la requête en quelques phrases, et montrer le résultat obtenu (ou un extrait si trop volumineux).
  - Inclure le code de la requête dans le zip.
