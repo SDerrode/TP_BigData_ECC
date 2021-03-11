@@ -65,3 +65,5 @@ Dans le répertoire _ml-latest-small_ créé lors de la décompression, vous con
 ### Travail à réaliser
 
 Pour le CR, je vous demande de proposer une (1) requête, écrite en _PySPark_, relativement sophistiquée (et originale) qui interroge un ou plusieurs fichiers de cette base.
+
+*Remarque* : Vous NE devez PAS utiliser `pyspark.sql` dans votre requête.
