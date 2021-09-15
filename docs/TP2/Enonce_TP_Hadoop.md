@@ -64,7 +64,7 @@ chmod +x vente_reduce.py
 ```   
 Vérifiez, avec la commande `cat vente_map.py`, que la première ligne du fichier est bien identique à :
 ```bash
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 ```   
 Si non, alors corrigez le fichier en conséquence!    
 Et si vous utilisez _Windows_, pensez également à convertir les fins de ligne de ces 2 fichiers avec `dos2unix`.

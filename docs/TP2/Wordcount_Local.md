@@ -49,9 +49,9 @@ cat dracula | python mapper.py | sort | python reducer.py
 
 **Remarque importante** La première ligne de tous vos scripts _Python_ devra être
 ```bash
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 ```
-Cette ligne indique que si le script doit être exécuté, alors c'est avec _python2.7_ qu'il doit l'être.
+Cette ligne indique que si le script doit être exécuté, alors c'est avec _python".x"_ qu'il doit l'être.
 
 ----
 ## Exercice 1 - Amélioration du *wordcount*

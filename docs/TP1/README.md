@@ -44,7 +44,7 @@ Le TP consiste à répondre aux 14 requêtes proposées ci-dessous, dans le [cli
   1. Afficher pour 10 villes françaises le nombre de natifs présents dans _DBPedia_
   1. Afficher les 10 villes ayant le plus de natifs dans _DBPedia_
 
-Pour bien débuter, voici la réponse à la première requête, à savoir `Afficher les URLs des lyonnais (_i.e._ personnes nées à Lyon)`:
+Pour bien débuter, voici la réponse à la première requête, à savoir `Afficher les URLs des lyonnais (_i.e._ des personnes nées à Lyon)`:
 
 ```sparql
 PREFIX dbo: <http://dbpedia.org/ontology/>

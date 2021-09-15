@@ -16,11 +16,16 @@ Pour installer *Docker*, merci de suivre les [consignes disponibles ici](https:/
 
 Nous allons utiliser tout au long de ce TP trois contenaires représentant respectivement un nœud maître (le _Namenode_) et deux nœuds esclaves (les _Datanodes_).
 
-1. Depuis un _Terminal_, téléchargez l'image docker depuis [_dockerhub_](https://hub.docker.com) (volume à télécharger > 1.5 GB !) :
+1. Depuis un _Terminal_, téléchargez l'image docker depuis [_dockerhub_](https://hub.docker.com) (volume à télécharger > 1.5 GB !). Si vous avez 8GB de RAM, alors utilisez la commande suivante:
 ```bash
-docker pull stephanederrode/docker-cluster-hadoop-spark-python:1.2
+docker pull stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
 ```
-Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécessaires pour utiliser **Hadoop** et **Spark**. Il contient également _Python2.7_ (version du langage _Python_ compatible avec les versions de **Hadoop** et **Spark**).
+Si vous avez 16+GB de RAM, al§ors utilisez:
+```bash
+docker pull stephanederrode/docker-cluster-hadoop-spark-python-16:3.2
+```
+
+Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécessaires pour utiliser **Hadoop** et **Spark**. Il contient également _Python3.x_ (version du langage _Python_ compatible avec les versions de **Hadoop** et **Spark** installées).
 
 2. Créez les trois contenaires à partir de l'image téléchargée. Pour cela:
 
@@ -29,20 +34,20 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
 docker network create --driver=bridge hadoop
 ```     
 
-    b. Créez et lancez les trois contenaires (les instructions `-p` permettent de faire un _mapping_ entre les ports de la machine hôte et ceux du contenaire):
+    b. Créez et lancez les trois contenaires (les instructions `-p` permettent de faire un _mapping_ entre les ports de la machine hôte et ceux du contenaire). Dans la suite, adoptez soit la syntaxe '-8' soit la syntaxe '-16', en fonction de l'image que vous avez téléchargée).
 ```bash
-docker run -itd --net=hadoop -p 50070:50070 -p 8088:8088 -p 7077:7077 -p 16010:16010 -p 9999:9999 --name hadoop-master --hostname hadoop-master stephanederrode/docker-cluster-hadoop-spark-python:1.2
+docker run -itd --net=hadoop -p 50070:50070 -p 8088:8088 -p 7077:7077 -p 16010:16010 -p 9999:9999 --name hadoop-master --hostname hadoop-master stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
 
-docker run -itd -p 8040:8042 --net=hadoop --name hadoop-slave1 --hostname hadoop-slave1 stephanederrode/docker-cluster-hadoop-spark-python:1.2
+docker run -itd -p 8040:8042 --net=hadoop --name hadoop-slave1 --hostname hadoop-slave1 stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
 
-docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2 stephanederrode/docker-cluster-hadoop-spark-python:1.2
+docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2 stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
 ```     
 
 **Remarques** 
 
   - Sur certaines machines, la première ligne de commande ne s'exécute pas correctement. L'erreur provient sans doute du port `50070` que doit déjà être utilisé par une autre application installée sur votre machine. Vous pouvez alors supprimer ce port de la première ligne de commande :
 ```bash
-docker run -itd --net=hadoop -p 8088:8088 -p 7077:7077 -p 16010:16010 --name hadoop-master --hostname hadoop-master stephanederrode/docker-cluster-hadoop-spark-python:1.2
+docker run -itd --net=hadoop -p 8088:8088 -p 7077:7077 -p 16010:16010 --name hadoop-master --hostname hadoop-master stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
 ```
   - Le port `9999` sera utilisé dans la partie 3 de ce TP, au sujet de _Spark streaming_.
 

@@ -64,10 +64,6 @@ Avant de lancer le script, il convient de vérifier que le répertoire _sortie_ 
 ```bash
 hadoop fs -rm -r -f sortie
 ```
-et il convient de faire connaître à _Spark_ la version de _Python_ à utiliser, à travers une variable d'environnement (NOTE de l'auteur: cette commande n'est plus nécessaire avec la MAJ du container) :
-```bash
-export PYSPARK_PYTHON=python2.7
-```
 
 Ensuite, lancez le programme de comptage de mots sur le livre _dracula_, en local, avec 2 cœurs de votre processeur : 
 ```bash
