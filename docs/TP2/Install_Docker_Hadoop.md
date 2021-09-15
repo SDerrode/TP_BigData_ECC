@@ -34,20 +34,26 @@ Ce container contient une distribution _Linux/Ubuntu_, et les librairies nécess
 docker network create --driver=bridge hadoop
 ```     
 
-    b. Créez et lancez les trois contenaires (les instructions `-p` permettent de faire un _mapping_ entre les ports de la machine hôte et ceux du contenaire). Dans la suite, adoptez soit la syntaxe '-8' soit la syntaxe '-16', en fonction de l'image que vous avez téléchargée).
+    b. Créez et lancez les trois contenaires (les instructions `-p` permettent de faire un _mapping_ entre les ports de la machine hôte et ceux du contenaire). **Important** Dans la suite, adaptez la syntaxe '-8' à la syntaxe '-16', en fonction de l'image que vous avez téléchargée.
 ```bash
-docker run -itd --net=hadoop -p 50070:50070 -p 8088:8088 -p 7077:7077 -p 16010:16010 -p 9999:9999 --name hadoop-master --hostname hadoop-master stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
+docker run -itd --net=hadoop -p 50070:50070 -p 8088:8088 -p 7077:7077 \
+  -p 16010:16010 -p 9999:9999 --name hadoop-master --hostname hadoop-master \
+  stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
 
-docker run -itd -p 8040:8042 --net=hadoop --name hadoop-slave1 --hostname hadoop-slave1 stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
+docker run -itd -p 8040:8042 --net=hadoop --name hadoop-slave1 --hostname hadoop-slave1 \
+  stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
 
-docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2 stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
+docker run -itd -p 8041:8042 --net=hadoop --name hadoop-slave2 --hostname hadoop-slave2 \
+  stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
 ```     
 
 **Remarques** 
 
   - Sur certaines machines, la première ligne de commande ne s'exécute pas correctement. L'erreur provient sans doute du port `50070` que doit déjà être utilisé par une autre application installée sur votre machine. Vous pouvez alors supprimer ce port de la première ligne de commande :
 ```bash
-docker run -itd --net=hadoop -p 8088:8088 -p 7077:7077 -p 16010:16010 --name hadoop-master --hostname hadoop-master stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
+docker run -itd --net=hadoop -p 8088:8088 -p 7077:7077 -p 16010:16010 \
+  --name hadoop-master --hostname hadoop-master \
+  stephanederrode/docker-cluster-hadoop-spark-python-8:3.2
 ```
   - Le port `9999` sera utilisé dans la partie 3 de ce TP, au sujet de _Spark streaming_.
 

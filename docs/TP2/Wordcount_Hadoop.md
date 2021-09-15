@@ -116,9 +116,18 @@ export STREAMINGJAR='/usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3
   Je vous rappelle que _**Hadoop** map-reduce_ fonctionne avec le langage **Java** ; il faut donc utiliser une bibliothèque capable de transformer des instructions _Python_ en instruction **Java**. C'est le rôle de cette bibliothèque _hadoop-streaming-3.2.2.jar_ (on appelle cela un _wrapper_).    
   - Ensuite, lancez le _job_ **Hadoop** avec l'instruction suivante (copiez tout le bloc d'instructions et collez-le dans le _Terminal_):
 ```bash
-hadoop jar $STREAMINGJAR -input input/dracula -output sortie -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
+hadoop jar $STREAMINGJAR -input input/dracula -output sortie \
+  -mapper mapper.py -reducer reducer.py \
+  -file mapper.py -file reducer.py
 ``` 
-  Les options ```-file``` permettent de copier les fichiers nécessaires pour qu'ils soit exécutés sur tous les nœuds du cluster. Le résultat du comptage de mots est stocké dans le dossier _sortie_ sous _HDFS_. Vous pouvez voir son contenu en lançant la commande:
+  Les options ```-file``` permettent de copier les fichiers nécessaires pour qu'ils soit exécutés sur tous les nœuds du cluster. 
+
+  Si jamais la commande ne fonctionnait pas correctement, vous pouvez essayer celle-ci:
+  ````bash
+  hadoop jar $STREAMINGJAR -file /root/wordcount/mapper.py -mapper "python mapper.py" -file /root/wordcount/reducer.py -reducer "python reducer.py" -input input/dracula -output sortie
+  ```
+
+  Le résultat du comptage de mots est stocké dans le dossier _sortie_ sous _HDFS_. Vous pouvez voir son contenu en lançant la commande:
 ```bash
 hadoop fs -ls sortie/
 ```
@@ -145,7 +154,9 @@ hadoop fs -rm -r -f sortie
 
   La présence d'un seul fichier ```part-0000x```  montre qu'un seul nœud a été utilisé pour le _reducer_ (le nombre de nœuds est estimé par le _Namenode_). Il est possible de forcer le nombre de _reducer_ :
 ```bash
-hadoop jar $STREAMINGJAR -D mapred.reduce.tasks=2 -input input/dracula -output sortie -mapper mapper.py -reducer reducer.py -file mapper.py -file reducer.py
+hadoop jar $STREAMINGJAR -D mapred.reduce.tasks=2 -input \
+  input/dracula -output sortie -mapper mapper.py -reducer reducer.py \
+  -file mapper.py -file reducer.py
 ```
   La commande :
 ```bash
