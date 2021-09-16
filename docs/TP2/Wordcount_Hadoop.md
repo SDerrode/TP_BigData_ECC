@@ -123,7 +123,7 @@ hadoop jar $STREAMINGJAR -input input/dracula -output sortie \
   Les options ```-file``` permettent de copier les fichiers nécessaires pour qu'ils soit exécutés sur tous les nœuds du cluster. 
 
   Si jamais la commande ne fonctionnait pas correctement, vous pouvez essayer celle-ci:
-````bash
+```bash
 hadoop jar $STREAMINGJAR -file /root/wordcount/mapper.py -mapper "python mapper.py" -file /root/wordcount/reducer.py -reducer "python reducer.py" -input input/dracula -output sortie
 ```
 
