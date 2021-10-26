@@ -8,7 +8,7 @@ Vous devez aussi savoir a minima naviguer dans vos dossiers à l'aide de la comm
 cd c:\Users\stephane\TP_Hadoop # Windows
 cd ~\stephane\TP_Hadoop        # Mac, linux
 ```
-Si vous souhaitez remonter d'un niveau dans la hiérarchie des dossiers: ```cd ..```. Des tutos vidéo existent pour décoruvrir les comandes de bases (identiques à celles que l'on retourve sur les systèmes _Linux_).
+Si vous souhaitez remonter d'un niveau dans la hiérarchie des dossiers: ```cd ..```. Des tutos vidéo existent pour découvrir les commandes de bases (identiques à celles que l'on retrouve sur les systèmes _Linux_).
 
 
 
@@ -103,7 +103,7 @@ Si vous validez cette idée, alors il devient possible de fusionner la branche a
 >> ls
 >> git branch -d essai                             # destruction de la branche après merge
 ```
-On peut très bien `merger` une branche et continuer son développement pour faire un second merge plus tard. On peut aussi publier la branche sur **gitlab/github** (pour l'instant elle ne reste que locale).
+On peut très bien `merger` une branche et continuer son développement pour faire un second _merge_ plus tard. On peut aussi publier la branche sur **gitlab/github** (pour l'instant elle ne reste que locale).
 
 **Tagger une version**
 ```bash
@@ -113,7 +113,7 @@ On peut très bien `merger` une branche et continuer son développement pour fai
 ```
 
 **Archiver une version**
-La commande suivante permet de générer un fichier compressé comprenant l'état actuel de votre projet (il ne contient pas les fichiers spécifique au suivi par _git_, tels le répertoire _.git_ ou le fichier _.gitignore_).
+La commande suivante permet de générer un fichier compressé comprenant l'état actuel de votre projet (il ne contient pas les fichiers spécifiques au suivi par _git_, tels le répertoire _.git_ ou le fichier _.gitignore_).
 
 ```bash
 >> git archive --format=tgz --prefix=git-0.1/ HEAD >git-0.1.tgz

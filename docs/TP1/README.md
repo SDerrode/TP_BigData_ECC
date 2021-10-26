@@ -13,7 +13,7 @@ Le TP consiste à répondre aux 14 requêtes proposées ci-dessous, dans le [cli
 
 ### Quelques URIs utiles
 
-  |                                                           |           |                                  |
+  
   |---                                                        |---        |---                               |
   | [dbo:Person](http://dbpedia.org/ontology/Person)          | Classe    | Classe des personnes             |
   | [foaf:name](http://xmlns.com/foaf/0.1/Person)             | Propriété | Nom d'une personne (entre autre) |
@@ -25,6 +25,7 @@ Le TP consiste à répondre aux 14 requêtes proposées ci-dessous, dans le [cli
   | [dbo:mayor](http://dbpedia.org/ontology/mayor)            | Propriété | Maire d'une ville                |
   | [dbr:Lyon](http://dbpedia.org/resource/Lyon)              | Instance  | La ville de Lyon                 |
   | [dbr:France](http://dbpedia.org/resource/Lyon)            | Instance  | La France                        |
+  |--- 
 
 
 ### Quelques requêtes à programmer
@@ -44,7 +45,7 @@ Le TP consiste à répondre aux 14 requêtes proposées ci-dessous, dans le [cli
   1. Afficher pour 10 villes françaises le nombre de natifs présents dans _DBPedia_
   1. Afficher les 10 villes ayant le plus de natifs dans _DBPedia_
 
-Pour bien débuter, voici la réponse à la première requête, à savoir `Afficher les URLs des lyonnais (_i.e._ des personnes nées à Lyon)`:
+Pour bien débuter, voici la réponse à la première requête, à savoir `Afficher les URLs des lyonnais (i.e. des personnes nées à Lyon)`:
 
 ```sparql
 PREFIX dbo: <http://dbpedia.org/ontology/>

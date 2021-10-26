@@ -1,13 +1,13 @@
 # Template - Fiche de synthèse
 
-Ce document présente les consignes pour la rédaction de la fiche de synthèse (FS), à rendre le jour de la dernière séance de cours.
+Ce document présente les consignes pour la rédaction de la fiche de synthèse (FS), à rendre **le jour de la dernière séance de cours**.
 
 ---
 ## Consignes
 
  - Votre FS doit être rédigée avec le format `Markdown` et suivre le modèle présenté ci-dessous. Elle ne doit pas dépasser l'équivalent d'une dizaine de pages.  
- - Le contenu de la FS doit être géré entre vous, avec l'aide d'un projet _GitLab_ ou _GitHub_. Le projet sera hébergé sur le compte de l'un des membres du groupe, qui autorisera l'accès en écriture au projet à tous les autres membres du projet ainsi qu'à moi-même (mon pseudo _GitLab_ ou _GitHub_: _SDerrode_).
- - Le groupe doit se déclarer sur ce [fichier partagé](https://partage.liris.cnrs.fr/index.php/s/4Q3JB8Xk3RtfcR3), qui contient autant d'onglets qu'il y a de groupes. On y déposera le titre de la fiche, l'adresse URL du projet _git_ et les noms et pseudo _git_ des étudiants. Utilisez le premier onglet vide disponible (si nécessaire, ajoutez des onglets).
+ - Le contenu de la FS doit être géré entre vous, avec l'aide d'un projet _GitLab_ ou _GitHub_. Le projet sera hébergé sur le compte de l'un des membres du groupe, qui autorisera l'accès en écriture au projet à tous les autres membres du projet ainsi qu'à moi-même (mon pseudo _GitLab_ : _SDerrode_; mon pseudo _GitHub_: _SDerrode_).
+ - Le groupe doit se déclarer sur ce [fichier partagé](https://partage.liris.cnrs.fr/index.php/s/FegdnkcY7xSgAr2), sur l'un des onglets vides (si nécessaire, ajoutez des onglets). On y déposera le titre de la fiche, l'adresse URL du projet _git_ et les noms et pseudo _git_ des étudiants. 
  - Je récupérerai votre FS directement sur votre _git_ le jour de la dernière séance de cours. C'est donc la date butoir pour terminer votre FS.
 
 *Remarque* Le système de gestion de versions **git** est présenté en cours. Vous trouverez le scenario du tuto joué durant le second cours dans le répertoire [git](./tuto-git-gitlab).
@@ -37,10 +37,7 @@ Votre fichier _README.md_ sera organisé de la manière suivante :
  - le titre de votre FS, les noms des auteurs, l'année (les informations classiques d'une page de garde).    
  - un résumé d'une dizaine de lignes.    
  - le sommaire de votre document.     
- - des liens vers des fichiers `Markdown` qui développent votre sujet d'étude (Introduction, chapitre 1, chapitre 2, ..., Conclusion).    
- - un lien vers un fichier `Markdown` qui contiendra la bibliographie et la webographie.    
- - des liens vers des fichiers `Markdown` qui présentent d'éventuelles annexes.
-
+ - des liens vers des fichiers `Markdown` qui développent votre sujet d'étude (Introduction, Chapitre 1, Chapitre 2, ..., Conclusion, Bibliographie/Webographie, Annexes). 
 
 ---
 ## Ajouts d'images, de schémas ou de diagrammes

@@ -114,17 +114,20 @@ Souvenez-vous de cette manip., car il faudra aussi la mettre en place sur vos no
 export STREAMINGJAR='/usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.2.2.jar'
 ```    
   Je vous rappelle que _**Hadoop** map-reduce_ fonctionne avec le langage **Java** ; il faut donc utiliser une bibliothèque capable de transformer des instructions _Python_ en instruction **Java**. C'est le rôle de cette bibliothèque _hadoop-streaming-3.2.2.jar_ (on appelle cela un _wrapper_).    
-  - Ensuite, lancez le _job_ **Hadoop** avec l'instruction suivante (copiez tout le bloc d'instructions et collez-le dans le _Terminal_):
+  
+- Ensuite, lancez le _job_ **Hadoop** avec l'instruction suivante (copiez tout le bloc d'instructions et collez-le dans le _Terminal_):
 ```bash
 hadoop jar $STREAMINGJAR -input input/dracula -output sortie \
   -mapper mapper.py -reducer reducer.py \
   -file mapper.py -file reducer.py
 ``` 
-  Les options ```-file``` permettent de copier les fichiers nécessaires pour qu'ils soit exécutés sur tous les nœuds du cluster. 
+  Les options `-file` permettent de copier les fichiers nécessaires pour qu'ils soit exécutés sur tous les nœuds du cluster. 
 
   Si jamais la commande ne fonctionnait pas correctement, vous pouvez essayer celle-ci:
 ```bash
-hadoop jar $STREAMINGJAR -file /root/wordcount/mapper.py -mapper "python mapper.py" -file /root/wordcount/reducer.py -reducer "python reducer.py" -input input/dracula -output sortie
+hadoop jar $STREAMINGJAR -file /root/wordcount/mapper.py -mapper "python mapper.py" \
+  -file /root/wordcount/reducer.py -reducer "python reducer.py" \
+  -input input/dracula -output sortie
 ```
 
   Le résultat du comptage de mots est stocké dans le dossier _sortie_ sous _HDFS_. Vous pouvez voir son contenu en lançant la commande:
@@ -175,15 +178,13 @@ Found 3 items
 
 **Hadoop** offre plusieurs interfaces web pour pouvoir observer le comportement de ses différentes composantes. Vous pouvez afficher ces pages en local sur votre machine grâce à l'option _-p_ de la commande `docker run`. 
  
- - Le **port 50070** permet d'afficher les informations de votre _Namenode_.      
+ - Le **port 9870** permet d'afficher les informations de votre _Namenode_.      
  - Le **port 8088** permet d'afficher les informations du _resource manager_ (appelé _Yarn_) et visualiser le comportement des différents jobs.
 
-Une fois votre cluster lancé et prêt à l'emploi, utilisez votre navigateur préféré pour observer la page _http://localhost:50070_. _Attention_ : lors de l'installation, certains étudiants auront du supprimer le _mapping_ de ce port, ils ne leur sera donc pas possible de visualiser la page, semblable à:
+Une fois votre cluster lancé et prêt à l'emploi, utilisez votre navigateur préféré pour observer la page [http://localhost:9870](http://localhost:9870). _Attention_ : lors de l'installation, certains étudiants auront du supprimer le _mapping_ de ce port, ils ne leur sera donc pas possible de visualiser la page, semblable à :
 
-![interface 50070](figures/interface50070.png)
+![interface 9870](figures/interface9870.png)
 
 Prenez le temps de naviguer dans les menus et d'observer les informations indiquées.
 
-Vous pouvez également visualiser l'avancement et les résultats de vos _jobs_ (_map-reduce_ ou autre) en allant à l'adresse _http://localhost:8088_. Prenez le temps là-aussi de naviguer dans les menus et d'observer les informations indiquées.
-
-_Dernier point_ : Il est également possible de voir le comportement des nœuds _Datanodes_, en allant à l'adresse: _http://localhost:8040_ pour _slave1_, et _http://localhost:8041_ pour _slave2_.
+Vous pouvez également visualiser l'avancement et les résultats de vos _jobs_ (_map-reduce_ ou autre) en allant à l'adresse [http://localhost:8088](http://localhost:8088). Prenez le temps là-aussi de naviguer dans les menus et d'observer les informations indiquées.

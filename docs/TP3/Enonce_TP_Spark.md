@@ -2,20 +2,20 @@
 
 [TOC]
 
-Dans cet énoncé, vous trouverez la partie à réaliser durant la séance (_Il est où le bel arbre ?_), ainsi que l'énoncé de l'exercice à réaliser pour le CR (ce dernier ne portera que sur cette partie).
+Cet énoncé recueille le sujet à réaliser en séance (_Il est où le bel arbre ?_), ainsi que l'énoncé de l'exercice à réaliser pour le CR (ce dernier ne portera que sur cet exercice).
 
 ---
-## Partie 1 : Il est où le bel arbre ?
+## Exercice 1 : Il est où le bel arbre ?
 
 ### Introduction
 
-On considère ici le fichier de données [Opendata Paris](http://opendata.paris.fr), de type CSV, concernant des arbres remarquables à Paris. Ce fichier est disponible au [téléchargement](https://opendata.paris.fr/explore/dataset/arbresremarquablesparis/information/). Choisissez le menu `Export`et le format `csv`.
+On considère ici le fichier de données [Opendata Paris](http://opendata.paris.fr), de type CSV, concernant des arbres remarquables à Paris. Ce fichier est disponible au [téléchargement](https://opendata.paris.fr/explore/dataset/arbresremarquablesparis/information/). Choisissez le menu `Export` et le format `csv`.
 
 Copiez ce fichier dans le _Namenode_ (`hadoop-master`). La commande 
 ```bash
 cat arbresremarquablesparis.csv
 ```
-montre que chaque ligne décrit un arbre : 
+montre que chaque ligne décrit un arbre de la manière suivante : 
 
   - position GPS, arrondissement, 
   - genre, espèce, famille, 
@@ -29,7 +29,7 @@ Copiez alors _arbresremarquablesparis2.csv_ sur _HDFS_ (dans le répertoires `in
 
 *Remarque :* 
 
-  - Vous ne pouvez pas rédiger vos algo sur le _Namenode_ (il n'y a pas d'éditeur de texte). Éditez le fichier sur votre système d'exploitation, et envoyez-le sur le _Namenode_ par la commande `Docker cp ..`.
+  - Vous ne pouvez pas rédiger vos algo sur le _Namenode_ (il n'y a pas d'éditeur de texte). Éditez le fichier sur votre système d'exploitation, et envoyez-le sur le _Namenode_ par la commande `docker cp ..`.
 
 
 ### Travail à réaliser
@@ -44,26 +44,23 @@ Copiez alors _arbresremarquablesparis2.csv_ sur _HDFS_ (dans le répertoires `in
   1. d'afficher toutes les espèces d'arbre, triées par genre. 
 
 ---
-## Partie 2: _The MovieLens Database_ (à reporter dans votre CR)
+## Exercice 2: _The MovieLens Database_ (à reporter dans votre CR)
 
 ### Téléchargement des données
 
-Il faut d'abord installer _unzip_
-```bash
-apt-get install unzip
-```
-Ensuite, téléchargez la base de données
+Il faut d'abord télécharger la base de données
 ```bash
 wget http://files.grouplens.org/datasets/movielens/ml-latest-small.zip
 ```
-et dézippez-la:
+et la décompresser:
 ```bash
 unzip ml-latest-small.zip
+rm ml-latest-small.zip
 ```
-Dans le répertoire _ml-latest-small_ créé lors de la décompression, vous constaterez que les fichiers correspondent à 100 000 notes et 3 600 tags donnés par 600 utilisateurs concernant 9 000 films.
+Dans le répertoire _ml-latest-small_, créé lors de la décompression, vous constaterez que les fichiers correspondent à 100 000 notes et 3 600 tags donnés par 600 utilisateurs concernant 9 000 films.
 
 ### Travail à réaliser
 
 Pour le CR, je vous demande de proposer une (1) requête, écrite en _PySPark_, relativement sophistiquée (et originale) qui interroge un ou plusieurs fichiers de cette base.
 
-*Remarque* : Vous NE devez PAS utiliser `pyspark.sql` dans votre requête.
+*Remarque* : Vous **NE devez PAS utiliser** `pyspark.sql` dans votre requête.

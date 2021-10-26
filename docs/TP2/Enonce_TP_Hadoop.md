@@ -15,9 +15,10 @@ Dans le _bash_ du _Namenode_, déplacez-vous dans le dossier _ventes_ (à partir
 ```bash
 cd ../ventes
 ```
-Les `..` permettent de remonter dans l'arborescence des dossiers d'un niveau (nous étions dans le répertoire _wordcount_). Pour observer le contenu du fichier présent dans ce dossier :
+Les `..` permettent de remonter dans l'arborescence des dossiers d'un niveau (nous étions dans le répertoire _wordcount_). Pour observer le contenu des 20 premières lignes ou des 10 dernière lgnes présentes dans ce fichier :
 ```bash
-cat purchases.txt
+head -n 20 purchases.txt
+tail -n 10 purchases.txt
 ```
 
 Ainsi, vous pouvez constater que le fichier est organisé en 6 colonnes :
@@ -55,7 +56,9 @@ docker cp vente_reduce.py hadoop-master:/root/ventes
  
 Avant de lancer le _job_ que vous aurez prévu dans les fichiers _vente_map.py_ et _vente_reduce.py_ avec la commande 
 ```bash
-hadoop jar $STREAMINGJAR -input input/purchases_extrait100.txt -output sortie -mapper vente_map.py -reducer vente_reduce.py -file vente_map.py -file vente_reduce.py
+hadoop jar $STREAMINGJAR -input input/purchases_extrait100.txt -output sortie \
+  -mapper vente_map.py -reducer vente_reduce.py \
+  -file vente_map.py -file vente_reduce.py
 ``` 
 dans le _bash_ du _Namenode_, pensez à rendre vos scripts exécutables :
 ```bash
@@ -120,7 +123,7 @@ Pour vos tests, vous pourrez utiliser le fichier de mots suivant :
 wget https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt
 ```
 
-Cet algorithme devra fonctionné sous environnement _Hadoop_, avec plusieurs _mapper_ et _reducer_ en parallèle. L'algorithme ne devra pas tenir compte de la présence éventuelle de majuscules dans les mots.
+Cet algorithme devra fonctionner sous environnement _Hadoop_, avec plusieurs _mapper_ et _reducer_ en parallèle. L'algorithme ne devra pas tenir compte de la présence éventuelle de majuscules dans les mots.
 
 ### Partie II
 
