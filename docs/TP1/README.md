@@ -13,19 +13,19 @@ Le TP consiste à répondre aux 14 requêtes proposées ci-dessous, dans le [cli
 
 ### Quelques URIs utiles
 
-  
-  |---                                                        |---        |---                               |
-  | [dbo:Person](http://dbpedia.org/ontology/Person)          | Classe    | Classe des personnes             |
-  | [foaf:name](http://xmlns.com/foaf/0.1/Person)             | Propriété | Nom d'une personne (entre autre) |
-  | [dbo:birthDate](http://dbpedia.org/ontology/birthDate)    | Propriété | Date de naissance d'une personne |
-  | [dbo:birthPlace	](http://dbpedia.org/ontology/birthPlace) | Propriété | Lieu de naissance d'une personne |
-  | [dbo:deathDate](http://dbpedia.org/ontology/deathDate)    | Propriété | Date de décès d'une personne     |
-  | [dbo:deathPlace](http://dbpedia.org/ontology/deathPlace)  | Propriété | Lieu de décès d'une personne     |
-  | [dbo:country](http://dbpedia.org/ontology/country)        | Propriété | Pays auquel un lieu appartient   |
-  | [dbo:mayor](http://dbpedia.org/ontology/mayor)            | Propriété | Maire d'une ville                |
-  | [dbr:Lyon](http://dbpedia.org/resource/Lyon)              | Instance  | La ville de Lyon                 |
-  | [dbr:France](http://dbpedia.org/resource/Lyon)            | Instance  | La France                        |
-  |--- 
+|                                                           |           |                                  |
+| ---                                                       | ---       | ---                              |
+| [foaf:Person](http://xmlns.com/foaf/0.1/Person)           | Classe    | Classe des personnes             |
+| [foaf:name](http://xmlns.com/foaf/0.1/name)               | Propriété | Nom d'une personne (entre autre) |
+| [dbo:birthDate](http://dbpedia.org/ontology/birthDate)    | Propriété | Date de naissance d'une personne |
+| [dbo:birthPlace	](http://dbpedia.org/ontology/birthPlace) | Propriété | Lieu de naissance d'une personne |
+| [dbo:deathDate](http://dbpedia.org/ontology/deathDate)    | Propriété | Date de décès d'une personne     |
+| [dbo:deathPlace](http://dbpedia.org/ontology/deathPlace)  | Propriété | Lieu de décès d'une personne     |
+| [dbo:City](http://dbpedia.org/ontology/city)              | Propriété | Ville                            |
+| [dbo:country](http://dbpedia.org/ontology/country)        | Propriété | Pays auquel un lieu appartient   |
+| [dbo:mayor](http://dbpedia.org/ontology/mayor)            | Propriété | Maire d'une ville                |
+| [dbr:Lyon](http://dbpedia.org/resource/Lyon)              | Instance  | La ville de Lyon                 |
+| [dbr:France](http://dbpedia.org/resource/France)          | Instance  | La France                        |
 
 
 ### Quelques requêtes à programmer
@@ -50,7 +50,8 @@ Pour bien débuter, voici la réponse à la première requête, à savoir `Affic
 ```sparql
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX dbr: <http://dbpedia.org/resource/>
-SELECT ?p {
+SELECT ?p 
+WHERE {
   ?p a              dbo:Person;
      dbo:birthPlace dbr:Lyon.
 }
