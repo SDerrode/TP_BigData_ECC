@@ -15,7 +15,8 @@ Merci de consulter régulièrement ce site, pour le bon déroulement du cours et
 **Volume de cours et travail personnel** : 
 
 > - 12 séances de 2h; La première moitié des enseignements se fera en distanciel (séances #1 à #6), et la seconde moitié en présentiel, lors de ma venue à l'ECC en janvier 2022.     
-> - des _homeworks_ à faire entre 2 séances (pour environ 4h de travail personnel ou en binôme).
+> - des _homeworks_ à faire entre 2 séances (pour 2h/4h de travail personnel ou en binôme).
+> - Une fiche de synthèse à rédiger sur un sujet associé au big data (cf consignes ci-dessous).
 
 **Évaluation** :
 
@@ -28,11 +29,10 @@ Merci de consulter régulièrement ce site, pour le bon déroulement du cours et
 ### Séance #1 - Introduction au _Big Data_
 
   - **Objectif du cours**
+  > - Présentation des objectifs du module
   > - Introduction au _Big Data_: enjeux éthiques, économiques & scientifiques.   
-  > - Présentation de la FS par groupe de 4 à 5 étudiants. Celle-ci doit être préparée tout au long du module, la date de remise est fixée à la date de la dernière séance de cours. Les consignes pour la rédaction (utilisation de _Markdown_ et de _git_) et le rendu sont détaillées dans le répertoire [Template_FS](./Template_FS/README.md).
-
+  
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - Formez les groupes, déposez les noms et les adresses mail sur le fichier hébergé sur [cette plateforme](https://partage.liris.cnrs.fr/index.php/s/4Q3JB8Xk3RtfcR3). Commencez à réfléchir au sujet de votre FS.    
   > - Regardez les vidéos non vues en cours, dont les liens figurent dans les slides, et certaines des vidéos suivantes (cela pourra vous donner des idées sur le sujet de votre FS) :   
        > 
      >   - [Le Big Data pour mieux nous comprendre](https://www.ted.com/talkkenneth_cukier_big_data_is_better_data?language=fr).    
@@ -52,6 +52,7 @@ Merci de consulter régulièrement ce site, pour le bon déroulement du cours et
 
   - **Objectif du cours**
   > - Sondage [wooclap - https://www.wooclap.com/FETQLU](https://www.wooclap.com/FETQLU)
+  > - Présentation de la FS par groupe de 4 à 5 étudiants. Celle-ci doit être préparée tout au long du module, la date de remise est fixée à la date de la dernière séance de cours. Les consignes pour la rédaction (utilisation de _Markdown_ et de _git_) et le rendu sont détaillées dans le répertoire [Template_FS](./Template_FS/README.md).
   > - Introduction à l'_Open Data_. Vidéos:
        > 
      >   - [L'open data à la loupe](https://www.youtube.com/watch?v=6WtviEVPkJI).    
@@ -60,13 +61,10 @@ Merci de consulter régulièrement ce site, pour le bon déroulement du cours et
   > - Apprentissage de _git_, avec l'outil _GitHub Desktop_ et directement en ligne de commandes (avec un _Terminal_). Les scénarios des tutoriels sont disponibles dans le dossier [git](./tuto-git-gitlab).
   
 
-  - **Travail hebdomadaire à faire pour la séance suivante**
-  > - Après avoir créé un compte sur la plateforme [GitLab](https://gitlab.com/users/sign_in), créez un projet privé pour la FS (me désigner `reporter` de chaque FS, mon pseudo : `Derrode`), selon les modalités exposées dans le dossier [Template_FS](./Template_FS/README.md). Cela me permettra de voir vos travaux (espionnage de votre travail !).    
-  > - Complément sur la séance #2 et préparation de la séance #3 :   
-       >  
-     >   - [_Demand on a more open-source government_](https://www.ted.com/talks/beth_noveck_demand_a_more_open_source_government#t-66622).    
-     >   - [L'Open Data, Avenir des Big Data](https://www.youtube.com/watch?v=MUI6Rwn4Qq0).
-     >   - [_Linked Open Data - What is it?_](https://www.youtube.com/watch?v=uju4wT9uBIA).
+  - **Complément sur la séance #2**
+  >   - [_Demand on a more open-source government_](https://www.ted.com/talks/beth_noveck_demand_a_more_open_source_government#t-66622).    
+  >   - [L'Open Data, Avenir des Big Data](https://www.youtube.com/watch?v=MUI6Rwn4Qq0).
+  >   - [_Linked Open Data - What is it?_](https://www.youtube.com/watch?v=uju4wT9uBIA).
 
 ---
 ### Séance #3 - _Linked Data_
@@ -74,13 +72,14 @@ Merci de consulter régulièrement ce site, pour le bon déroulement du cours et
   - **Objectif du cours**
   > - Sondage [wooclap](https://www.wooclap.com/MIZTRT)
   > - Introduction aux données liées (_Linked Data_ ou _Linked Open Data_).    
-  > - Vidéos vues en cours :
+  > - Liens vers des vidéos vues en cours :
        > 
      >   - [Tim Berners-Lee : _The next Web_](https://www.ted.com/talks/tim_berners_lee_the_next_web).
      >   - [_What is Linked Data? Manu Sporny_](https://www.youtube.com/watch?v=4x_xzT5eF5Q).
 
   - **Travail hebdomadaire à faire pour la séance suivante**
-  > - Travailler sur votre fiche de synthèse
+  > - Formez les groupes, déposez les noms et les adresses mail et les sujets de votre FS sur le fichier [hébergé ici](https://partage.liris.cnrs.fr/index.php/s/FegdnkcY7xSgAr2).    
+  > - Après avoir créé un compte sur la plateforme [GitLab](https://gitlab.com/users/sign_in), créez un projet privé pour la FS (me désigner `reporter` de chaque FS, mon pseudo : `Derrode`), selon les modalités exposées dans le dossier [Template_FS](./Template_FS/README.md). Cela me permettra de voir vos travaux (espionnage de votre travail !).    
   > - Préparer les requêtes 2 à 6 du [TP1](./TP1), la solution de la requête 1 est déjà donnée dans l'énoncé. N'hésitez pas à sauvegarder vos requêtes dans un fichier texte (au format _Markdown_ ?) pour pouvoir les rejouer plus tard.
     
 

@@ -6,7 +6,7 @@ Ce document présente les consignes pour la rédaction de la fiche de synthèse 
 ## Consignes
 
  - Votre FS doit être rédigée avec le format `Markdown` et suivre le modèle présenté ci-dessous. Elle ne doit pas dépasser l'équivalent d'une dizaine de pages.  
- - Le contenu de la FS doit être géré entre vous, avec l'aide d'un projet _GitLab_ ou _GitHub_. Le projet sera hébergé sur le compte de l'un des membres du groupe, qui autorisera l'accès en écriture au projet à tous les autres membres du projet ainsi qu'à moi-même (mon pseudo _GitLab_ : _SDerrode_; mon pseudo _GitHub_: _SDerrode_).
+ - Le contenu de la FS doit être géré entre vous, avec l'aide d'un projet _GitLab_ ou _GitHub_. Le projet sera hébergé sur le compte de l'un des membres du groupe, qui autorisera l'accès en écriture au projet à tous les autres membres du projet ainsi qu'à moi-même (mon pseudo _GitLab_ : _stephane.derrode@ec-lyon.fr_; mon pseudo _GitHub_: _stephane.derrode@ec-lyon.fr_).
  - Le groupe doit se déclarer sur ce [fichier partagé](https://partage.liris.cnrs.fr/index.php/s/FegdnkcY7xSgAr2), sur l'un des onglets vides (si nécessaire, ajoutez des onglets). On y déposera le titre de la fiche, l'adresse URL du projet _git_ et les noms et pseudo _git_ des étudiants. 
  - Je récupérerai votre FS directement sur votre _git_ le jour de la dernière séance de cours. C'est donc la date butoir pour terminer votre FS.
 
