@@ -7,6 +7,23 @@
 
 Étant donnée l'installation précédente, nous allons exploiter le parallélisme de votre processeur, souvent constitué de 4 cœurs, et donc susceptible de lancer 4 instructions en parallèle. Parmi ces 4 cœurs, nous n'en exploiterons que 3 (1 pour le _Namenode_ et 2 pour les _Datanodes_), le dernier cœur étant à disposition de votre machine pour toutes les autres tâches.
 
+Deux commandes pour commencer :
+
+1. La commande 
+```bash
+/usr/local/hadoop/bin/hdfs namenode -format
+```
+formate le disque dur hdfs. A ne faire que la première fois que vous rentrez dans le l_Namenode_ 
+
+2. La commande
+```bash
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+```
+si vous disposez d'un processeur _amd_, ou la commande
+```bash
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-arm64"
+```
+si vous disposez d'un processeur _intel_ (plus rare, mais utilisé par Apple dans ses derniers modèles).
 
 ---
 ## Lancement du _daemon_ **Hadoop**
@@ -44,16 +61,16 @@ hadoop-slave2: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-root
 
 Laissez-vous guider...
 
-   - Depuis le _Terminal_, créez un dossier _wordcount_ et déplacez-vous dedans
+  - Depuis le _Terminal_, créez un dossier _wordcount_ et déplacez-vous dedans
 ```bash
 mkdir wordcount
 cd wordcount
 ```    
-   - Téléchargez depuis internet le livre _dracula_ à l'aide de la commande
+  - Téléchargez depuis internet le livre _dracula_ à l'aide de la commande
 ```bash
 wget http://www.textfiles.com/etext/FICTION/dracula
 ```   
-   - Versez ce fichier volumineux sur l'espace HDFS (après avoir créé un dossier pour le recevoir)
+  - Versez ce fichier volumineux sur l'espace HDFS (après avoir créé un dossier pour le recevoir)
 ```bash
 hadoop fs -mkdir -p input
 hadoop fs -put dracula input
@@ -67,7 +84,7 @@ hadoop fs -ls input
 Found 1 items
 -rw-r--r--   2 root supergroup     844505 2020-10-16 05:02 input/dracula
 ```    
-   - Supprimer le fichier _dracula_ de votre espace _Linux_ (on n'en a plus besoin!)
+  - Supprimer le fichier _dracula_ de votre espace _Linux_ (on n'en a plus besoin!)
 ```bash
 rm dracula
 ```     
@@ -81,7 +98,7 @@ Retenez la syntaxe, car elle vous sera utile plus tard, pour rapatrier les nouve
 
 Revenez alors vers le **premier _Terminal_** (ne fermez pas le second, il sera utile plus tard), et vérifiez avec la commande ```ls``` que les 2 fichiers sont bien présents. Il faut maintenant 
 
-  - rendre ces 2 scripts exécutables:
+ - rendre ces 2 scripts exécutables:
 ```bash
 chmod +x mapper.py
 chmod +x reducer.py
@@ -92,7 +109,7 @@ chmod +x reducer.py
 ```   
   Si non, alors corrigez le fichier en conséquence!
 
-  - Pour les utilisateurs de _Windows_ uniquement : il faut aussi convertir les caractères de saut de lignes, qui sont différents entre _Windows_ et _Linux_. Pour chaque fichier texte (_p. ex._, _fichier.py_) que vous rapatrierez depuis votre machine sur le compte _Linux_, il conviendra de lancer:
+ - Pour les utilisateurs de _Windows_ uniquement : il faut aussi convertir les caractères de saut de lignes, qui sont différents entre _Windows_ et _Linux_. Pour chaque fichier texte (_p. ex._, _fichier.py_) que vous rapatrierez depuis votre machine sur le compte _Linux_, il conviendra de lancer:
 ```bash
 dos2unix fichier.py
 ```
@@ -113,59 +130,62 @@ Souvenez-vous de cette manip., car il faudra aussi la mettre en place sur vos no
 ```bash
 export STREAMINGJAR='/usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.2.2.jar'
 ```    
-  Je vous rappelle que _**Hadoop** map-reduce_ fonctionne avec le langage **Java** ; il faut donc utiliser une bibliothèque capable de transformer des instructions _Python_ en instruction **Java**. C'est le rôle de cette bibliothèque _hadoop-streaming-3.2.2.jar_ (on appelle cela un _wrapper_).    
+Je vous rappelle que _**Hadoop** map-reduce_ fonctionne avec le langage **Java** ; il faut donc utiliser une bibliothèque capable de transformer des instructions _Python_ en instruction **Java**. C'est le rôle de cette bibliothèque _hadoop-streaming-3.2.2.jar_ (on appelle cela un _wrapper_).    
   
 - Ensuite, lancez le _job_ **Hadoop** avec l'instruction suivante (copiez tout le bloc d'instructions et collez-le dans le _Terminal_):
 ```bash
-hadoop jar $STREAMINGJAR -input input/dracula -output sortie \
+hadoop jar $STREAMINGJAR -files mapper.py,reducer.py \
   -mapper mapper.py -reducer reducer.py \
-  -file mapper.py -file reducer.py
+  -input input/dracula -output sortie
 ``` 
-  Les options `-file` permettent de copier les fichiers nécessaires pour qu'ils soit exécutés sur tous les nœuds du cluster. 
+L'option `-files` permet de copier les fichiers nécessaires pour qu'ils soit exécutés sur tous les nœuds du cluster.
 
-  Si jamais la commande ne fonctionnait pas correctement, vous pouvez essayer celle-ci:
+
+Si jamais la commande ne fonctionnait pas correctement, vous pouvez essayer celle-ci:
 ```bash
-hadoop jar $STREAMINGJAR -file /root/wordcount/mapper.py -mapper "python mapper.py" \
-  -file /root/wordcount/reducer.py -reducer "python reducer.py" \
+hadoop jar $STREAMINGJAR -files /root/wordcount/mapper.py,/root/wordcount/reducer.py \
+  -mapper "python mapper.py" -reducer "python reducer.py" \
   -input input/dracula -output sortie
 ```
 
-  Le résultat du comptage de mots est stocké dans le dossier _sortie_ sous _HDFS_. Vous pouvez voir son contenu en lançant la commande:
+Le résultat du comptage de mots est stocké dans le dossier _sortie_ sous _HDFS_. Vous pouvez voir son contenu en lançant la commande:
 ```bash
 hadoop fs -ls sortie/
 ```
-  qui donnera quelque chose comme
+qui donnera quelque chose comme
 ```bash
 Found 2 items
 -rw-r--r--   2 root supergroup          0 2020-10-16 06:58 sortie/_SUCCESS
 -rw-r--r--   2 root supergroup         25 2020-10-16 06:58 sortie/part-00000
 ```
-  Le premier fichier _\_SUCCESS_ est un fichier vide (0 octet!), dont la simple présence indique que le _job_ s'est terminé avec succès. Le second fichier _part-00000_ contient le résultat de l'algorithme. Vous pouvez visualiser les dernières lignes du fichier avec la commande :
+
+Le premier fichier _\_SUCCESS_ est un fichier vide (0 octet!), dont la simple présence indique que le _job_ s'est terminé avec succès. Le second fichier _part-00000_ contient le résultat de l'algorithme. Vous pouvez visualiser les dernières lignes du fichier avec la commande :
 ```bash
 hadoop fs -tail sortie/part-00000
 ```
-  ou voir tout le fichier avec la commande :
+ou voir tout le fichier avec la commande :
 ```bash
 hadoop fs -cat sortie/part-00000
 ```
-  Le résultat devrait être exactement le même que lors de la première partie du TP.
+Le résultat devrait être exactement le même que lors de la première partie du TP.
 
-  *Remarque - N'oubliez pas!* : Entre 2 exécutions, il faut soit utiliser un nouveau nom pour le dossier _sortie_, soit le supprimer de la manière suivante :
+*Remarque - N'oubliez pas!* : Entre 2 exécutions, il faut soit utiliser un nouveau nom pour le dossier _sortie_, soit le supprimer de la manière suivante :
 ```bash
 hadoop fs -rm -r -f sortie
 ``` 
 
-  La présence d'un seul fichier ```part-0000x```  montre qu'un seul nœud a été utilisé pour le _reducer_ (le nombre de nœuds est estimé par le _Namenode_). Il est possible de forcer le nombre de _reducer_ :
+La présence d'un seul fichier ```part-0000x```  montre qu'un seul nœud a été utilisé pour le _reducer_ (le nombre de nœuds est estimé par le _Namenode_). Il est possible de forcer le nombre de _reducer_ :
 ```bash
-hadoop jar $STREAMINGJAR -D mapred.reduce.tasks=2 -input \
-  input/dracula -output sortie -mapper mapper.py -reducer reducer.py \
-  -file mapper.py -file reducer.py
+hadoop jar $STREAMINGJAR -D mapred.reduce.tasks=2 \
+  -files mapper.py,reducer.py \
+  -input input/dracula -output sortie \
+  -mapper mapper.py -reducer reducer.py \
 ```
-  La commande :
+La commande :
 ```bash
 hadoop fs -ls sortie/
 ```
-  donnera alors :
+donnera alors :
 ```bash
 Found 3 items
 -rw-r--r--   2 root supergroup          0 2020-10-17 15:24 sortie/_SUCCESS
@@ -178,8 +198,8 @@ Found 3 items
 
 **Hadoop** offre plusieurs interfaces web pour pouvoir observer le comportement de ses différentes composantes. Vous pouvez afficher ces pages en local sur votre machine grâce à l'option _-p_ de la commande `docker run`. 
  
- - Le **port 9870** permet d'afficher les informations de votre _Namenode_.      
- - Le **port 8088** permet d'afficher les informations du _resource manager_ (appelé _Yarn_) et visualiser le comportement des différents jobs.
+- Le **port 9870** permet d'afficher les informations de votre _Namenode_.      
+- Le **port 8088** permet d'afficher les informations du _resource manager_ (appelé _Yarn_) et visualiser le comportement des différents jobs.
 
 Une fois votre cluster lancé et prêt à l'emploi, utilisez votre navigateur préféré pour observer la page [http://localhost:9870](http://localhost:9870). _Attention_ : lors de l'installation, certains étudiants auront du supprimer le _mapping_ de ce port, ils ne leur sera donc pas possible de visualiser la page, semblable à :
 

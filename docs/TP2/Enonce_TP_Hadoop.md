@@ -7,7 +7,6 @@
 
 **Objectif du travail** : recueillir des informations et calculer des statistiques sur des résultats de ventes stockés dans le fichier _purchases.txt_. 
 
-
 ---
 ## Préparation et conseils
 
@@ -32,33 +31,33 @@ Ainsi, vous pouvez constater que le fichier est organisé en 6 colonnes :
 
 Les colonnes sont séparées par une tabulation. Ce caractère  est codé par _\t_ en _Python_. Exemple : `print("avant\tapres")` permet d'obtenir l'impression de la chaîne "_avant&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;apres_".
 
-La commande _Linux_ `wc -l purchases.txt` permet d'obtenir le nombre de lignes du fichier (soit 4 138 476 lignes!). Ce fichier est sans doute trop volumineux pour régler vos algorithmes (le temps de debug en serait largement augmenté). Aussi, il est conseillé de travailler avec un extrait du fichier :
+La commande _Linux_ `wc -l purchases.txt` permet d'obtenir le nombre de lignes du fichier (soit 4 138 476 lignes!). Ce fichier est sans doute trop volumineux pour débugger vos algorithmes (le temps de debug en serait largement augmenté). Aussi, il est conseillé de travailler avec un extrait du fichier, que l'on peut obtenir de la manière suivante :
 ```bash
 cat purchases.txt | head -n 100 > purchases_extrait100.txt
 ```
-Cette commande extrait les 100 premières lignes du fichier et les stocke dans un fichier appelé _purchases_extrait100.txt_. N'oubliez cependant pas de vérifier vos scripts définitifs avec le fichier original.
+Cette commande extrait les 100 premières lignes du fichier et les stocke dans un fichier appelé _purchases_extrait100.txt_. N'oubliez cependant pas de vérifier vos scripts définitifs avec le fichier original de données.
 
 Pensez à envoyer ces deux fichiers sur HDFS, dans le dossier _input_ :
 ```bash
-hadoop fs -put purchases.txt input
-hadoop fs -put purchases_extrait100.txt input
+hadoop fs -cp purchases.txt input
+hadoop fs -cp purchases_extrait100.txt input
 ```
 
-**Remarque** : Il n'est pas possible de programmer directement dans le _bash_ du _Namenode_, car celui-ci ne dispose pas d'éditeur de texte graphique (vous avez quand même accès à _vim_ et _nano_, mais en mode texte : essayez!). La solution consiste à 
+**Remarque** : Il n'est pas possible de programmer directement dans le _bash_ du _Namenode_, car celui-ci ne dispose pas d'éditeur de texte graphique (vous avez quand même accès à _vim_ et _nano_, mais en mode texte : essayez !). La solution consiste à 
 
  1. programmer vos scripts _map_ et _reduce_ avec votre IDE préférée (et pourquoi pas _Spyder_);    
  1. stocker vos fichiers (appelés _vente\_map.py_ et _vente\_reduce.py_) dans un dossier _vente_ que vous aurez créé sur votre machine (à côté du répertoire _wordcount_ de la première partie du TP ?);    
  1. envoyer vos 2 fichiers vers le _Namenode_ :
 ```bash
-docker cp vente_map.py hadoop-master:/root/ventes
+docker cp vente_map.py    hadoop-master:/root/ventes
 docker cp vente_reduce.py hadoop-master:/root/ventes
 ```
  
-Avant de lancer le _job_ que vous aurez prévu dans les fichiers _vente_map.py_ et _vente_reduce.py_ avec la commande 
+Avant de lancer le _job_ que vous aurez programmé dans les fichiers _vente_map.py_ et _vente_reduce.py_ avec la commande 
 ```bash
-hadoop jar $STREAMINGJAR -input input/purchases_extrait100.txt -output sortie \
-  -mapper vente_map.py -reducer vente_reduce.py \
-  -file vente_map.py -file vente_reduce.py
+hadoop jar $STREAMINGJAR -files vente_map.py, vente_reduce.py \
+  -input input/purchases_extrait100.txt -output sortie \
+  -mapper vente_map.py -reducer vente_reduce.py
 ``` 
 dans le _bash_ du _Namenode_, pensez à rendre vos scripts exécutables :
 ```bash
@@ -69,24 +68,22 @@ Vérifiez, avec la commande `cat vente_map.py`, que la première ligne du fichie
 ```bash
 #!/usr/bin/env python3
 ```   
-Si non, alors corrigez le fichier en conséquence!    
-Et si vous utilisez _Windows_, pensez également à convertir les fins de ligne de ces 2 fichiers avec `dos2unix`.
+Si non, corrigez alors le fichier en conséquence ! Et si vous utilisez _Windows_, pensez également à convertir les fins de ligne de ces 2 fichiers avec `dos2unix`.
 
 Vous êtes maintenant équipés pour développer les scripts _map-reduce_ permettant de répondre aux questions suivantes.
 
 ---
 ## Exercice - Questionner le fichier de ventes
 
-Voici une liste de questions que vous pouvez aborder dans l'ordre (ou non!) :
+A partir d'ici, et jusqu'à la fin du TP, veuillez utiliser la librairie _MRJob_ telle que présentée en cours.
 
- 1. Quel est le nombre d'achats effectués pour chaque catégorie d'achat ?    
- 1. Quelle est la somme totale dépensée pour chaque catégorie d'achat ?   
- 1. Quelle somme est dépensée  dans la ville de _San Francisco_ dans chaque moyen de paiement ?
- 1. Dans quelle ville la catégorie _Women's Clothing_ a permis de générer le plus d'argent _Cash_ ?
- 1. À quelle heure les clients dépensent-ils le plus ? (type de réponse attendue : "entre 16h et 17h" par exemple)
+Voici une liste de questions que vous pouvez aborder dans l'ordre (ou non!). Faites un programme (et donc un fichier) par question.
 
-
-Il est conseillé de développer un couple de fichiers différent pour chaque question (pour garder trace de vos algorithmes).
+1. Quel est le nombre d'achats effectués pour chaque catégorie d'achat ?    
+1. Quelle est la somme totale dépensée pour chaque catégorie d'achat ?   
+1. Quelle somme est dépensée  dans la ville de _San Francisco_ dans chaque moyen de paiement ?
+1. Dans quelle ville la catégorie _Women's Clothing_ a permis de générer le plus d'argent _Cash_ ?
+1. À quelle heure les clients dépensent-ils le plus ? (type de réponse attendue : "entre 16h et 17h" par exemple).
 
 
 ---
