@@ -46,6 +46,12 @@ Copiez alors _arbresremarquablesparis2.csv_ sur _HDFS_ (dans le répertoires `in
 ---
 ## Exercice 2: _The MovieLens Database_ (à reporter dans votre CR)
 
+Cette partie du TP est à rendre, en respectant les deadlines (_cf_ site edunao du cours), seul ou en binôme.
+
+> - Sur le CR, rédigé en *markdown*, merci d'inclure les scripts permettant de répondre à la question posée, et d'ajouter un extrait des résultats obtenus sur le fichier proposé. Tout ajout, *p. ex.* une variante de l'algorithme, ou un test sur d'autres fichiers de vocabulaires..., sera TRES apprécié. Inscrivez sur le CR toutes les informations me permettant de rejouer ces ajouts.  
+> - N'oubliez pas d'inscrire votre nom / vos noms sur les scripts, et de déposer un seul fichier compressé nommé _VosNoms_rendu3.zip_.
+> - Cet algorithme sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme), ainsi que l'originalité et la complexité de la requête que vous aurez choisie !
+
 ### Téléchargement des données
 
 Il faut d'abord télécharger la base de données
@@ -63,4 +69,4 @@ Dans le répertoire _ml-latest-small_, créé lors de la décompression, vous co
 
 Pour le CR, je vous demande de proposer une (1) requête, écrite en _PySPark_, relativement sophistiquée (et originale) qui interroge un ou plusieurs fichiers de cette base.
 
-*Remarque* : Vous **NE devez PAS utiliser** `pyspark.sql` dans votre requête.
+*Remarque* : Vous **NE devez PAS** utiliser `pyspark.sql` dans votre requête.

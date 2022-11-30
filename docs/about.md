@@ -1,8 +1,8 @@
 **Stéphane Derrode**
 
-  - *adresse*: 2nd stair - E6 building.    36 av. Guy de Collongue - 69134 Ecully Cedex - France
-  - *mél* : stephane.derrode[at]ec-lyon.fr
-  - *tél* : 04 72 18 64 45, fax: 04 72 18 64 43
+  - *adresse*: 2nd stair - E6 building. 36 av. Guy de Collongue - 69134 Ecully Cedex - France
+  - *mél* : stephane.derrode[at]ec[minus]lyon.fr
+  - *tél* : int+ 33 4 72 18 64 45, fax: int+ 33 4 72 18 64 43
   - *references*:
 
       - [Google Scholar](https://scholar.google.com/citations?user=boGMDa0AAAAJ&hl=fr)

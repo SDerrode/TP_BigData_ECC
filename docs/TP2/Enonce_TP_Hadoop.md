@@ -89,7 +89,14 @@ Voici une liste de questions que vous pouvez aborder dans l'ordre (ou non!). Fai
 ---
 ## Énoncé du CR de TP2
 
-### Partie I
+Cette partie du TP est à rendre, en respectant les deadlines (_cf_ site edunao du cours), seul ou en binôme.
+
+> - Sur le CR, rédigé en *markdown*, merci d'inclure les scripts permettant de répondre à la question posée, et d'ajouter un extrait des résultats obtenus sur le fichier proposé. Tout ajout, *p. ex.* une variante de l'algorithme, ou un test sur d'autres fichiers de vocabulaires..., sera TRES apprécié. Inscrivez sur le CR toutes les informations me permettant de rejouer ces ajouts.  
+> - N'oubliez pas d'inscrire votre nom / vos noms sur les scripts, et de déposer un seul fichier compressé nommé _VosNoms_rendu2.zip_.
+> - Cet algorithme sera évalué et comptera dans votre note finale. La note prendra en compte la qualité et la clarté du code (qui doit être légèrement commenté, avec des noms de variables qui donnent du sens à votre programme) !
+
+
+### Partie I - Anagramme
 
 Il est conseillé de créer un nouveau répertoire pour réaliser cette partie :
 ```bash
@@ -122,9 +129,10 @@ wget https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt
 
 Cet algorithme devra fonctionner sous environnement _Hadoop_, avec plusieurs _mapper_ et _reducer_ en parallèle. L'algorithme ne devra pas tenir compte de la présence éventuelle de majuscules dans les mots.
 
-### Partie II
+
+### Partie II - retour sur le fichier de ventes
 
 Proposez une **requête originale et complexe** sur le fichier de ventes. Dans le CR, veuillez:
 
  - Décrite la requête en quelques phrases, et montrer le résultat obtenu (ou un extrait si trop volumineux).
- - Inclure le code de la requête dans le zip.
+ - Inclure le source code de la requête dans le zip.

@@ -1,54 +1,58 @@
-# Template - Fiche de synthèse
+# Template- Fiche de synthèse
+
+[TOC]
 
 Ce document présente les consignes pour la rédaction de la fiche de synthèse (FS), à rendre **le jour de la dernière séance de cours**.
 
 ---
 ## Consignes
 
- - Votre FS doit être rédigée avec le format `Markdown` et suivre le modèle présenté ci-dessous. Elle ne doit pas dépasser l'équivalent d'une dizaine de pages.  
- - Le contenu de la FS doit être géré entre vous, avec l'aide d'un projet _GitLab_ ou _GitHub_. Le projet sera hébergé sur le compte de l'un des membres du groupe, qui autorisera l'accès en écriture au projet à tous les autres membres du projet ainsi qu'à moi-même (mon pseudo _GitLab_ : _stephane.derrode@ec-lyon.fr_; mon pseudo _GitHub_: _stephane.derrode@ec-lyon.fr_).
- - Le groupe doit se déclarer sur ce [fichier partagé](https://partage.liris.cnrs.fr/index.php/s/FegdnkcY7xSgAr2), sur l'un des onglets vides (si nécessaire, ajoutez des onglets). On y déposera le titre de la fiche, l'adresse URL du projet _git_ et les noms et pseudo _git_ des étudiants. 
- - Je récupérerai votre FS directement sur votre _git_ le jour de la dernière séance de cours. C'est donc la date butoir pour terminer votre FS.
+- Le groupe (4-5 étudiants) doit se déclarer sur ce [fichier partagé](https://partage.liris.cnrs.fr/index.php/s/7Yy2XBtSq6M4dQ9), sur l'un des onglets vides (si nécessaire, ajoutez des onglets). On y déposera le titre de la fiche, l'adresse URL du projet _git_ et les noms, adresse mél et pseudo _git_ des étudiants. 
+- Votre FS doit être rédigée avec le format _Markdown_ et suivre le modèle présenté ci-dessous. Elle ne doit pas dépasser l'équivalent d'une dizaine de pages.  
+- Le contenu de la FS doit être géré entre vous, avec l'aide d'un projet _GitLab_ ou _GitHub_. Le projet sera hébergé sur le compte de l'un des membres du groupe, qui autorisera l'accès en écriture au projet à tous les autres membres du projet ainsi qu'à moi-même (mon pseudo _GitLab_ : _stephane.derrode@ec-lyon.fr_; mon pseudo _GitHub_: _stephane.derrode@ec-lyon.fr_).
+- Je récupérerai votre FS directement sur votre _git_ le jour de la dernière séance de cours. C'est donc la date butoir pour terminer votre FS.
 
 *Remarque* Le système de gestion de versions **git** est présenté en cours. Vous trouverez le scenario du tuto joué durant le second cours dans le répertoire [git](./tuto-git-gitlab).
-
----
-## Markdown
-
- - `Markdown` est un simple format texte dans lequel on ajoute des balises, pour mettre en gras, inclure des images, faire des liens hypertextes... Ces balises peuvent être interprétées par différents moteurs pour obtenir un rendu en _html_, en _pdf_, en _rtf_ ou en _word_... Pour apprendre les quelques balises nécessaires à une mise en page minimaliste (mais suffisante la plupart du temps), vous trouverez de nombreux tutoriaux sur internet, dont celui-ci : [Markdown - Wikipédia](https://fr.wikipedia.org/wiki/Markdown).
-
- - La totalité des éditeurs de textes généralistes, tels _Sublime Text_, _Geany_..., gèrent très bien ce format, et incluent des convertisseurs automatiques. Remarquez d'ailleurs que _GitLab_ et _GitHub_ interprètent automatiquement les fichiers `Markdown` que vous déposez sur leur site.
-
- - Voici cependant quelques outils _open source_ spécifiques qui pourraient vous aider pour débuter:    
-    - [ghostwriter](https://wereturtle.github.io/ghostwriter/) : _Linux_ et _Windows_
-    - [abricotine](http://abricotine.brrd.fr) : _Linux_, _Windows_ et _Mac OS X_ (en version beta)
-    - [remarkable](https://remarkableapp.github.io) : _Windows_ et _Linux_
-
-Il existe des éditeurs en ligne, dont [Dilinger](https://dillinger.io), [StackEdit](https://stackedit.io/app#) (ce dernier requiert une inscription).
 
 
 ---
 ## Organisation de la FS
 
-La FS sera composée de plusieurs fichiers `Markdown`. Le fichier principal de votre FS sera appelé _README.md_, et inclura des liens vers les différents fichiers qui composent votre fiche. 
+La FS sera composée de plusieurs fichiers _Markdown_. Le fichier principal de votre FS sera appelé _README.md_, et inclura des liens vers les différents fichiers qui composent votre fiche (un fichier par chapitre par exemple). 
 
 Votre fichier _README.md_ sera organisé de la manière suivante :
 
- - le titre de votre FS, les noms des auteurs, l'année (les informations classiques d'une page de garde).    
- - un résumé d'une dizaine de lignes.    
- - le sommaire de votre document.     
- - des liens vers des fichiers `Markdown` qui développent votre sujet d'étude (Introduction, Chapitre 1, Chapitre 2, ..., Conclusion, Bibliographie/Webographie, Annexes). 
+- le titre de votre FS, les noms des auteurs, l'année (les informations classiques d'une page de garde).    
+- un résumé d'une dizaine de lignes.    
+- le sommaire de votre document.     
+- des liens vers des fichiers _Markdown_ qui développent votre sujet d'étude (Introduction, Chapitre 1, Chapitre 2, ..., Conclusion, Bibliographie/Webographie, Annexes). 
+
+Voici [un exemple](./big-data-and-political-science.zip) de ce qui est attendu.
 
 ---
-## Ajouts d'images, de schémas ou de diagrammes
+## Markdown
+
+- _Markdown_ est un simple format texte dans lequel on ajoute des balises, pour mettre en gras, inclure des images, faire des liens hypertextes... Ces balises peuvent être interprétées par différents moteurs pour obtenir un rendu en _html_, en _pdf_, en _rtf_ ou en _word_... Pour apprendre les quelques balises nécessaires à une mise en page minimaliste (mais suffisante la plupart du temps), vous trouverez de nombreux tutoriaux sur Internet, dont celui-ci : [Markdown - Wikipédia](https://fr.wikipedia.org/wiki/Markdown).
+
+- La totalité des éditeurs de textes généralistes, tels _Sublime Text_, _Geany_, _VSCode_..., gèrent très bien ce format, et incluent des convertisseurs automatiques. Remarquez d'ailleurs que _GitLab_ et _GitHub_ interprètent automatiquement les fichiers _Markdown_ que vous déposez sur leur site.
+
+- Voici cependant quelques outils _open source_ spécifiques qui pourraient vous aider pour débuter:    
+   - [ghostwriter](https://ghostwriter.kde.org/fr/) : _Linux_ et _Windows_
+   - [abricotine](http://abricotine.brrd.fr) : _Linux_, _Windows_ et _Mac OS X_ (en version beta)
+   - [remarkable](https://remarkableapp.github.io) : _Windows_ et _Linux_
+
+Il existe des éditeurs en ligne, dont [Dilinger](https://dillinger.io), [StackEdit](https://stackedit.io/app#).
+
+### Ajouts d'images, de schémas ou de diagrammes
 
 Si vous souhaitez intégrer des diagrammes ou des schémas (ou tout autre diagramme vectoriel), je vous conseille l'utilisation de [diagram.net](https://app.diagrams.net) (open source). 
 
-Vous pouvez sauvegarder vos graphiques _diagram.net_ sur votre machine (cf exemple dans le dossier _figures_, à côté de ce fichier) et les convertir dans des images aux formats _png_, _svg_... pour les intégrer ensuite dans un fichier `Markdown` selon l'exemple suivant :
+Vous pouvez sauvegarder vos graphiques _diagram.net_ sur votre machine (_cf_ exemple dans le dossier _figures_, à côté de ce fichier) et les convertir dans des images aux formats _png_, _svg_... pour les intégrer ensuite dans un fichier _Markdown_ selon l'exemple suivant :
 
-    la commande ![test](figures/test.png) donne
+> la commande `![test](figures/test.png)` donne
+
 ![test](figures/test.png)
 
+> la commande  `![test](figures/test.svg)` donne
 
-    la commande  ![test](figures/test.svg) donne
 ![test](figures/test.svg)
